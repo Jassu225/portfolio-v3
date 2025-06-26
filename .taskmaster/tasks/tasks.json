@@ -1,0 +1,483 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize Next.js Project with TypeScript and Tailwind CSS",
+        "description": "Set up a new Next.js project using the App Router, configured with TypeScript for type safety and Tailwind CSS for utility-first styling. This includes initializing the project, configuring Tailwind, and setting up the basic folder structure.",
+        "details": "Use the command `npx create-next-app@latest --typescript --tailwind your-portfolio-app` to initialize the project. Configure `tailwind.config.ts` (e.g., theme extensions for colors, fonts if specified in Figma) and `postcss.config.js`. Create initial folders: `app/` for routes, `components/` for UI components, and `lib/data/` for hardcoded content.",
+        "testStrategy": "Verify the project initializes correctly by running `npm run dev`. Check that TypeScript compiles without errors (`npm run build`). Apply a simple Tailwind class to the main page and ensure it renders correctly in the browser.",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Implement Main Layout Component (`Layout.tsx`)",
+        "description": "Create the main `Layout.tsx` component that will serve as a wrapper for all page content. This component will include the Navbar and Footer and provide a consistent structure across the application.",
+        "details": "The `Layout.tsx` component should be placed in the `components/` directory. It will accept `children: React.ReactNode` as props. The basic structure should be a flex container ensuring the footer stays at the bottom: `<div className=\"min-h-screen flex flex-col\"><Navbar />{/* Placeholder for Navbar */}<main className=\"flex-grow\">{children}</main><Footer />{/* Placeholder for Footer */}</div>`. Import and render `Navbar` and `Footer` components once they are created.",
+        "testStrategy": "Create a basic page within the `app` directory (e.g., `app/page.tsx`) that uses this `Layout` component. Verify that content passed as children renders correctly between the (placeholder) Navbar and Footer. Ensure the layout structure supports a sticky footer if content is short.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create `components` directory",
+            "description": "Create a `components` directory inside `src` to store reusable components.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 2
+          },
+          {
+            "id": 2,
+            "title": "Create `Layout.tsx` component",
+            "description": "Create the `Layout.tsx` file in `src/components` with a basic structure.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 2
+          },
+          {
+            "id": 3,
+            "title": "Integrate `Layout.tsx` into `src/app/layout.tsx`",
+            "description": "Update `src/app/layout.tsx` to use the new `Layout` component and set the correct font and metadata.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 2
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Develop Responsive Navigation Bar (`Navbar.tsx`)",
+        "description": "Develop the `Navbar.tsx` component. It must be responsive, sticky at the top, and include navigation links to the Hero, About, Skills, Background, and Projects sections.",
+        "details": "Place `Navbar.tsx` in `components/`. Implement sticky behavior using Tailwind: `className=\"sticky top-0 z-50 bg-gray-800 text-white shadow-md\"` (adjust colors based on dark theme). For responsiveness, use a hamburger menu for mobile (e.g., using a library like `headlessui/react` or custom JS/CSS) and horizontal links for desktop. Links should be `<a>` tags with `href=\"#section-id\"`. Example links: Home (to Hero), About, Skills, Background, Projects.",
+        "testStrategy": "Verify the Navbar is sticky when scrolling. Test responsiveness: hamburger menu appears and functions on small screens, horizontal links on larger screens. Check that links are present and hover states are implemented. Test in `Layout.tsx`.",
+        "priority": "medium",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create `Navbar.tsx` with Mobile-First Structure",
+            "description": "Create the `Navbar.tsx` component file and add the basic structure for the mobile view, including the title and a placeholder for the menu icon.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 3
+          },
+          {
+            "id": 2,
+            "title": "Integrate Navbar into Layout",
+            "description": "Integrate the `Navbar` component into `Layout.tsx` to make it appear on all pages.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 3
+          },
+          {
+            "id": 3,
+            "title": "Implement Mobile Menu Toggle Functionality",
+            "description": "Add state and event handlers to the `Navbar` component to toggle a mobile menu when the hamburger icon is clicked. The menu should display navigation links.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 3
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Develop Basic Footer Component (`Footer.tsx`)",
+        "description": "Implement the `Footer.tsx` component. For the MVP, this will be a simple footer, with potential for future enhancements.",
+        "details": "Place `Footer.tsx` in `components/`. Style with Tailwind CSS for the dark theme. It can contain simple text like `© ${new Date().getFullYear()} Ethan Carter. All rights reserved.` or links to social media if specified in design (though not explicitly in PRD for MVP). Example: `<footer className=\"bg-gray-800 text-gray-400 text-center p-4\">...</footer>`.",
+        "testStrategy": "Verify the Footer renders correctly at the bottom of the page when integrated into `Layout.tsx`. Check text content and basic styling.",
+        "priority": "medium",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create `Footer.tsx` Component",
+            "description": "Create the `Footer.tsx` component file in `src/components` with a basic structure and styling.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 4
+          },
+          {
+            "id": 2,
+            "title": "Integrate Footer into Layout",
+            "description": "Integrate the `Footer` component into the `Layout.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 4
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Define Data Structures and Create Mock Content Files",
+        "description": "Define TypeScript interfaces for all content types (personal info, skills, experience, projects) and create mock data files (JSON or TypeScript) in the `lib/data` folder.",
+        "details": "In `lib/data/types.ts` (or similar): `interface Skill { id: string; name: string; } interface ExperienceItemData { id: string; company: string; role: string; duration: string; description: string[]; } interface ProjectData { id: string; title: string; description: string; imageUrl: string; tags: string[]; } interface PersonalInfoData { name: string; title: string; location: string; profilePicture: string; bio: string; }`. In `lib/data/mockData.ts`: export consts for `personalInfo`, `skillsList`, `experienceList`, `projectList` populated with placeholder or initial content (e.g., Ethan Carter's details).",
+        "testStrategy": "Verify that the data structures are correctly defined and that mock data can be imported and accessed in other components without type errors. Check that data matches the expected format for each section.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Data Directory",
+            "description": "Create the `src/lib/data` directory to house data-related files.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          },
+          {
+            "id": 2,
+            "title": "Define TypeScript Interfaces",
+            "description": "Create the `types.ts` file and define the interfaces for `Skill`, `Experience`, and `Project`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          },
+          {
+            "id": 3,
+            "title": "Create Mock Data File",
+            "description": "Create the `index.ts` file in `src/lib/data` and populate it with mock data for the portfolio sections.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Develop Hero Section Component (`Hero.tsx`)",
+        "description": "Develop the `Hero.tsx` component. This section will feature the user's name ('Ethan Carter'), title ('Product Designer'), location ('San Francisco, CA'), and a profile picture.",
+        "details": "Place `Hero.tsx` in `components/sections/`. Import `personalInfoData` from `lib/data/mockData.ts`. Use `next/image` for the profile picture for optimization. Style with Tailwind CSS according to the dark theme and Figma design (prominent text, clear visual hierarchy). Ensure responsiveness. Example structure: `<section id=\"hero\" className=\"flex flex-col items-center justify-center min-h-screen text-center p-4 bg-gray-900 text-white\">...</section>`.",
+        "testStrategy": "Verify the Hero section renders with correct data (name, title, location, image). Check visual appearance against design guidelines (typography, spacing, dark theme). Test responsiveness on mobile, tablet, and desktop.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Sections Directory",
+            "description": "Create the `src/components/sections` directory to organize page section components.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 2,
+            "title": "Create Hero.tsx Component",
+            "description": "Create the `Hero.tsx` component file and implement the UI according to the Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 3,
+            "title": "Integrate Hero Component",
+            "description": "Integrate the `Hero` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 4,
+            "title": "Refine Hero Section Styling",
+            "description": "Adjust font sizes, weights, colors, and spacing in the Hero section to precisely match the Figma design specifications.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Develop About Section Component (`About.tsx`)",
+        "description": "Develop the `About.tsx` component to display a brief biography of the user.",
+        "details": "Place `About.tsx` in `components/sections/`. Import `personalInfoData.bio` (or a dedicated about text) from `lib/data/mockData.ts`. Style with Tailwind CSS, maintaining consistency with the dark theme and overall design. Ensure text is readable and the section is responsive. Example structure: `<section id=\"about\" className=\"py-16 px-4 bg-gray-850 text-gray-300\">...</section>`.",
+        "testStrategy": "Verify the About section renders the biographical text correctly. Check styling for readability and consistency. Test responsiveness across different screen sizes.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create About.tsx Component",
+            "description": "Create the `About.tsx` component file and implement the UI according to the Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          },
+          {
+            "id": 2,
+            "title": "Integrate About Component",
+            "description": "Integrate the `About` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          },
+          {
+            "id": 3,
+            "title": "Refine About Section Styling",
+            "description": "Adjust font sizes, colors, and line height in the About section to precisely match the Figma design specifications.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Develop Skills Section (`Skills.tsx`) and `SkillTag.tsx`",
+        "description": "Develop the `Skills.tsx` section component and the reusable `SkillTag.tsx` component to display key skills as tags.",
+        "details": "Place `Skills.tsx` in `components/sections/` and `SkillTag.tsx` in `components/ui/` or `components/`. `Skills.tsx` will import `skillsList` from mock data and map over it, rendering a `SkillTag.tsx` for each skill. `SkillTag.tsx` (e.g., `(props: { name: string }) => <span className=\"bg-blue-500 text-white px-3 py-1 rounded-full text-sm\">{props.name}</span>`) should be styled as a tag. `Skills.tsx` layout should be responsive (e.g., `flex flex-wrap justify-center gap-2`). Example structure: `<section id=\"skills\" className=\"py-16 px-4 bg-gray-900 text-white\">...</section>`.",
+        "testStrategy": "Verify that all skills from mock data are displayed as tags. Check the appearance and styling of `SkillTag.tsx`. Test the responsiveness of the skills layout (e.g., single column on mobile, multi-column/wrap on larger screens).",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create `ui` Directory",
+            "description": "Create `src/components/ui` directory for small, reusable UI components.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 2,
+            "title": "Create SkillTag.tsx Component",
+            "description": "Create the `SkillTag.tsx` component in `src/components/ui`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 3,
+            "title": "Create Skills.tsx Section",
+            "description": "Create the `Skills.tsx` component in `src/components/sections`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 4,
+            "title": "Integrate Skills Component",
+            "description": "Integrate the `Skills` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Develop Background Section (`Background.tsx`) and `ExperienceItem.tsx`",
+        "description": "Develop the `Background.tsx` section component and the `ExperienceItem.tsx` component to detail professional experience in a timeline style.",
+        "details": "Place `Background.tsx` in `components/sections/` and `ExperienceItem.tsx` in `components/`. `Background.tsx` imports `experienceList` from mock data and maps over it, rendering an `ExperienceItem.tsx` for each entry. `ExperienceItem.tsx` will display company, role, duration, and description. Implement a timeline style using Tailwind CSS (e.g., vertical line with items branching off). Example structure: `<section id=\"background\" className=\"py-16 px-4 bg-gray-850 text-gray-300\">...</section>`.",
+        "testStrategy": "Verify all experience entries are displayed with correct details. Check the timeline styling and readability. Test responsiveness, ensuring the timeline adapts well to different screen sizes.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create ExperienceItem.tsx Component",
+            "description": "Create the `ExperienceItem.tsx` component in `src/components/ui`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 2,
+            "title": "Create Background.tsx Section",
+            "description": "Create the `Background.tsx` component in `src/components/sections`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 3,
+            "title": "Integrate Background Component",
+            "description": "Integrate the `Background` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Develop Featured Projects Section (`Projects.tsx`) and `ProjectCard.tsx`",
+        "description": "Develop the `Projects.tsx` section component and the `ProjectCard.tsx` component to showcase 2-4 featured projects with an image, title, and short description.",
+        "details": "Place `Projects.tsx` in `components/sections/` and `ProjectCard.tsx` in `components/`. `Projects.tsx` imports `projectList` from mock data and maps over it, rendering a `ProjectCard.tsx` for each project. `ProjectCard.tsx` will use `next/image` for project images and display title and description. Style cards and gallery layout using Tailwind CSS (e.g., responsive grid: `grid grid-cols-1 md:grid-cols-2 gap-6`). Example structure: `<section id=\"projects\" className=\"py-16 px-4 bg-gray-900 text-white\">...</section>`.",
+        "testStrategy": "Verify all featured projects are displayed with image, title, and description. Check card styling and image loading. Test the responsiveness of the project gallery layout (e.g., single column on mobile, multi-column grid on larger screens).",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create ProjectCard.tsx Component",
+            "description": "Create the `ProjectCard.tsx` component in `src/components/ui`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 10
+          },
+          {
+            "id": 2,
+            "title": "Create Projects.tsx Section",
+            "description": "Create the `Projects.tsx` component in `src/components/sections`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 10
+          },
+          {
+            "id": 3,
+            "title": "Integrate Projects Component",
+            "description": "Integrate the `Projects` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 10
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Integrate All Sections into Main Page and Implement Smooth Scrolling Navigation",
+        "description": "Integrate all developed section components (`Hero`, `About`, `Skills`, `Background`, `Projects`) into the main page (`app/page.tsx`) under the `Layout` component. Implement smooth scrolling for `Navbar` links to their respective sections.",
+        "details": "In `app/page.tsx`, import and render `Hero`, `About`, `Skills`, `Background`, and `Projects` components in the specified order. Ensure each section component has a unique `id` attribute (e.g., `<Hero id=\"hero\" />`). Update `Navbar.tsx` links to point to these IDs (e.g., `<a href=\"#hero\">...</a>`). Enable smooth scrolling globally via CSS: `html { scroll-behavior: smooth; }` in `app/globals.css`.",
+        "testStrategy": "Verify all sections appear on the main page in the correct order. Test navigation by clicking links in the Navbar; ensure smooth scrolling to the correct section. Check for any layout breaks or style conflicts after integration.",
+        "priority": "medium",
+        "dependencies": [
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Enable Smooth Scrolling",
+            "description": "Enable smooth scrolling by adding `scroll-behavior: smooth;` to the `html` element in `globals.css`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 11
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Implement Mobile-First Responsiveness and Cross-Device Styling Refinements",
+        "description": "Thoroughly review and refine the responsiveness of all sections and components, ensuring adherence to the mobile-first design strategy. The application should adapt gracefully to tablet and desktop screen sizes.",
+        "details": "Use Tailwind CSS responsive prefixes (e.g., `sm:`, `md:`, `lg:`, `xl:`) to adjust layouts, font sizes, spacing, and visibility. Test using browser developer tools for various breakpoints (e.g., 320px, 375px, 768px, 1024px, 1440px). Focus on single-column for mobile, and multi-column for Skills/Projects on larger screens. Ensure interactive elements (links, buttons) have clear hover/focus states.",
+        "testStrategy": "Systematically test each section and component on common mobile, tablet, and desktop viewport sizes. Verify layout integrity, readability, and usability. Check for content overflow, awkward spacing, or unclickable elements. Ensure a consistent user experience across devices.",
+        "priority": "medium",
+        "dependencies": [
+          11
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Responsive Navigation Bar",
+            "description": "Make the `Navbar` component responsive by displaying links horizontally on desktop and keeping the hamburger menu for mobile.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 12
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Final Testing and Quality Assurance",
+        "description": "Conduct comprehensive testing of the entire application. This includes functionality, UI/UX consistency, responsiveness across devices, and content accuracy based on mock data and PRD requirements.",
+        "details": "Perform a full user journey walkthrough: landing on Hero, scrolling through sections, using navigation. Check all interactive elements. Validate against Figma design for layout, color scheme, and typography (as per MVP mitigation: professional and functional, not pixel-perfect). Test on major browsers (Chrome, Firefox, Safari). Check for console errors or warnings.",
+        "testStrategy": "Develop a test checklist covering all core features and UI elements. Perform exploratory testing to find edge cases. Verify content matches mock data. Ensure all links work and scroll correctly. Confirm responsiveness on key breakpoints.",
+        "priority": "medium",
+        "dependencies": [
+          12
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 14,
+        "title": "Prepare for Deployment",
+        "description": "Prepare the application for deployment on platforms like Vercel or Netlify. This includes ensuring the application builds successfully for production and any necessary deployment configurations are considered.",
+        "details": "Run the production build command (`npm run build`) and ensure it completes without errors. Review build output for any unexpectedly large assets (Next.js usually handles optimization well). If not already present, create/update `README.md` with basic build and run instructions. Ensure no sensitive information is hardcoded if any was used for placeholders (though MVP uses mock data).",
+        "testStrategy": "Successfully execute `npm run build`. Optionally, perform a test deployment to a Vercel or Netlify staging environment to confirm the build works in a production-like setting. Check the deployed site for basic functionality.",
+        "priority": "medium",
+        "dependencies": [
+          13
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-06-26T13:36:45.161Z",
+      "updated": "2025-06-26T14:48:38.373Z",
+      "description": "Tasks for master context"
+    }
+  }
+}
