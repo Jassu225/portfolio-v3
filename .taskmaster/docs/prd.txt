@@ -4,7 +4,7 @@ This document outlines the requirements for a personal portfolio web application
 # Core Features
 The initial version (MVP) of the portfolio will consist of the following sections, presented as a single-page scrolling experience:
 - **Navigation Bar**: A responsive header that is sticky and contains links to different sections of the page.
-- **Hero Section**: A prominent introductory section featuring the user's name ("Ethan Carter" from the design), title ("Product Designer"), and location ("San Francisco, CA"). It will include a profile picture.
+- **Hero Section**: A prominent introductory section featuring the user's name ("Jaswanth Sai Sattenapalli" from the design), title ("Full-stack Developer"), and location ("San Francisco, CA"). It will include a profile picture.
 - **About Section**: A brief biography to give visitors a personal glimpse into the user's background and passion.
 - **Skills Section**: A section to display key skills as tags (e.g., "UI/UX Design", "User Research", "Prototyping").
 - **Background Section**: A timeline-style section detailing professional experience and roles held at various companies (e.g., "Acme Co.", "Beta Inc.").

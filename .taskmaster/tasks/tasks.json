@@ -50,6 +50,15 @@
             "status": "done",
             "dependencies": [],
             "parentTaskId": 2
+          },
+          {
+            "id": 4,
+            "title": "Add temporary max-width to page layout",
+            "description": "Restrict the maximum width of the page content to 480px to maintain a mobile-first appearance on larger screens during development. This is a temporary measure to ensure design consistency.",
+            "details": "- Modified `src/components/Layout.tsx`.\n- Added `container`, `mx-auto`, and `max-w-[480px]` Tailwind CSS classes to the `main` element.\n- This change centers the content and constrains its width globally across the application.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 2
           }
         ]
       },
@@ -98,7 +107,7 @@
         "id": 4,
         "title": "Develop Basic Footer Component (`Footer.tsx`)",
         "description": "Implement the `Footer.tsx` component. For the MVP, this will be a simple footer, with potential for future enhancements.",
-        "details": "Place `Footer.tsx` in `components/`. Style with Tailwind CSS for the dark theme. It can contain simple text like `© ${new Date().getFullYear()} Ethan Carter. All rights reserved.` or links to social media if specified in design (though not explicitly in PRD for MVP). Example: `<footer className=\"bg-gray-800 text-gray-400 text-center p-4\">...</footer>`.",
+        "details": "Place `Footer.tsx` in `components/`. Style with Tailwind CSS for the dark theme. It can contain simple text like `© ${new Date().getFullYear()} Jaswanth Sai Sattenapalli. All rights reserved.` or links to social media if specified in design (though not explicitly in PRD for MVP). Example: `<footer className=\"bg-gray-800 text-gray-400 text-center p-4\">...</footer>`.",
         "testStrategy": "Verify the Footer renders correctly at the bottom of the page when integrated into `Layout.tsx`. Check text content and basic styling.",
         "priority": "medium",
         "dependencies": [
@@ -130,7 +139,7 @@
         "id": 5,
         "title": "Define Data Structures and Create Mock Content Files",
         "description": "Define TypeScript interfaces for all content types (personal info, skills, experience, projects) and create mock data files (JSON or TypeScript) in the `lib/data` folder.",
-        "details": "In `lib/data/types.ts` (or similar): `interface Skill { id: string; name: string; } interface ExperienceItemData { id: string; company: string; role: string; duration: string; description: string[]; } interface ProjectData { id: string; title: string; description: string; imageUrl: string; tags: string[]; } interface PersonalInfoData { name: string; title: string; location: string; profilePicture: string; bio: string; }`. In `lib/data/mockData.ts`: export consts for `personalInfo`, `skillsList`, `experienceList`, `projectList` populated with placeholder or initial content (e.g., Ethan Carter's details).",
+        "details": "In `lib/data/types.ts` (or similar): `interface Skill { id: string; name: string; } interface ExperienceItemData { id: string; company: string; role: string; duration: string; description: string[]; } interface ProjectData { id: string; title: string; description: string; imageUrl: string; tags: string[]; } interface PersonalInfoData { name: string; title: string; location: string; profilePicture: string; bio: string; }`. In `lib/data/mockData.ts`: export consts for `personalInfo`, `skillsList`, `experienceList`, `projectList` populated with placeholder or initial content (e.g., Jaswanth Sai Sattenapalli's details).",
         "testStrategy": "Verify that the data structures are correctly defined and that mock data can be imported and accessed in other components without type errors. Check that data matches the expected format for each section.",
         "priority": "medium",
         "dependencies": [
@@ -164,13 +173,31 @@
             "status": "done",
             "dependencies": [],
             "parentTaskId": 5
+          },
+          {
+            "id": 4,
+            "title": "Update Experience data model and populate with resume content",
+            "description": "Update the Experience data model in types.ts and the ExperienceItem component to support and display detailed, multi-point descriptions. Then, populate this new structure with the content provided from the user's resume.",
+            "details": "- Added a `description: string[]` field to the `Experience` interface in `src/lib/data/types.ts`.\n- Updated the data in `src/lib/data/index.ts` to match the user's resume, including detailed bullet points for each role.\n- Modified the `ExperienceItem.tsx` component to render the `description` array as a `ul` list.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          },
+          {
+            "id": 5,
+            "title": "Refine Experience section UI (justification, margins, 'See more' feature)",
+            "description": "Improve the UI of the Experience section by justifying the description text, reducing the list marker margin for a cleaner look, and implementing a 'See more/less' toggle to handle long descriptions gracefully.",
+            "details": "- Justified the description text in `ExperienceItem.tsx` for better readability.\n- Adjusted list padding to reduce the margin of the bullet points.\n- Added a stateful `isExpanded` toggle to the `ExperienceItem` component.\n- The description is now truncated to the first bullet point by default, with a button to expand or collapse the full text.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
           }
         ]
       },
       {
         "id": 6,
         "title": "Develop Hero Section Component (`Hero.tsx`)",
-        "description": "Develop the `Hero.tsx` component. This section will feature the user's name ('Ethan Carter'), title ('Product Designer'), location ('San Francisco, CA'), and a profile picture.",
+        "description": "Develop the `Hero.tsx` component. This section will feature the user's name ('Jaswanth Sai Sattenapalli'), title ('Full-stack Developer'), location ('San Francisco, CA'), and a profile picture.",
         "details": "Place `Hero.tsx` in `components/sections/`. Import `personalInfoData` from `lib/data/mockData.ts`. Use `next/image` for the profile picture for optimization. Style with Tailwind CSS according to the dark theme and Figma design (prominent text, clear visual hierarchy). Ensure responsiveness. Example structure: `<section id=\"hero\" className=\"flex flex-col items-center justify-center min-h-screen text-center p-4 bg-gray-900 text-white\">...</section>`.",
         "testStrategy": "Verify the Hero section renders with correct data (name, title, location, image). Check visual appearance against design guidelines (typography, spacing, dark theme). Test responsiveness on mobile, tablet, and desktop.",
         "priority": "medium",
@@ -212,6 +239,42 @@
             "title": "Refine Hero Section Styling",
             "description": "Adjust font sizes, weights, colors, and spacing in the Hero section to precisely match the Figma design specifications.",
             "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 5,
+            "title": "Update carousel: remove nav buttons, add dots, and adjust item width",
+            "description": "Refactor the Projects section carousel to remove navigation buttons, add DotButtons for pagination, and make carousel items 80% width on mobile so users can see there is more content to scroll. Ensure the dot buttons are accessible and visually indicate the active slide.",
+            "details": "- Remove Prev/Next navigation buttons from the Carousel component.\n- Add DotButtons (pagination dots) below the carousel using Embla's API.\n- Make carousel items occupy 80vw on mobile, with max-w-full and flex-shrink-0 for proper sizing.\n- Update the Projects section container to allow horizontal overflow for the carousel.\n- Style the dot buttons for accessibility and active state.\n- Ensure all changes are responsive and match the design intent.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 6,
+            "title": "Fix: Carousel items not respecting 80% width on mobile",
+            "description": "Fixed an issue where carousel items were occupying 100% width on mobile, overriding the intended 80% width. The fix involved removing a conflicting CSS rule from globals.css and applying an inline style to the CarouselItem component.",
+            "details": "- Identified that a `flex: 0 0 100%` rule in `globals.css` was overriding Tailwind width utilities.\n- Removed the conflicting `flex` property from the `.embla__slide` class in `globals.css`.\n- Modified the `CarouselItem` component to use an inline style `flex: \"0 0 80%\"` for consistent sizing.\n- Verified with the user that the carousel items now correctly occupy 80% of the width on mobile.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 7,
+            "title": "Fix: Standardize carousel item height",
+            "description": "Ensured all carousel items have the same height, regardless of their content, by modifying the ProjectCard component to use flexbox and updating the Embla container styles.",
+            "details": "- Modified `ProjectCard.tsx` to be a flex container that stretches to fill available height using `h-full`, `flex-col`, and `flex-grow`.\n- Added `align-items: stretch` to the `.embla__container` in `globals.css` to ensure all slide elements expand to the same height.\n- Verified with the user that all project cards in the carousel now have a uniform height.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 8,
+            "title": "Update: Reposition and restyle 'View' button on ProjectCard",
+            "description": "Relocated the 'View Project' button to the top-right corner of the project image and relabeled it to 'View'. Applied styling to make it a small, semi-transparent capsule button that sits on top of the image.",
+            "details": "- Modified `ProjectCard.tsx` to move the `<a>` tag inside the `div` with the `relative` class.\n- Styled the button to be `absolute` with `top-2` and `right-2`.\n- Changed the button text from 'View Project' to 'View'.\n- Updated styling to a rounded, semi-transparent black background for better visibility over the image.\n- Ensured the parent `div` maintained its flex properties to keep card heights uniform.",
             "status": "done",
             "dependencies": [],
             "parentTaskId": 6
@@ -350,6 +413,42 @@
             "status": "done",
             "dependencies": [],
             "parentTaskId": 9
+          },
+          {
+            "id": 4,
+            "title": "Replace Timeline Circle with SVG Icon",
+            "description": "Replace the default circle in the timeline with the office-bag.svg icon for each experience item.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 5,
+            "title": "Fix Timeline Line on Last Item",
+            "description": "Fix a visual bug where a vertical line was rendered after the last item in the timeline. Modified ExperienceItem.tsx to conditionally render the line based on an isLast prop passed from Background.tsx.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 6,
+            "title": "Refine Timeline Item Spacing",
+            "description": "Adjusted spacing in the timeline to make the vertical line appear more connected between items. Removed the container gap in Background.tsx and added bottom padding (pb-8) to the content div in ExperienceItem.tsx to compensate.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 7,
+            "title": "Fix Timeline Icon and Line Alignment",
+            "description": "Corrected a layout bug where the vertical timeline line was misaligned with the center of the icon. Removed a negative margin (-ml-1) that was causing the parent container to calculate its width incorrectly, ensuring proper centering.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
           }
         ]
       },
@@ -457,8 +556,27 @@
         "dependencies": [
           12
         ],
-        "status": "pending",
-        "subtasks": []
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Fix Missing Navbar Links",
+            "description": "Added missing 'Home' and 'Contact' links to the navigation bar to ensure all sections are accessible. Also corrected the main 'Portfolio' link to point to the #hero section.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 13
+          },
+          {
+            "id": 2,
+            "title": "Temporarily Hide Contact Section",
+            "description": "Temporarily hid the Contact section by commenting out the component in `page.tsx` as per user request. The component file remains for future use.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 13
+          }
+        ]
       },
       {
         "id": 14,
@@ -472,11 +590,25 @@
         ],
         "status": "pending",
         "subtasks": []
+      },
+      {
+        "id": 15,
+        "title": "Implement Carousel for Featured Projects Section",
+        "description": "Implement a responsive carousel for the Featured Projects section using `embla-carousel-react` to display project cards in a horizontally scrollable manner, replacing the current grid layout.",
+        "details": "1. Install `embla-carousel-react`: Run `npm install embla-carousel-react` or `yarn add embla-carousel-react`.\n2. Create a reusable `Carousel.tsx` component, likely in `components/ui/Carousel.tsx`. This component will utilize the `useEmblaCarousel` hook from the library. It should accept `children` (the project cards) and optionally `options` for embla configuration. The basic structure will involve a viewport, a container for slides, and individual slide elements.\n3. Style the `Carousel.tsx` component using Tailwind CSS to achieve a horizontal layout for slides and ensure it's responsive. Consider implementing optional previous/next navigation buttons and/or pagination dots, styled according to the project's dark theme and Figma design.\n4. Update the existing `Projects.tsx` section component (in `components/sections/Projects.tsx`). Import and integrate the new `Carousel.tsx` component. Modify the logic to map over project data (e.g., from `projectData` in `lib/data/mockData.ts`) and render each `ProjectCard.tsx` (assuming this component exists from Task 10) as a slide within the carousel.\n5. Remove the previous grid-based layout for project cards in `Projects.tsx`.\n6. Ensure the carousel is fully responsive, adapting its appearance and behavior across mobile, tablet, and desktop screen sizes, consistent with the guidelines from Task 12 and the Figma design. Support touch gestures for navigation on mobile devices.",
+        "testStrategy": "1. Verify `embla-carousel-react` is correctly installed and listed in `package.json`.\n2. Confirm the `Projects.tsx` section now displays project cards within a carousel structure, replacing any previous grid layout.\n3. Test core carousel functionality: horizontal scrolling via mouse drag (if enabled) on desktop and swipe gestures on touch devices. All project cards from the mock data should be viewable.\n4. If navigation buttons (previous/next) are implemented, verify they are correctly styled, functional, and appropriately enabled/disabled at the carousel ends.\n5. If pagination dots are implemented, verify they accurately reflect the number of slides, highlight the active slide, and allow navigation on click.\n6. Test responsiveness thoroughly across various viewport sizes (e.g., 320px, 375px, 768px, 1024px, 1440px). Ensure the carousel layout, item visibility, and controls adapt correctly without breaking the page layout or causing overflow.\n7. Visually inspect the carousel against the Figma design for adherence to specified horizontal layout, spacing, project card appearance within the carousel, and overall dark theme consistency.\n8. Check the browser console for any errors or warnings related to the carousel implementation during interaction.\n9. Perform basic accessibility checks: ensure carousel controls are keyboard focusable and operable.",
+        "status": "done",
+        "dependencies": [
+          10,
+          12
+        ],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
       "created": "2025-06-26T13:36:45.161Z",
-      "updated": "2025-06-26T14:48:38.373Z",
+      "updated": "2025-06-29T15:40:27.683Z",
       "description": "Tasks for master context"
     }
   }

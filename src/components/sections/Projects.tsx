@@ -1,17 +1,22 @@
 import React from 'react';
 import { projects } from '@/lib/data';
 import ProjectCard from '@/components/ui/ProjectCard';
+import { Carousel, CarouselItem } from '@/components/ui/Carousel';
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-4 px-4">
-      <div className="container mx-auto">
-        <h2 className="text-2xl font-bold text-white mb-6 font-space-grotesk">Featured Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section id="projects" className="py-4">
+      <div className="container mx-auto overflow-x-visible">
+        <h2 className="text-lg font-bold mb-8 px-4">
+          Featured Projects
+        </h2>
+        <Carousel>
           {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <CarouselItem key={index}>
+              <ProjectCard project={project} />
+            </CarouselItem>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );

@@ -9,8 +9,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Ethan Carter | Product Designer",
-  description: "Portfolio of Ethan Carter, a Product Designer based in San Francisco, CA.",
+  title: "Jaswanth Sai Sattenapalli | Front-end oriented full-stack developer",
+  description: "Portfolio of Jaswanth Sai Sattenapalli, a full-stack developer based in Bengaluru, India.",
 };
 
 export default function RootLayout({
