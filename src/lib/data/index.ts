@@ -57,28 +57,28 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
-    title: 'React Virtual Scroll List',
-    description: 'A virtual scroll list implementation for efficiently rendering large datasets in React.',
-    imageUrl: '/projects/react-virtual-scroll-list/home.jpeg',
-    link: 'https://github.com/jassuT21/react-virtual-scroll-list',
-  },
-  {
-    title: 'Cloud Work',
-    description: 'A collaborative document editing platform with real-time updates.',
-    imageUrl: '/projects/cloud-work/home.png',
-    link: 'https://github.com/jassuT21/cloud-work',
+    title: 'Photo Sphere',
+    description: 'A 360-degree photo viewer built with modern web technologies.',
+    imageUrl: '/projects/photo-sphere/home.png',
+    link: 'https://photo-sphere.web.app/',
   },
   {
     title: 'Kanban Board',
     description: 'A project management tool to visualize workflows and track tasks.',
     imageUrl: '/projects/kanban-board/home.jpeg',
-    link: 'https://github.com/jassuT21/kanban-board',
+    link: 'https://kanban-slate.web.app/',
   },
   {
-    title: 'Photo Sphere',
-    description: 'A 360-degree photo viewer built with modern web technologies.',
-    imageUrl: '/projects/photo-sphere/home.png',
-    link: 'https://github.com/jassuT21/photo-sphere',
+    title: 'Cloud Work',
+    description: 'A collaborative document editing platform with real-time updates.',
+    imageUrl: '/projects/cloud-work/home.png',
+    link: 'https://cloud-work.web.app/',
+  },
+  {
+    title: 'React Virtual Scroll List',
+    description: 'A virtual scroll list implementation for efficiently rendering large datasets in React.',
+    imageUrl: '/projects/react-virtual-scroll-list/home.jpeg',
+    link: 'https://virtual-scroll-list.web.app/',
   },
 ];
 
