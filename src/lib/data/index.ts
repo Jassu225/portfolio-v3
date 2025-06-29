@@ -58,19 +58,19 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     title: 'Photo Sphere',
-    description: 'A 360-degree photo viewer built with modern web technologies.',
+    description: 'Turn your memories into a mesmerizing 3D globe, right in your browser.',
     imageUrl: '/projects/photo-sphere/home.png',
     link: 'https://photo-sphere.web.app/',
   },
   {
     title: 'Kanban Board',
-    description: 'A project management tool to visualize workflows and track tasks.',
+    description: 'A project management tool to track tasks using local storage.',
     imageUrl: '/projects/kanban-board/home.jpeg',
     link: 'https://kanban-slate.web.app/',
   },
   {
     title: 'Cloud Work',
-    description: 'A collaborative document editing platform with real-time updates.',
+    description: 'A dummy tool to create tasks with complexity.',
     imageUrl: '/projects/cloud-work/home.png',
     link: 'https://cloud-work.web.app/',
   },
