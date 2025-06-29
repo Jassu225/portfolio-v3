@@ -4,7 +4,7 @@ import { personalInfo } from '@/lib/data';
 
 const Hero = () => {
   return (
-    <section id="hero" className="py-4 px-4">
+    <section id="hero" className="py-4 px-4 scroll-m-16">
       <div className="container mx-auto flex flex-col items-center gap-6">
         <div className="relative w-32 h-32 rounded-full overflow-hidden">
           <Image

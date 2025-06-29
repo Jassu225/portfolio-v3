@@ -9,8 +9,8 @@ const Navbar = () => {
   const navLinks = [
     { href: '#hero', label: 'Home' },
     { href: '#about', label: 'About' },
+    { href: '#experience', label: 'Experience' },
     { href: '#skills', label: 'Skills' },
-    { href: '#background', label: 'Experience' },
     { href: '#projects', label: 'Projects' },
     // { href: '#contact', label: 'Contact' },
   ];

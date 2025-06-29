@@ -4,7 +4,7 @@ import SkillTag from '@/components/ui/SkillTag';
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-4 px-4">
+    <section id="skills" className="py-4 px-4 scroll-m-16">
       <div className="container mx-auto">
         <h2 className="text-lg font-bold text-white mb-4 font-space-grotesk">Skills</h2>
         <div className="flex flex-wrap gap-3">
