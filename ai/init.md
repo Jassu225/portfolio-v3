@@ -224,7 +224,7 @@ Log your analysis and decisions in `project-log.md`:
   ```
 - [ ] Match folder structure with components:
   ```
-  /components/home/Hero.tsx
+  /src/components/home/Hero.tsx
   /assets/images/home/hero-bg.png
   ```
 
@@ -386,17 +386,17 @@ At each step:
 
 ## 🧩 Quick Reference
 
-| File                                     | Purpose                                |
-|------------------------------------------|----------------------------------------|
-| `/ai/project-log.md`                     | Main checklist and logs                |
-| `/ai/theme.ts`                           | Theme + layout config                  |
-| `/.taskmaster/docs/prd.txt`              | Product Requirements Document          |
-| `/.taskmaster/tasks/tasks.json`          | Task hierarchy and roadmap             |
-| `/.taskmaster/templates/example_prd.txt` | Source for generating `prd.txt`        |
-| `/assets/`                               | Images, icons, illustrations           |
-| `/design/`                               | Visual metadata, mirrors `/components` |
-| `/components/`                           | React code                             |
-| `/tests/e2e/`                            | Playwright tests                       |
+| File                                     | Purpose                                     |
+|------------------------------------------|---------------------------------------------|
+| `/ai/project-log.md`                     | Main checklist and logs                     |
+| `/ai/theme.ts`                           | Theme + layout config                       |
+| `/.taskmaster/docs/prd.txt`              | Product Requirements Document               |
+| `/.taskmaster/tasks/tasks.json`          | Task hierarchy and roadmap                  |
+| `/.taskmaster/templates/example_prd.txt` | Source for generating `prd.txt`             |
+| `/assets/`                               | Images, icons, illustrations                |
+| `/design/`                               | Visual metadata, mirrors `/src/components`  |
+| `/src/components/`                       | React code                                  |
+| `/tests/e2e/`                            | Playwright tests                            |
 
 ---
 
