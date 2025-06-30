@@ -3,7 +3,7 @@ import About from '@/components/features/sections/About';
 import Skills from '@/components/features/sections/Skills';
 import Background from '@/components/features/sections/Background';
 import Projects from '@/components/features/sections/Projects';
-// import Contact from '@/components/features/sections/Contact';
+import Contact from '@/components/features/sections/Contact';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <Background />
       <Skills />
       <Projects />
-      {/* <Contact /> */}
+      <Contact />
       {/* Other sections will be added here */}
     </>
   );

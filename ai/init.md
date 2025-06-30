@@ -296,7 +296,7 @@ Log your analysis and decisions in `project-log.md`:
 - [x] **Entry Structure:**
   - `[TIMESTAMP] - <One-liner description of the change> (Task: #ID.SUB_ID)`
 - [x] **Details:**
-  - **Timestamp:** Use the ISO 8601 format (e.g., `YYYY-MM-DDTHH:MM:SSZ`).
+  - **Timestamp:** Use the **current, precise** ISO 8601 format (e.g., `YYYY-MM-DDTHH:MM:SSZ`). Do not round or approximate the time.
   - **Description:** Must be clear and concise for both human and AI understanding.
   - **Task ID:** Reference the relevant task or sub-task ID from `.taskmaster/tasks/tasks.json`. If not applicable, use `(Task: N/A)`.
 
