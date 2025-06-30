@@ -27,11 +27,11 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, isLast }) =
         {!isLast && <div className="flex-grow w-px bg-[#3B4754]"></div>}
       </div>
       <div className="pb-6">
-        <h3 className="text-white font-medium text-base">{experience.role}</h3>
-        <p className="text-[#9CABBA] text-base">
+        <h3 className="text-white font-medium text-base lg:text-lg">{experience.role}</h3>
+        <p className="text-[#9CABBA] text-base lg:text-lg">
           {experience.company} | {experience.duration}
         </p>
-        <ul className="list-disc text-[#9CABBA] text-sm mt-2 space-y-1 pl-4">
+        <ul className="list-disc text-[#9CABBA] text-sm lg:text-base mt-2 space-y-1 pl-4">
           {(isExpanded ? experience.description : experience.description.slice(0, 1)).map(
             (item, index) => (
               <li key={index} className="text-justify">
@@ -43,7 +43,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, isLast }) =
         {isExpandable && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-blue-400 hover:text-blue-300 text-sm mt-2"
+            className="text-blue-400 hover:text-blue-300 text-sm lg:text-base mt-2"
           >
             {isExpanded ? 'See less...' : 'See more...'}
           </button>

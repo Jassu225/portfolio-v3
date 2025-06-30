@@ -709,6 +709,33 @@
           "status": "pending",
           "dependencies": [],
           "parentTaskId": 18
+        },
+        {
+          "id": 6,
+          "title": "Make About Section Responsive",
+          "description": "Make the About section responsive by adjusting its layout and styling for larger screens to match the desktop Figma design.",
+          "details": "",
+          "status": "pending",
+          "dependencies": [],
+          "parentTaskId": 18
+        },
+        {
+          "id": 7,
+          "title": "Make Background Section Responsive",
+          "description": "Make the Background section and its `ExperienceItem` components responsive, adjusting layout and typography for larger screens to match the desktop Figma design.",
+          "details": "",
+          "status": "pending",
+          "dependencies": [],
+          "parentTaskId": 18
+        },
+        {
+          "id": 8,
+          "title": "Make Skills Section Responsive",
+          "description": "Make the Skills section and its `SkillTag` components responsive, adjusting layout and typography for larger screens to match the desktop Figma design.",
+          "details": "",
+          "status": "pending",
+          "dependencies": [],
+          "parentTaskId": 18
         }
       ]
     }

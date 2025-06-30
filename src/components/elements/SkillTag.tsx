@@ -6,7 +6,7 @@ interface SkillTagProps {
 
 const SkillTag: React.FC<SkillTagProps> = ({ name }) => {
   return (
-    <div className="bg-[#293038] text-white font-medium text-sm py-2 px-4 rounded-full">
+    <div className="bg-[#293038] text-white font-medium text-sm lg:text-base py-2 px-4 rounded-full">
       {name}
     </div>
   );
