@@ -1,7 +1,7 @@
 import React from 'react';
 import { projects } from '@/lib/data';
-import ProjectCard from '@/components/ui/ProjectCard';
-import { Carousel, CarouselItem } from '@/components/ui/Carousel';
+import ProjectCard from '@/components/elements/ProjectCard';
+import { Carousel, CarouselItem } from '@/components/elements/Carousel';
 
 const Projects = () => {
   return (

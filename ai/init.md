@@ -329,6 +329,7 @@ For each component / feature:
   - Create a new task or sub-task
   - Link it to the relevant feature/component
   - Document it in `CHANGELOG.md`
+  - Add relevant task or a sub-task
   - Include reason, requester, date, and relevant context
 
 ---

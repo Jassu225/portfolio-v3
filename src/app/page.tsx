@@ -1,9 +1,9 @@
-import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Skills from '@/components/sections/Skills';
-import Background from '@/components/sections/Background';
-import Projects from '@/components/sections/Projects';
-// import Contact from '@/components/sections/Contact';
+import Hero from '@/components/features/sections/Hero';
+import About from '@/components/features/sections/About';
+import Skills from '@/components/features/sections/Skills';
+import Background from '@/components/features/sections/Background';
+import Projects from '@/components/features/sections/Projects';
+// import Contact from '@/components/features/sections/Contact';
 
 export default function Home() {
   return (

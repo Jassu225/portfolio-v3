@@ -1,6 +1,6 @@
 import React from 'react';
 import { experiences } from '@/lib/data';
-import ExperienceItem from '@/components/ui/ExperienceItem';
+import ExperienceItem from '@/components/elements/ExperienceItem';
 
 const Background = () => {
   return (

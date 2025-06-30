@@ -1,6 +1,6 @@
 import React from 'react';
 import { skills } from '@/lib/data';
-import SkillTag from '@/components/ui/SkillTag';
+import SkillTag from '@/components/elements/SkillTag';
 
 const Skills = () => {
   return (
