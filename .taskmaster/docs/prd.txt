@@ -75,3 +75,12 @@ Development should proceed in the following order to ensure a logical build proc
 
 # Appendix
 - **Figma Design File**: https://www.figma.com/design/5o0y0RLQgX0sHEw17SgEw1/Portfolio?node-id=1-2 
+
+## 2. Project Goals
+The primary goal of this project is to create a professional, modern, and responsive personal portfolio website for Jaswanth Sai Sattenapalli.
+
+- **Figma Design (Mobile):** [https://www.figma.com/design/5o0y0RLQgX0sHEw17SgEw1/Portfolio?node-id=0-1](https://www.figma.com/design/5o0y0RLQgX0sHEw17SgEw1/Portfolio?node-id=0-1)
+- **Figma Design (Desktop):** [https://www.figma.com/design/5o0y0RLQgX0sHEw17SgEw1/Portfolio?node-id=91-269](https://www.figma.com/design/5o0y0RLQgX0sHEw17SgEw1/Portfolio?node-id=91-269)
+
+## 3. Target Audience
+- Recruiters and Hiring Managers 

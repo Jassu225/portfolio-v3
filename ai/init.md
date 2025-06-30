@@ -14,6 +14,8 @@ This guide will help you (and any AI assistant) **bootstrap a new project from s
 - ✅ Document everything in markdown
 - ✅ Follow semantic, modular, and scalable structures
 - ✅ Focus on clarity, testability, and maintainability
+- **Responsive Design:** Implement a mobile-first approach, ensuring the portfolio looks great on all devices, from small phones to large desktops.
+- **Strict Design Adherence:** Strictly adhere to the provided Figma designs for both mobile and desktop views.
 
 ---
 
