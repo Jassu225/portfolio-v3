@@ -392,6 +392,7 @@ For each component / feature:
 │       └── tasks.json
 │   └── /templates
 │       └── example_prd.txt
+├── CHANGELOG.md
 ```
 
 ---
@@ -411,6 +412,7 @@ At each step:
 |------------------------------------------|---------------------------------------------|
 | `/ai/project-log.md`                     | Main checklist and logs                     |
 | `/ai/theme.ts`                           | Theme + layout config                       |
+| `CHANGELOG.md`                           | Detailed log of all project changes         |
 | `/.taskmaster/docs/prd.txt`              | Product Requirements Document               |
 | `/.taskmaster/tasks/tasks.json`          | Task hierarchy and roadmap                  |
 | `/.taskmaster/templates/example_prd.txt` | Source for generating `prd.txt`             |

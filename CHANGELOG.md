@@ -3,6 +3,8 @@
 *This file is updated for every change made to the project, as per the process defined in `ai/init.md`.*
 
 ---
+[2024-07-31T01:00:15Z] - Corrected init.md to add changelog link to the existing Quick Reference table. (Task: N/A)
+[2024-07-31T00:57:30Z] - Added Quick Reference section to init.md with a link to the changelog. (Task: N/A)
 [2024-07-31T00:55:45Z] - Justified text in the About section for improved readability. (Task: #18)
 [2024-07-31T00:54:15Z] - Added 'Contact' link to the navigation bar. (Task: N/A)
 [2024-07-31T00:52:13Z] - Updated changelog process to require precise, non-approximated timestamps. (Task: N/A)
