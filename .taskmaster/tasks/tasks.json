@@ -575,6 +575,15 @@
             "status": "done",
             "dependencies": [],
             "parentTaskId": 13
+          },
+          {
+            "id": 3,
+            "title": "Fix: Navbar anchor links overlapping section content",
+            "description": "Fixed an issue where the sticky navbar would overlap section content when navigating via anchor links. Applied a `scroll-margin-top` utility to all sections to create the necessary offset. Also corrected a mismatched ID between a navbar link and its target section.",
+            "details": "- Added `scroll-m-16` class to the main `<section>` element of `Hero.tsx`, `About.tsx`, `Skills.tsx`, `Background.tsx`, and `Projects.tsx`.\n- Corrected the ID of the `Background` section from `#background` to `#experience`.\n- Updated the corresponding link in `Navbar.tsx` to point to `#experience` instead of `#background`.\n- Verified with the user that the fix works as expected.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 13
           }
         ]
       },
