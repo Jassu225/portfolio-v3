@@ -12,6 +12,7 @@ This guide will help you (and any AI assistant) **bootstrap a new project from s
 - ✅ Always ask for missing context
 - ✅ Confirm before executing each step
 - ✅ **Continuous Learning:** Actively learn from user feedback to correct mistakes and improve performance over time.
+- ✅ **Verify Documentation Versions:** Before implementing features that rely on third-party libraries (e.g., Tailwind CSS, Framer Motion), always verify that you are referencing the documentation for the version used in the project. Using outdated configuration or APIs leads to errors and rework.
 - ✅ Document everything in markdown
 - ✅ Follow semantic, modular, and scalable structures
 - ✅ Focus on clarity, testability, and maintainability
@@ -292,7 +293,10 @@ Log your analysis and decisions in `project-log.md`:
 ## ✅ STEP 8: Change Management & Logging
 
 - [x] **Mandatory Changelog Updates:** For any and all requests, the `CHANGELOG.md` file must be updated. This is a mandatory step. I repeat, For any and all requests, the `CHANGELOG.md` file must be updated. This is a mandatory step.
-- [x] **Changelog Format:** All entries must be a single, descriptive one-liner.
+- [x] **Strict Formatting:** It is imperative that you strictly adhere to the established format for all `CHANGELOG.md` entries. Do not deviate under any circumstances.
+  - **Correct Format:** `[YYYY-MM-DDTHH:MM:SSZ] - Description of the change. (Task: #ID_or_N/A)`
+  - **Correct Example:** `[2024-07-30T12:23:32Z] - Refactored Carousel component to use dot indicators. (Task: #10.5)`
+  - **Incorrect Example:** `2024-07-30T12:00:00Z - [TASK-10.5] Refactored Carousel. - @agent`
 - [x] **Entry Structure:**
   - `[TIMESTAMP] - <One-liner description of the change> (Task: #ID.SUB_ID)`
 - [x] **Details:**

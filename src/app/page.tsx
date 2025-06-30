@@ -14,7 +14,6 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
-      {/* Other sections will be added here */}
     </>
   );
 }

@@ -3,6 +3,17 @@
 *This file is updated for every change made to the project, as per the process defined in `ai/init.md`.*
 
 ---
+[2024-07-31T02:05:18Z] - Added 'forwards' fill-mode to the twinkle animation to persist its end state on hover. (Task: #16)
+[2024-07-31T02:00:10Z] - Reverted incorrect deletion of critical base and carousel styles from `globals.css` after user correction. (Task: #16)
+[2024-07-31T01:55:45Z] - Added a core principle to `init.md` to always verify documentation versions before implementation. (Task: N/A)
+[2024-07-31T01:55:30Z] - Fixed SkillTag twinkle animation using the correct Tailwind CSS v4 `@theme` directive and cleaned up config. (Task: #16)
+[2024-07-31T01:50:15Z] - Fixed twinkle animation on SkillTag to correctly disappear on hover-out. (Task: #16)
+[2024-07-31T01:45:10Z] - Polished SkillTag hover animation with a smoother pop and a custom twinkle effect. (Task: #16)
+[2024-07-31T01:44:50Z] - Created tailwind.config.ts to enable custom animations. (Task: #16)
+[2024-07-31T01:40:28Z] - Enhanced SkillTag hover effect with a smoother transition and a twinkle icon. (Task: #16)
+[2024-07-31T01:30:14Z] - Implemented a 3D tilt hover effect for project cards using a custom framer-motion component. (Task: #16)
+[2024-07-31T01:15:22Z] - Removed scroll-based fade-in animations based on user feedback. (Task: #16)
+[2024-07-31T01:05:51Z] - Implemented scroll-based fade-in animations for all sections using framer-motion. (Task: #16)
 [2024-07-31T01:00:15Z] - Corrected init.md to add changelog link to the existing Quick Reference table. (Task: N/A)
 [2024-07-31T00:57:30Z] - Added Quick Reference section to init.md with a link to the changelog. (Task: N/A)
 [2024-07-31T00:55:45Z] - Justified text in the About section for improved readability. (Task: #18)
@@ -29,4 +40,4 @@
 [2024-07-31T00:04:00Z] - Defined data structures and mock content for the application. (Task: #5)
 [2024-07-31T00:03:00Z] - Implemented core layout with Navbar and Footer components. (Task: #2, #3, #4)
 [2024-07-31T00:02:00Z] - Set up project with Next.js, TypeScript, and Tailwind CSS. (Task: #1)
-[2024-07-31T00:01:00Z] - Initialized project repository and `taskmaster-ai` for project management. (Task: N/A) 
+[2024-07-31T00:01:00Z] - Initialized project repository and `taskmaster-ai` for project management. (Task: N/A)

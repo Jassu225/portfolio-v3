@@ -620,7 +620,7 @@
         "description": "Implement advanced animations and micro-interactions to enhance user experience, focusing on the desktop version initially. This includes smooth inertia scrolling, scroll-based section reveals, and interactive effects on components.",
         "details": "Integrate a library like Framer Motion (`npm install framer-motion`) to handle the animations. 1. **Inertia Scroll:** Implement a smooth scrolling library like `Lenis` to replace the native browser scroll, providing a more fluid, premium feel. This will involve wrapping the main layout in the Lenis provider. 2. **Scroll-based Reveals:** Wrap each main section component (`About`, `Skills`, `Background`, `Projects`) in a `motion` component from Framer Motion. Use the `useInView` hook or `whileInView` prop to trigger fade-in or slide-in animations as the section enters the viewport. Example: `<motion.section initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>...</motion.section>`. 3. **Interactive Tilt Effect:** Apply a 3D tilt effect to the `ProjectCard.tsx` components within the carousel on hover. This can be achieved using a library like `react-parallax-tilt` or by using Framer Motion's `whileHover` with transform properties. 4. **Enhanced Hover Effects:** Refine hover states for interactive elements like navigation links and buttons. Use Framer Motion's `whileHover` prop to add subtle scale, translate, or background color transitions for a more dynamic feel.",
         "testStrategy": "1. Verify that scrolling the page is noticeably smoother and has an inertia effect. 2. Scroll down the page from the top; confirm that each section animates into view as it enters the viewport. 3. Hover the mouse over the project cards in the featured projects carousel; verify that they exhibit a 3D tilt effect. 4. Hover over links in the Navbar and any other buttons; confirm they have the new, enhanced animation effects. 5. Check for performance issues using browser developer tools to ensure animations are smooth (maintain 60fps) and do not cause layout shifts or high CPU load.",
-        "status": "pending",
+        "status": "in-progress",
         "dependencies": [
           11,
           13,
@@ -824,7 +824,7 @@
     ],
     "metadata": {
       "created": "2025-06-26T13:36:45.161Z",
-      "updated": "2025-06-30T17:23:21.366Z",
+      "updated": "2025-06-30T18:06:21.910Z",
       "description": "Tasks for master context"
     }
   }
