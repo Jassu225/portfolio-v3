@@ -1,4 +1,4 @@
-import { theme } from '../ai/theme';
+import { theme } from '@ai/theme';
 
 export const NavbarDesign = {
   layout: {
