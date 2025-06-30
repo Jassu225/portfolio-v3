@@ -55,7 +55,7 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
 
 export const CarouselItem = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="embla__slide" style={{ flex: "0 0 80%" }}>
+    <div className="embla__slide basis-4/5 md:basis-1/2 flex-shrink-0 flex-grow-0">
       {children}
     </div>
   );

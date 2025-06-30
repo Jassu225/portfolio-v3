@@ -77,7 +77,7 @@ export const projects: Project[] = [
   {
     title: 'React Virtual Scroll List',
     description: 'A virtual scroll list implementation for efficiently rendering large datasets in React.',
-    imageUrl: '/assets/images/projects/react-virtual-scroll-list-home.jpeg',
+    imageUrl: '/assets/images/projects/react-virtual-scroll-list.jpeg',
     link: 'https://virtual-scroll-list.web.app/',
   },
 ];

@@ -9,13 +9,14 @@ This guide will help you (and any AI assistant) **bootstrap a new project from s
 
 ## 🔥 Core Principles
 
-- ✅ Ask for missing context
+- ✅ Always ask for missing context
 - ✅ Confirm before executing each step
+- ✅ **Continuous Learning:** Actively learn from user feedback to correct mistakes and improve performance over time.
 - ✅ Document everything in markdown
 - ✅ Follow semantic, modular, and scalable structures
 - ✅ Focus on clarity, testability, and maintainability
 - **Responsive Design:** Implement a mobile-first approach, ensuring the portfolio looks great on all devices, from small phones to large desktops.
-- **Strict Design Adherence:** Strictly adhere to the provided Figma designs for both mobile and desktop views.
+- **Strict Design Adherence:** Strictly adhere to the provided Figma designs for both mobile and desktop views. I repeat, strictly adhere to the provided Figma designs for both mobile and desktop views.
 
 ---
 
@@ -285,6 +286,24 @@ Log your analysis and decisions in `project-log.md`:
     /api/auth
   - Auth Strategy: JWT
   ```
+
+---
+
+## ✅ STEP 8: Change Management & Logging
+
+- [x] **Mandatory Changelog Updates:** For any and all requests, the `CHANGELOG.md` file must be updated. This is a mandatory step. I repeat, For any and all requests, the `CHANGELOG.md` file must be updated. This is a mandatory step.
+- [x] **Changelog Format:** All entries must be a single, descriptive one-liner.
+- [x] **Entry Structure:**
+  - `[TIMESTAMP] - <One-liner description of the change> (Task: #ID.SUB_ID)`
+- [x] **Details:**
+  - **Timestamp:** Use the ISO 8601 format (e.g., `YYYY-MM-DDTHH:MM:SSZ`).
+  - **Description:** Must be clear and concise for both human and AI understanding.
+  - **Task ID:** Reference the relevant task or sub-task ID from `.taskmaster/tasks/tasks.json`. If not applicable, use `(Task: N/A)`.
+
+**Example:**
+```
+[2024-07-30T12:00:00Z] - Refactored Carousel component to use dot indicators. (Task: #10.5)
+```
 
 ---
 

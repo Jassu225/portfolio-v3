@@ -26,8 +26,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </a>
       </div>
       <div className="p-4 bg-[#1A1E23] flex-grow">
-        <h3 className="text-white font-medium text-base">{project.title}</h3>
-        <p className="text-[#9CABBA] text-sm mt-2">{project.description}</p>
+        <h3 className="text-white font-medium text-base lg:text-lg">{project.title}</h3>
+        <p className="text-[#9CABBA] text-sm lg:text-base mt-2">{project.description}</p>
       </div>
     </div>
   );

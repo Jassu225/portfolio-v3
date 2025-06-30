@@ -1,748 +1,831 @@
 {
-  "tasks": [
-    {
-      "id": 1,
-      "title": "Initialize Next.js Project with TypeScript and Tailwind CSS",
-      "description": "Set up a new Next.js project using the App Router, configured with TypeScript for type safety and Tailwind CSS for utility-first styling. This includes initializing the project, configuring Tailwind, and setting up the basic folder structure.",
-      "details": "Use the command `npx create-next-app@latest --typescript --tailwind your-portfolio-app` to initialize the project. Configure `tailwind.config.ts` (e.g., theme extensions for colors, fonts if specified in Figma) and `postcss.config.js`. Create initial folders: `app/` for routes, `components/` for UI components, and `lib/data/` for hardcoded content.",
-      "testStrategy": "Verify the project initializes correctly by running `npm run dev`. Check that TypeScript compiles without errors (`npm run build`). Apply a simple Tailwind class to the main page and ensure it renders correctly in the browser.",
-      "priority": "medium",
-      "dependencies": [],
-      "status": "done",
-      "subtasks": []
-    },
-    {
-      "id": 2,
-      "title": "Implement Main Layout Component (`Layout.tsx`)",
-      "description": "Create the main `Layout.tsx` component that will serve as a wrapper for all page content. This component will include the Navbar and Footer and provide a consistent structure across the application.",
-      "details": "The `Layout.tsx` component should be placed in the `components/` directory. It will accept `children: React.ReactNode` as props. The basic structure should be a flex container ensuring the footer stays at the bottom: `<div className=\"min-h-screen flex flex-col\"><Navbar />{/* Placeholder for Navbar */}<main className=\"flex-grow\">{children}</main><Footer />{/* Placeholder for Footer */}</div>`. Import and render `Navbar` and `Footer` components once they are created.",
-      "testStrategy": "Create a basic page within the `app` directory (e.g., `app/page.tsx`) that uses this `Layout` component. Verify that content passed as children renders correctly between the (placeholder) Navbar and Footer. Ensure the layout structure supports a sticky footer if content is short.",
-      "priority": "medium",
-      "dependencies": [
-        1
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create `components` directory",
-          "description": "Create a `components` directory inside `src` to store reusable components.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 2
-        },
-        {
-          "id": 2,
-          "title": "Create `Layout.tsx` component",
-          "description": "Create the `Layout.tsx` file in `src/components` with a basic structure.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 2
-        },
-        {
-          "id": 3,
-          "title": "Integrate `Layout.tsx` into `src/app/layout.tsx`",
-          "description": "Update `src/app/layout.tsx` to use the new `Layout` component and set the correct font and metadata.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 2
-        },
-        {
-          "id": 4,
-          "title": "Add temporary max-width to page layout",
-          "description": "Restrict the maximum width of the page content to 480px to maintain a mobile-first appearance on larger screens during development. This is a temporary measure to ensure design consistency.",
-          "details": "- Modified `src/components/Layout.tsx`.\n- Added `container`, `mx-auto`, and `max-w-[480px]` Tailwind CSS classes to the `main` element.\n- This change centers the content and constrains its width globally across the application.",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 2
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Develop Responsive Navigation Bar (`Navbar.tsx`)",
-      "description": "Develop the `Navbar.tsx` component. It must be responsive, sticky at the top, and include navigation links to the Hero, About, Skills, Background, and Projects sections.",
-      "details": "Place `Navbar.tsx` in `components/`. Implement sticky behavior using Tailwind: `className=\"sticky top-0 z-50 bg-gray-800 text-white shadow-md\"` (adjust colors based on dark theme). For responsiveness, use a hamburger menu for mobile (e.g., using a library like `headlessui/react` or custom JS/CSS) and horizontal links for desktop. Links should be `<a>` tags with `href=\"#section-id\"`. Example links: Home (to Hero), About, Skills, Background, Projects.",
-      "testStrategy": "Verify the Navbar is sticky when scrolling. Test responsiveness: hamburger menu appears and functions on small screens, horizontal links on larger screens. Check that links are present and hover states are implemented. Test in `Layout.tsx`.",
-      "priority": "medium",
-      "dependencies": [
-        2
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create `Navbar.tsx` with Mobile-First Structure",
-          "description": "Create the `Navbar.tsx` component file and add the basic structure for the mobile view, including the title and a placeholder for the menu icon.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 3
-        },
-        {
-          "id": 2,
-          "title": "Integrate Navbar into Layout",
-          "description": "Integrate the `Navbar` component into `Layout.tsx` to make it appear on all pages.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 3
-        },
-        {
-          "id": 3,
-          "title": "Implement Mobile Menu Toggle Functionality",
-          "description": "Add state and event handlers to the `Navbar` component to toggle a mobile menu when the hamburger icon is clicked. The menu should display navigation links.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 3
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Develop Basic Footer Component (`Footer.tsx`)",
-      "description": "Implement the `Footer.tsx` component. For the MVP, this will be a simple footer, with potential for future enhancements.",
-      "details": "Place `Footer.tsx` in `components/`. Style with Tailwind CSS for the dark theme. It can contain simple text like `© ${new Date().getFullYear()} Jaswanth Sai Sattenapalli. All rights reserved.` or links to social media if specified in design (though not explicitly in PRD for MVP). Example: `<footer className=\"bg-gray-800 text-gray-400 text-center p-4\">...</footer>`.",
-      "testStrategy": "Verify the Footer renders correctly at the bottom of the page when integrated into `Layout.tsx`. Check text content and basic styling.",
-      "priority": "medium",
-      "dependencies": [
-        2
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create `Footer.tsx` Component",
-          "description": "Create the `Footer.tsx` component file in `src/components` with a basic structure and styling.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 4
-        },
-        {
-          "id": 2,
-          "title": "Integrate Footer into Layout",
-          "description": "Integrate the `Footer` component into the `Layout.tsx` file.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 4
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "title": "Define Data Structures and Create Mock Content Files",
-      "description": "Define TypeScript interfaces for all content types (personal info, skills, experience, projects) and create mock data files (JSON or TypeScript) in the `lib/data` folder.",
-      "details": "In `lib/data/types.ts` (or similar): `interface Skill { id: string; name: string; } interface ExperienceItemData { id: string; company: string; role: string; duration: string; description: string[]; } interface ProjectData { id: string; title: string; description: string; imageUrl: string; tags: string[]; } interface PersonalInfoData { name: string; title: string; location: string; profilePicture: string; bio: string; }`. In `lib/data/mockData.ts`: export consts for `personalInfo`, `skillsList`, `experienceList`, `projectList` populated with placeholder or initial content (e.g., Jaswanth Sai Sattenapalli's details).",
-      "testStrategy": "Verify that the data structures are correctly defined and that mock data can be imported and accessed in other components without type errors. Check that data matches the expected format for each section.",
-      "priority": "medium",
-      "dependencies": [
-        1
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create Data Directory",
-          "description": "Create the `src/lib/data` directory to house data-related files.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 5
-        },
-        {
-          "id": 2,
-          "title": "Define TypeScript Interfaces",
-          "description": "Create the `types.ts` file and define the interfaces for `Skill`, `Experience`, and `Project`.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 5
-        },
-        {
-          "id": 3,
-          "title": "Create Mock Data File",
-          "description": "Create the `index.ts` file in `src/lib/data` and populate it with mock data for the portfolio sections.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 5
-        },
-        {
-          "id": 4,
-          "title": "Update Experience data model and populate with resume content",
-          "description": "Update the Experience data model in types.ts and the ExperienceItem component to support and display detailed, multi-point descriptions. Then, populate this new structure with the content provided from the user's resume.",
-          "details": "- Added a `description: string[]` field to the `Experience` interface in `src/lib/data/types.ts`.\n- Updated the data in `src/lib/data/index.ts` to match the user's resume, including detailed bullet points for each role.\n- Modified the `ExperienceItem.tsx` component to render the `description` array as a `ul` list.",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 5
-        },
-        {
-          "id": 5,
-          "title": "Refine Experience section UI (justification, margins, 'See more' feature)",
-          "description": "Improve the UI of the Experience section by justifying the description text, reducing the list marker margin for a cleaner look, and implementing a 'See more/less' toggle to handle long descriptions gracefully.",
-          "details": "- Justified the description text in `ExperienceItem.tsx` for better readability.\n- Adjusted list padding to reduce the margin of the bullet points.\n- Added a stateful `isExpanded` toggle to the `ExperienceItem` component.\n- The description is now truncated to the first bullet point by default, with a button to expand or collapse the full text.",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 5
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "title": "Develop Hero Section Component (`Hero.tsx`)",
-      "description": "Develop the `Hero.tsx` component. This section will feature the user's name ('Jaswanth Sai Sattenapalli'), title ('Full-stack Developer'), location ('San Francisco, CA'), and a profile picture.",
-      "details": "Place `Hero.tsx` in `components/sections/`. Import `personalInfoData` from `lib/data/mockData.ts`. Use `next/image` for the profile picture for optimization. Style with Tailwind CSS according to the dark theme and Figma design (prominent text, clear visual hierarchy). Ensure responsiveness. Example structure: `<section id=\"hero\" className=\"flex flex-col items-center justify-center min-h-screen text-center p-4 bg-gray-900 text-white\">...</section>`.",
-      "testStrategy": "Verify the Hero section renders with correct data (name, title, location, image). Check visual appearance against design guidelines (typography, spacing, dark theme). Test responsiveness on mobile, tablet, and desktop.",
-      "priority": "medium",
-      "dependencies": [
-        2,
-        5
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create Sections Directory",
-          "description": "Create the `src/components/sections` directory to organize page section components.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 6
-        },
-        {
-          "id": 2,
-          "title": "Create Hero.tsx Component",
-          "description": "Create the `Hero.tsx` component file and implement the UI according to the Figma design.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 6
-        },
-        {
-          "id": 3,
-          "title": "Integrate Hero Component",
-          "description": "Integrate the `Hero` component into the `src/app/page.tsx` file.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 6
-        },
-        {
-          "id": 4,
-          "title": "Refine Hero Section Styling",
-          "description": "Adjust font sizes, weights, colors, and spacing in the Hero section to precisely match the Figma design specifications.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 6
-        },
-        {
-          "id": 5,
-          "title": "Update carousel: remove nav buttons, add dots, and adjust item width",
-          "description": "Refactor the Projects section carousel to remove navigation buttons, add DotButtons for pagination, and make carousel items 80% width on mobile so users can see there is more content to scroll. Ensure the dot buttons are accessible and visually indicate the active slide.",
-          "details": "- Remove Prev/Next navigation buttons from the Carousel component.\n- Add DotButtons (pagination dots) below the carousel using Embla's API.\n- Make carousel items occupy 80vw on mobile, with max-w-full and flex-shrink-0 for proper sizing.\n- Update the Projects section container to allow horizontal overflow for the carousel.\n- Style the dot buttons for accessibility and active state.\n- Ensure all changes are responsive and match the design intent.",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 6
-        },
-        {
-          "id": 6,
-          "title": "Fix: Carousel items not respecting 80% width on mobile",
-          "description": "Fixed an issue where carousel items were occupying 100% width on mobile, overriding the intended 80% width. The fix involved removing a conflicting CSS rule from globals.css and applying an inline style to the CarouselItem component.",
-          "details": "- Identified that a `flex: 0 0 100%` rule in `globals.css` was overriding Tailwind width utilities.\n- Removed the conflicting `flex` property from the `.embla__slide` class in `globals.css`.\n- Modified the `CarouselItem` component to use an inline style `flex: \"0 0 80%\"` for consistent sizing.\n- Verified with the user that the carousel items now correctly occupy 80% of the width on mobile.",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 6
-        },
-        {
-          "id": 7,
-          "title": "Fix: Standardize carousel item height",
-          "description": "Ensured all carousel items have the same height, regardless of their content, by modifying the ProjectCard component to use flexbox and updating the Embla container styles.",
-          "details": "- Modified `ProjectCard.tsx` to be a flex container that stretches to fill available height using `h-full`, `flex-col`, and `flex-grow`.\n- Added `align-items: stretch` to the `.embla__container` in `globals.css` to ensure all slide elements expand to the same height.\n- Verified with the user that all project cards in the carousel now have a uniform height.",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 6
-        },
-        {
-          "id": 8,
-          "title": "Update: Reposition and restyle 'View' button on ProjectCard",
-          "description": "Relocated the 'View Project' button to the top-right corner of the project image and relabeled it to 'View'. Applied styling to make it a small, semi-transparent capsule button that sits on top of the image.",
-          "details": "- Modified `ProjectCard.tsx` to move the `<a>` tag inside the `div` with the `relative` class.\n- Styled the button to be `absolute` with `top-2` and `right-2`.\n- Changed the button text from 'View Project' to 'View'.\n- Updated styling to a rounded, semi-transparent black background for better visibility over the image.\n- Ensured the parent `div` maintained its flex properties to keep card heights uniform.",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 6
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "title": "Develop About Section Component (`About.tsx`)",
-      "description": "Develop the `About.tsx` component to display a brief biography of the user.",
-      "details": "Place `About.tsx` in `components/sections/`. Import `personalInfoData.bio` (or a dedicated about text) from `lib/data/mockData.ts`. Style with Tailwind CSS, maintaining consistency with the dark theme and overall design. Ensure text is readable and the section is responsive. Example structure: `<section id=\"about\" className=\"py-16 px-4 bg-gray-850 text-gray-300\">...</section>`.",
-      "testStrategy": "Verify the About section renders the biographical text correctly. Check styling for readability and consistency. Test responsiveness across different screen sizes.",
-      "priority": "medium",
-      "dependencies": [
-        2,
-        5
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create About.tsx Component",
-          "description": "Create the `About.tsx` component file and implement the UI according to the Figma design.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 7
-        },
-        {
-          "id": 2,
-          "title": "Integrate About Component",
-          "description": "Integrate the `About` component into the `src/app/page.tsx` file.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 7
-        },
-        {
-          "id": 3,
-          "title": "Refine About Section Styling",
-          "description": "Adjust font sizes, colors, and line height in the About section to precisely match the Figma design specifications.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 7
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "title": "Develop Skills Section (`Skills.tsx`) and `SkillTag.tsx`",
-      "description": "Develop the `Skills.tsx` section component and the reusable `SkillTag.tsx` component to display key skills as tags.",
-      "details": "Place `Skills.tsx` in `components/sections/` and `SkillTag.tsx` in `components/ui/` or `components/`. `Skills.tsx` will import `skillsList` from mock data and map over it, rendering a `SkillTag.tsx` for each skill. `SkillTag.tsx` (e.g., `(props: { name: string }) => <span className=\"bg-blue-500 text-white px-3 py-1 rounded-full text-sm\">{props.name}</span>`) should be styled as a tag. `Skills.tsx` layout should be responsive (e.g., `flex flex-wrap justify-center gap-2`). Example structure: `<section id=\"skills\" className=\"py-16 px-4 bg-gray-900 text-white\">...</section>`.",
-      "testStrategy": "Verify that all skills from mock data are displayed as tags. Check the appearance and styling of `SkillTag.tsx`. Test the responsiveness of the skills layout (e.g., single column on mobile, multi-column/wrap on larger screens).",
-      "priority": "medium",
-      "dependencies": [
-        2,
-        5
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create `ui` Directory",
-          "description": "Create `src/components/ui` directory for small, reusable UI components.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 8
-        },
-        {
-          "id": 2,
-          "title": "Create SkillTag.tsx Component",
-          "description": "Create the `SkillTag.tsx` component in `src/components/ui`.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 8
-        },
-        {
-          "id": 3,
-          "title": "Create Skills.tsx Section",
-          "description": "Create the `Skills.tsx` component in `src/components/sections`.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 8
-        },
-        {
-          "id": 4,
-          "title": "Integrate Skills Component",
-          "description": "Integrate the `Skills` component into the `src/app/page.tsx` file.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 8
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "title": "Develop Background Section (`Background.tsx`) and `ExperienceItem.tsx`",
-      "description": "Develop the `Background.tsx` section component and the `ExperienceItem.tsx` component to detail professional experience in a timeline style.",
-      "details": "Place `Background.tsx` in `components/sections/` and `ExperienceItem.tsx` in `components/`. `Background.tsx` imports `experienceList` from mock data and maps over it, rendering an `ExperienceItem.tsx` for each entry. `ExperienceItem.tsx` will display company, role, duration, and description. Implement a timeline style using Tailwind CSS (e.g., vertical line with items branching off). Example structure: `<section id=\"background\" className=\"py-16 px-4 bg-gray-850 text-gray-300\">...</section>`.",
-      "testStrategy": "Verify all experience entries are displayed with correct details. Check the timeline styling and readability. Test responsiveness, ensuring the timeline adapts well to different screen sizes.",
-      "priority": "medium",
-      "dependencies": [
-        2,
-        5
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create ExperienceItem.tsx Component",
-          "description": "Create the `ExperienceItem.tsx` component in `src/components/ui`.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 9
-        },
-        {
-          "id": 2,
-          "title": "Create Background.tsx Section",
-          "description": "Create the `Background.tsx` component in `src/components/sections`.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 9
-        },
-        {
-          "id": 3,
-          "title": "Integrate Background Component",
-          "description": "Integrate the `Background` component into the `src/app/page.tsx` file.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 9
-        },
-        {
-          "id": 4,
-          "title": "Replace Timeline Circle with SVG Icon",
-          "description": "Replace the default circle in the timeline with the office-bag.svg icon for each experience item.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 9
-        },
-        {
-          "id": 5,
-          "title": "Fix Timeline Line on Last Item",
-          "description": "Fix a visual bug where a vertical line was rendered after the last item in the timeline. Modified ExperienceItem.tsx to conditionally render the line based on an isLast prop passed from Background.tsx.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 9
-        },
-        {
-          "id": 6,
-          "title": "Refine Timeline Item Spacing",
-          "description": "Adjusted spacing in the timeline to make the vertical line appear more connected between items. Removed the container gap in Background.tsx and added bottom padding (pb-8) to the content div in ExperienceItem.tsx to compensate.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 9
-        },
-        {
-          "id": 7,
-          "title": "Fix Timeline Icon and Line Alignment",
-          "description": "Corrected a layout bug where the vertical timeline line was misaligned with the center of the icon. Removed a negative margin (-ml-1) that was causing the parent container to calculate its width incorrectly, ensuring proper centering.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 9
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "title": "Develop Featured Projects Section (`Projects.tsx`) and `ProjectCard.tsx`",
-      "description": "Develop the `Projects.tsx` section component and the `ProjectCard.tsx` component to showcase 2-4 featured projects with an image, title, and short description.",
-      "details": "Place `Projects.tsx` in `components/sections/` and `ProjectCard.tsx` in `components/`. `Projects.tsx` imports `projectList` from mock data and maps over it, rendering a `ProjectCard.tsx` for each project. `ProjectCard.tsx` will use `next/image` for project images and display title and description. Style cards and gallery layout using Tailwind CSS (e.g., responsive grid: `grid grid-cols-1 md:grid-cols-2 gap-6`). Example structure: `<section id=\"projects\" className=\"py-16 px-4 bg-gray-900 text-white\">...</section>`.",
-      "testStrategy": "Verify all featured projects are displayed with image, title, and description. Check card styling and image loading. Test the responsiveness of the project gallery layout (e.g., single column on mobile, multi-column grid on larger screens).",
-      "priority": "medium",
-      "dependencies": [
-        2,
-        5
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Create ProjectCard.tsx Component",
-          "description": "Create the `ProjectCard.tsx` component in `src/components/ui`.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 10
-        },
-        {
-          "id": 2,
-          "title": "Create Projects.tsx Section",
-          "description": "Create the `Projects.tsx` component in `src/components/sections`.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 10
-        },
-        {
-          "id": 3,
-          "title": "Integrate Projects Component",
-          "description": "Integrate the `Projects` component into the `src/app/page.tsx` file.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 10
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "title": "Integrate All Sections into Main Page and Implement Smooth Scrolling Navigation",
-      "description": "Integrate all developed section components (`Hero`, `About`, `Skills`, `Background`, `Projects`) into the main page (`app/page.tsx`) under the `Layout` component. Implement smooth scrolling for `Navbar` links to their respective sections.",
-      "details": "In `app/page.tsx`, import and render `Hero`, `About`, `Skills`, `Background`, and `Projects` components in the specified order. Ensure each section component has a unique `id` attribute (e.g., `<Hero id=\"hero\" />`). Update `Navbar.tsx` links to point to these IDs (e.g., `<a href=\"#hero\">...</a>`). Enable smooth scrolling globally via CSS: `html { scroll-behavior: smooth; }` in `app/globals.css`.",
-      "testStrategy": "Verify all sections appear on the main page in the correct order. Test navigation by clicking links in the Navbar; ensure smooth scrolling to the correct section. Check for any layout breaks or style conflicts after integration.",
-      "priority": "medium",
-      "dependencies": [
-        3,
-        4,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Enable Smooth Scrolling",
-          "description": "Enable smooth scrolling by adding `scroll-behavior: smooth;` to the `html` element in `globals.css`.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 11
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "title": "Implement Mobile-First Responsiveness and Cross-Device Styling Refinements",
-      "description": "Thoroughly review and refine the responsiveness of all sections and components, ensuring adherence to the mobile-first design strategy. The application should adapt gracefully to tablet and desktop screen sizes.",
-      "details": "Use Tailwind CSS responsive prefixes (e.g., `sm:`, `md:`, `lg:`, `xl:`) to adjust layouts, font sizes, spacing, and visibility. Test using browser developer tools for various breakpoints (e.g., 320px, 375px, 768px, 1024px, 1440px). Focus on single-column for mobile, and multi-column for Skills/Projects on larger screens. Ensure interactive elements (links, buttons) have clear hover/focus states.",
-      "testStrategy": "Systematically test each section and component on common mobile, tablet, and desktop viewport sizes. Verify layout integrity, readability, and usability. Check for content overflow, awkward spacing, or unclickable elements. Ensure a consistent user experience across devices.",
-      "priority": "medium",
-      "dependencies": [
-        11
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Implement Responsive Navigation Bar",
-          "description": "Make the `Navbar` component responsive by displaying links horizontally on desktop and keeping the hamburger menu for mobile.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 12
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "title": "Final Testing and Quality Assurance",
-      "description": "Conduct comprehensive testing of the entire application. This includes functionality, UI/UX consistency, responsiveness across devices, and content accuracy based on mock data and PRD requirements.",
-      "details": "Perform a full user journey walkthrough: landing on Hero, scrolling through sections, using navigation. Check all interactive elements. Validate against Figma design for layout, color scheme, and typography (as per MVP mitigation: professional and functional, not pixel-perfect). Test on major browsers (Chrome, Firefox, Safari). Check for console errors or warnings.",
-      "testStrategy": "Develop a test checklist covering all core features and UI elements. Perform exploratory testing to find edge cases. Verify content matches mock data. Ensure all links work and scroll correctly. Confirm responsiveness on key breakpoints.",
-      "priority": "medium",
-      "dependencies": [
-        12
-      ],
-      "status": "done",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Fix Missing Navbar Links",
-          "description": "Added missing 'Home' and 'Contact' links to the navigation bar to ensure all sections are accessible. Also corrected the main 'Portfolio' link to point to the #hero section.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 13
-        },
-        {
-          "id": 2,
-          "title": "Temporarily Hide Contact Section",
-          "description": "Temporarily hid the Contact section by commenting out the component in `page.tsx` as per user request. The component file remains for future use.",
-          "details": "",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 13
-        },
-        {
-          "id": 3,
-          "title": "Fix: Navbar anchor links overlapping section content",
-          "description": "Fixed an issue where the sticky navbar would overlap section content when navigating via anchor links. Applied a `scroll-margin-top` utility to all sections to create the necessary offset. Also corrected a mismatched ID between a navbar link and its target section.",
-          "details": "- Added `scroll-m-16` class to the main `<section>` element of `Hero.tsx`, `About.tsx`, `Skills.tsx`, `Background.tsx`, and `Projects.tsx`.\n- Corrected the ID of the `Background` section from `#background` to `#experience`.\n- Updated the corresponding link in `Navbar.tsx` to point to `#experience` instead of `#background`.\n- Verified with the user that the fix works as expected.",
-          "status": "done",
-          "dependencies": [],
-          "parentTaskId": 13
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "title": "Prepare for Deployment",
-      "description": "Prepare the application for deployment on platforms like Vercel or Netlify. This includes ensuring the application builds successfully for production and any necessary deployment configurations are considered.",
-      "details": "Run the production build command (`npm run build`) and ensure it completes without errors. Review build output for any unexpectedly large assets (Next.js usually handles optimization well). If not already present, create/update `README.md` with basic build and run instructions. Ensure no sensitive information is hardcoded if any was used for placeholders (though MVP uses mock data).",
-      "testStrategy": "Successfully execute `npm run build`. Optionally, perform a test deployment to a Vercel or Netlify staging environment to confirm the build works in a production-like setting. Check the deployed site for basic functionality.",
-      "priority": "medium",
-      "dependencies": [
-        13
-      ],
-      "status": "pending",
-      "subtasks": []
-    },
-    {
-      "id": 15,
-      "title": "Implement Carousel for Featured Projects Section",
-      "description": "Implement a responsive carousel for the Featured Projects section using `embla-carousel-react` to display project cards in a horizontally scrollable manner, replacing the current grid layout.",
-      "details": "1. Install `embla-carousel-react`: Run `npm install embla-carousel-react` or `yarn add embla-carousel-react`.\n2. Create a reusable `Carousel.tsx` component, likely in `components/ui/Carousel.tsx`. This component will utilize the `useEmblaCarousel` hook from the library. It should accept `children` (the project cards) and optionally `options` for embla configuration. The basic structure will involve a viewport, a container for slides, and individual slide elements.\n3. Style the `Carousel.tsx` component using Tailwind CSS to achieve a horizontal layout for slides and ensure it's responsive. Consider implementing optional previous/next navigation buttons and/or pagination dots, styled according to the project's dark theme and Figma design.\n4. Update the existing `Projects.tsx` section component (in `components/sections/Projects.tsx`). Import and integrate the new `Carousel.tsx` component. Modify the logic to map over project data (e.g., from `projectData` in `lib/data/mockData.ts`) and render each `ProjectCard.tsx` (assuming this component exists from Task 10) as a slide within the carousel.\n5. Remove the previous grid-based layout for project cards in `Projects.tsx`.\n6. Ensure the carousel is fully responsive, adapting its appearance and behavior across mobile, tablet, and desktop screen sizes, consistent with the guidelines from Task 12 and the Figma design. Support touch gestures for navigation on mobile devices.",
-      "testStrategy": "1. Verify `embla-carousel-react` is correctly installed and listed in `package.json`.\n2. Confirm the `Projects.tsx` section now displays project cards within a carousel structure, replacing any previous grid layout.\n3. Test core carousel functionality: horizontal scrolling via mouse drag (if enabled) on desktop and swipe gestures on touch devices. All project cards from the mock data should be viewable.\n4. If navigation buttons (previous/next) are implemented, verify they are correctly styled, functional, and appropriately enabled/disabled at the carousel ends.\n5. If pagination dots are implemented, verify they accurately reflect the number of slides, highlight the active slide, and allow navigation on click.\n6. Test responsiveness thoroughly across various viewport sizes (e.g., 320px, 375px, 768px, 1024px, 1440px). Ensure the carousel layout, item visibility, and controls adapt correctly without breaking the page layout or causing overflow.\n7. Visually inspect the carousel against the Figma design for adherence to specified horizontal layout, spacing, project card appearance within the carousel, and overall dark theme consistency.\n8. Check the browser console for any errors or warnings related to the carousel implementation during interaction.\n9. Perform basic accessibility checks: ensure carousel controls are keyboard focusable and operable.",
-      "status": "done",
-      "dependencies": [
-        10,
-        12
-      ],
-      "priority": "medium",
-      "subtasks": []
-    },
-    {
-      "id": 16,
-      "title": "Implement Advanced Animations and Micro-interactions",
-      "description": "Implement advanced animations and micro-interactions to enhance user experience, focusing on the desktop version initially. This includes smooth inertia scrolling, scroll-based section reveals, and interactive effects on components.",
-      "details": "Integrate a library like Framer Motion (`npm install framer-motion`) to handle the animations. 1. **Inertia Scroll:** Implement a smooth scrolling library like `Lenis` to replace the native browser scroll, providing a more fluid, premium feel. This will involve wrapping the main layout in the Lenis provider. 2. **Scroll-based Reveals:** Wrap each main section component (`About`, `Skills`, `Background`, `Projects`) in a `motion` component from Framer Motion. Use the `useInView` hook or `whileInView` prop to trigger fade-in or slide-in animations as the section enters the viewport. Example: `<motion.section initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>...</motion.section>`. 3. **Interactive Tilt Effect:** Apply a 3D tilt effect to the `ProjectCard.tsx` components within the carousel on hover. This can be achieved using a library like `react-parallax-tilt` or by using Framer Motion's `whileHover` with transform properties. 4. **Enhanced Hover Effects:** Refine hover states for interactive elements like navigation links and buttons. Use Framer Motion's `whileHover` prop to add subtle scale, translate, or background color transitions for a more dynamic feel.",
-      "testStrategy": "1. Verify that scrolling the page is noticeably smoother and has an inertia effect. 2. Scroll down the page from the top; confirm that each section animates into view as it enters the viewport. 3. Hover the mouse over the project cards in the featured projects carousel; verify that they exhibit a 3D tilt effect. 4. Hover over links in the Navbar and any other buttons; confirm they have the new, enhanced animation effects. 5. Check for performance issues using browser developer tools to ensure animations are smooth (maintain 60fps) and do not cause layout shifts or high CPU load.",
-      "status": "pending",
-      "dependencies": [
-        11,
-        13,
-        15
-      ],
-      "priority": "medium",
-      "subtasks": []
-    },
-    {
-      "id": 17,
-      "title": "Update Layout.tsx for Desktop Responsiveness",
-      "description": "Update the main `Layout.tsx` component to be fully responsive for larger screens. This involves adjusting the main content container's width to expand at the `lg` breakpoint, aligning with the desktop design.",
-      "details": "Locate the `Layout.tsx` component and identify the `main` element or its primary child container that wraps the page content. This container likely has a restrictive `max-width` class (e.g., `max-w-3xl`) and `mx-auto` for centering. Modify these classes to apply a larger width for desktop screens. For example, change `className=\"... max-w-3xl\"` to `className=\"... max-w-3xl lg:max-w-7xl\"`. This will maintain the constrained width on mobile and tablet while allowing the content to expand on viewports 1024px and wider, providing more space for desktop-oriented layouts like multi-column sections.",
-      "testStrategy": "1. Run the application and open it in a browser with developer tools. 2. Set the viewport to a mobile width (e.g., 375px) and verify the content is constrained to its original max-width and centered. 3. Resize the viewport to be wider than the `lg` breakpoint (e.g., 1200px). 4. Confirm that the main content container expands to the new, larger `max-width` (e.g., `7xl`). 5. Ensure that all page content reflows correctly within the wider container and that no horizontal scrollbar appears.",
-      "status": "pending",
-      "dependencies": [
-        2,
-        12
-      ],
-      "priority": "high",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Refine Layout: Remove mobile-specific max-width constraint",
-          "description": "Remove the `max-w-[480px]` class from the main layout to allow for a more fluid width on intermediate screen sizes, as requested by the user.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 17
-        }
-      ]
-    },
-    {
-      "id": 18,
-      "title": "Refine Section Components for Desktop Responsiveness",
-      "description": "Update the internal layout and styling of all major content sections (`Hero`, `About`, `Background`, `Projects`, `Skills`, `Contact`) to match the desktop design on larger screens, while preserving the existing mobile-first styling.",
-      "details": "This task involves applying responsive styles using Tailwind's `lg:` and `xl:` prefixes to adapt each section's internal layout for desktop viewports, following the completion of Task #17. The goal is to transition from single-column mobile layouts to more complex, multi-column, or spacious desktop layouts. Key changes include: - **Hero.tsx**: Transition from a `flex-col` layout to `lg:flex-row` with `lg:text-left`. Adjust spacing and image size for a side-by-side presentation. - **About.tsx**: Increase the `max-w` of the text container on large screens to improve line length and readability. - **Background.tsx**: Refine the timeline's spacing and alignment for wider viewports to ensure it doesn't look sparse. - **Projects.tsx**: Update the grid from `md:grid-cols-2` to `lg:grid-cols-3` to better utilize horizontal space. - **Skills.tsx**: Ensure the `flex-wrap` container has appropriate horizontal constraints and gaps on desktop. - **Contact.tsx**: Adjust form fields to be side-by-side or in a grid on desktop, instead of stacked vertically.",
-      "testStrategy": "1. Verify that all changes are applied only on viewports wider than the `lg` breakpoint (1024px). 2. Confirm that the mobile and tablet views (below 1024px) remain unchanged and functional, preserving the work from Task #12. 3. For each section on a large desktop viewport (>1200px): - **Hero**: Check for the side-by-side layout of the image and text. - **Projects**: Confirm the grid displays three columns. - **About/Background**: Ensure text is readable and layout is balanced. - **Skills/Contact**: Verify that elements are well-distributed and do not appear stretched or cramped.",
-      "status": "pending",
-      "dependencies": [
-        12,
-        17
-      ],
-      "priority": "high",
-      "subtasks": [
-        {
-          "id": 1,
-          "title": "Make Hero Section Responsive",
-          "description": "Make the Hero section responsive by adjusting its layout and styling for larger screens, following the desktop Figma design.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 18
-        },
-        {
-          "id": 2,
-          "title": "Fix: Add background to profile image in Hero section",
-          "description": "Add a background color to the container of the profile image in the Hero section to match the Figma design, as pointed out by the user.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 18
-        },
-        {
-          "id": 3,
-          "title": "Refine: Adjust profile image styling with padding",
-          "description": "Refine the Hero section's profile image styling. Remove the background color and apply 16px (p-4) padding around the image container for a better visual effect, as per user feedback.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 18
-        },
-        {
-          "id": 4,
-          "title": "Fix: Correctly apply padding to profile image",
-          "description": "Correct the implementation of the profile image padding. Wrap the Image component in an additional div to ensure the padding is visible and effectively creates a border around the image, as the previous implementation was incorrect.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 18
-        },
-        {
-          "id": 5,
-          "title": "Refine: Add colored border to profile image",
-          "description": "Added a background color to the padded container around the profile image to create the visual effect of a colored border, as implemented by the user.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 18
-        },
-        {
-          "id": 6,
-          "title": "Make About Section Responsive",
-          "description": "Make the About section responsive by adjusting its layout and styling for larger screens to match the desktop Figma design.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 18
-        },
-        {
-          "id": 7,
-          "title": "Make Background Section Responsive",
-          "description": "Make the Background section and its `ExperienceItem` components responsive, adjusting layout and typography for larger screens to match the desktop Figma design.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 18
-        },
-        {
-          "id": 8,
-          "title": "Make Skills Section Responsive",
-          "description": "Make the Skills section and its `SkillTag` components responsive, adjusting layout and typography for larger screens to match the desktop Figma design.",
-          "details": "",
-          "status": "pending",
-          "dependencies": [],
-          "parentTaskId": 18
-        }
-      ]
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize Next.js Project with TypeScript and Tailwind CSS",
+        "description": "Set up a new Next.js project using the App Router, configured with TypeScript for type safety and Tailwind CSS for utility-first styling. This includes initializing the project, configuring Tailwind, and setting up the basic folder structure.",
+        "details": "Use the command `npx create-next-app@latest --typescript --tailwind your-portfolio-app` to initialize the project. Configure `tailwind.config.ts` (e.g., theme extensions for colors, fonts if specified in Figma) and `postcss.config.js`. Create initial folders: `app/` for routes, `components/` for UI components, and `lib/data/` for hardcoded content.",
+        "testStrategy": "Verify the project initializes correctly by running `npm run dev`. Check that TypeScript compiles without errors (`npm run build`). Apply a simple Tailwind class to the main page and ensure it renders correctly in the browser.",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Implement Main Layout Component (`Layout.tsx`)",
+        "description": "Create the main `Layout.tsx` component that will serve as a wrapper for all page content. This component will include the Navbar and Footer and provide a consistent structure across the application.",
+        "details": "The `Layout.tsx` component should be placed in the `components/` directory. It will accept `children: React.ReactNode` as props. The basic structure should be a flex container ensuring the footer stays at the bottom: `<div className=\"min-h-screen flex flex-col\"><Navbar />{/* Placeholder for Navbar */}<main className=\"flex-grow\">{children}</main><Footer />{/* Placeholder for Footer */}</div>`. Import and render `Navbar` and `Footer` components once they are created.",
+        "testStrategy": "Create a basic page within the `app` directory (e.g., `app/page.tsx`) that uses this `Layout` component. Verify that content passed as children renders correctly between the (placeholder) Navbar and Footer. Ensure the layout structure supports a sticky footer if content is short.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create `components` directory",
+            "description": "Create a `components` directory inside `src` to store reusable components.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 2
+          },
+          {
+            "id": 2,
+            "title": "Create `Layout.tsx` component",
+            "description": "Create the `Layout.tsx` file in `src/components` with a basic structure.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 2
+          },
+          {
+            "id": 3,
+            "title": "Integrate `Layout.tsx` into `src/app/layout.tsx`",
+            "description": "Update `src/app/layout.tsx` to use the new `Layout` component and set the correct font and metadata.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 2
+          },
+          {
+            "id": 4,
+            "title": "Add temporary max-width to page layout",
+            "description": "Restrict the maximum width of the page content to 480px to maintain a mobile-first appearance on larger screens during development. This is a temporary measure to ensure design consistency.",
+            "details": "- Modified `src/components/Layout.tsx`.\n- Added `container`, `mx-auto`, and `max-w-[480px]` Tailwind CSS classes to the `main` element.\n- This change centers the content and constrains its width globally across the application.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 2
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Develop Responsive Navigation Bar (`Navbar.tsx`)",
+        "description": "Develop the `Navbar.tsx` component. It must be responsive, sticky at the top, and include navigation links to the Hero, About, Skills, Background, and Projects sections.",
+        "details": "Place `Navbar.tsx` in `components/`. Implement sticky behavior using Tailwind: `className=\"sticky top-0 z-50 bg-gray-800 text-white shadow-md\"` (adjust colors based on dark theme). For responsiveness, use a hamburger menu for mobile (e.g., using a library like `headlessui/react` or custom JS/CSS) and horizontal links for desktop. Links should be `<a>` tags with `href=\"#section-id\"`. Example links: Home (to Hero), About, Skills, Background, Projects.",
+        "testStrategy": "Verify the Navbar is sticky when scrolling. Test responsiveness: hamburger menu appears and functions on small screens, horizontal links on larger screens. Check that links are present and hover states are implemented. Test in `Layout.tsx`.",
+        "priority": "medium",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create `Navbar.tsx` with Mobile-First Structure",
+            "description": "Create the `Navbar.tsx` component file and add the basic structure for the mobile view, including the title and a placeholder for the menu icon.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 3
+          },
+          {
+            "id": 2,
+            "title": "Integrate Navbar into Layout",
+            "description": "Integrate the `Navbar` component into `Layout.tsx` to make it appear on all pages.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 3
+          },
+          {
+            "id": 3,
+            "title": "Implement Mobile Menu Toggle Functionality",
+            "description": "Add state and event handlers to the `Navbar` component to toggle a mobile menu when the hamburger icon is clicked. The menu should display navigation links.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 3
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Develop Basic Footer Component (`Footer.tsx`)",
+        "description": "Implement the `Footer.tsx` component. For the MVP, this will be a simple footer, with potential for future enhancements.",
+        "details": "Place `Footer.tsx` in `components/`. Style with Tailwind CSS for the dark theme. It can contain simple text like `© ${new Date().getFullYear()} Jaswanth Sai Sattenapalli. All rights reserved.` or links to social media if specified in design (though not explicitly in PRD for MVP). Example: `<footer className=\"bg-gray-800 text-gray-400 text-center p-4\">...</footer>`.",
+        "testStrategy": "Verify the Footer renders correctly at the bottom of the page when integrated into `Layout.tsx`. Check text content and basic styling.",
+        "priority": "medium",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create `Footer.tsx` Component",
+            "description": "Create the `Footer.tsx` component file in `src/components` with a basic structure and styling.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 4
+          },
+          {
+            "id": 2,
+            "title": "Integrate Footer into Layout",
+            "description": "Integrate the `Footer` component into the `Layout.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 4
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Define Data Structures and Create Mock Content Files",
+        "description": "Define TypeScript interfaces for all content types (personal info, skills, experience, projects) and create mock data files (JSON or TypeScript) in the `lib/data` folder.",
+        "details": "In `lib/data/types.ts` (or similar): `interface Skill { id: string; name: string; } interface ExperienceItemData { id: string; company: string; role: string; duration: string; description: string[]; } interface ProjectData { id: string; title: string; description: string; imageUrl: string; tags: string[]; } interface PersonalInfoData { name: string; title: string; location: string; profilePicture: string; bio: string; }`. In `lib/data/mockData.ts`: export consts for `personalInfo`, `skillsList`, `experienceList`, `projectList` populated with placeholder or initial content (e.g., Jaswanth Sai Sattenapalli's details).",
+        "testStrategy": "Verify that the data structures are correctly defined and that mock data can be imported and accessed in other components without type errors. Check that data matches the expected format for each section.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Data Directory",
+            "description": "Create the `src/lib/data` directory to house data-related files.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          },
+          {
+            "id": 2,
+            "title": "Define TypeScript Interfaces",
+            "description": "Create the `types.ts` file and define the interfaces for `Skill`, `Experience`, and `Project`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          },
+          {
+            "id": 3,
+            "title": "Create Mock Data File",
+            "description": "Create the `index.ts` file in `src/lib/data` and populate it with mock data for the portfolio sections.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          },
+          {
+            "id": 4,
+            "title": "Update Experience data model and populate with resume content",
+            "description": "Update the Experience data model in types.ts and the ExperienceItem component to support and display detailed, multi-point descriptions. Then, populate this new structure with the content provided from the user's resume.",
+            "details": "- Added a `description: string[]` field to the `Experience` interface in `src/lib/data/types.ts`.\n- Updated the data in `src/lib/data/index.ts` to match the user's resume, including detailed bullet points for each role.\n- Modified the `ExperienceItem.tsx` component to render the `description` array as a `ul` list.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          },
+          {
+            "id": 5,
+            "title": "Refine Experience section UI (justification, margins, 'See more' feature)",
+            "description": "Improve the UI of the Experience section by justifying the description text, reducing the list marker margin for a cleaner look, and implementing a 'See more/less' toggle to handle long descriptions gracefully.",
+            "details": "- Justified the description text in `ExperienceItem.tsx` for better readability.\n- Adjusted list padding to reduce the margin of the bullet points.\n- Added a stateful `isExpanded` toggle to the `ExperienceItem` component.\n- The description is now truncated to the first bullet point by default, with a button to expand or collapse the full text.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 5
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Develop Hero Section Component (`Hero.tsx`)",
+        "description": "Develop the `Hero.tsx` component. This section will feature the user's name ('Jaswanth Sai Sattenapalli'), title ('Full-stack Developer'), location ('San Francisco, CA'), and a profile picture.",
+        "details": "Place `Hero.tsx` in `components/sections/`. Import `personalInfoData` from `lib/data/mockData.ts`. Use `next/image` for the profile picture for optimization. Style with Tailwind CSS according to the dark theme and Figma design (prominent text, clear visual hierarchy). Ensure responsiveness. Example structure: `<section id=\"hero\" className=\"flex flex-col items-center justify-center min-h-screen text-center p-4 bg-gray-900 text-white\">...</section>`.",
+        "testStrategy": "Verify the Hero section renders with correct data (name, title, location, image). Check visual appearance against design guidelines (typography, spacing, dark theme). Test responsiveness on mobile, tablet, and desktop.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Sections Directory",
+            "description": "Create the `src/components/sections` directory to organize page section components.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 2,
+            "title": "Create Hero.tsx Component",
+            "description": "Create the `Hero.tsx` component file and implement the UI according to the Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 3,
+            "title": "Integrate Hero Component",
+            "description": "Integrate the `Hero` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 4,
+            "title": "Refine Hero Section Styling",
+            "description": "Adjust font sizes, weights, colors, and spacing in the Hero section to precisely match the Figma design specifications.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 5,
+            "title": "Update carousel: remove nav buttons, add dots, and adjust item width",
+            "description": "Refactor the Projects section carousel to remove navigation buttons, add DotButtons for pagination, and make carousel items 80% width on mobile so users can see there is more content to scroll. Ensure the dot buttons are accessible and visually indicate the active slide.",
+            "details": "- Remove Prev/Next navigation buttons from the Carousel component.\n- Add DotButtons (pagination dots) below the carousel using Embla's API.\n- Make carousel items occupy 80vw on mobile, with max-w-full and flex-shrink-0 for proper sizing.\n- Update the Projects section container to allow horizontal overflow for the carousel.\n- Style the dot buttons for accessibility and active state.\n- Ensure all changes are responsive and match the design intent.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 6,
+            "title": "Fix: Carousel items not respecting 80% width on mobile",
+            "description": "Fixed an issue where carousel items were occupying 100% width on mobile, overriding the intended 80% width. The fix involved removing a conflicting CSS rule from globals.css and applying an inline style to the CarouselItem component.",
+            "details": "- Identified that a `flex: 0 0 100%` rule in `globals.css` was overriding Tailwind width utilities.\n- Removed the conflicting `flex` property from the `.embla__slide` class in `globals.css`.\n- Modified the `CarouselItem` component to use an inline style `flex: \"0 0 80%\"` for consistent sizing.\n- Verified with the user that the carousel items now correctly occupy 80% of the width on mobile.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 7,
+            "title": "Fix: Standardize carousel item height",
+            "description": "Ensured all carousel items have the same height, regardless of their content, by modifying the ProjectCard component to use flexbox and updating the Embla container styles.",
+            "details": "- Modified `ProjectCard.tsx` to be a flex container that stretches to fill available height using `h-full`, `flex-col`, and `flex-grow`.\n- Added `align-items: stretch` to the `.embla__container` in `globals.css` to ensure all slide elements expand to the same height.\n- Verified with the user that all project cards in the carousel now have a uniform height.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 8,
+            "title": "Update: Reposition and restyle 'View' button on ProjectCard",
+            "description": "Relocated the 'View Project' button to the top-right corner of the project image and relabeled it to 'View'. Applied styling to make it a small, semi-transparent capsule button that sits on top of the image.",
+            "details": "- Modified `ProjectCard.tsx` to move the `<a>` tag inside the `div` with the `relative` class.\n- Styled the button to be `absolute` with `top-2` and `right-2`.\n- Changed the button text from 'View Project' to 'View'.\n- Updated styling to a rounded, semi-transparent black background for better visibility over the image.\n- Ensured the parent `div` maintained its flex properties to keep card heights uniform.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Develop About Section Component (`About.tsx`)",
+        "description": "Develop the `About.tsx` component to display a brief biography of the user.",
+        "details": "Place `About.tsx` in `components/sections/`. Import `personalInfoData.bio` (or a dedicated about text) from `lib/data/mockData.ts`. Style with Tailwind CSS, maintaining consistency with the dark theme and overall design. Ensure text is readable and the section is responsive. Example structure: `<section id=\"about\" className=\"py-16 px-4 bg-gray-850 text-gray-300\">...</section>`.",
+        "testStrategy": "Verify the About section renders the biographical text correctly. Check styling for readability and consistency. Test responsiveness across different screen sizes.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create About.tsx Component",
+            "description": "Create the `About.tsx` component file and implement the UI according to the Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          },
+          {
+            "id": 2,
+            "title": "Integrate About Component",
+            "description": "Integrate the `About` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          },
+          {
+            "id": 3,
+            "title": "Refine About Section Styling",
+            "description": "Adjust font sizes, colors, and line height in the About section to precisely match the Figma design specifications.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Develop Skills Section (`Skills.tsx`) and `SkillTag.tsx`",
+        "description": "Develop the `Skills.tsx` section component and the reusable `SkillTag.tsx` component to display key skills as tags.",
+        "details": "Place `Skills.tsx` in `components/sections/` and `SkillTag.tsx` in `components/ui/` or `components/`. `Skills.tsx` will import `skillsList` from mock data and map over it, rendering a `SkillTag.tsx` for each skill. `SkillTag.tsx` (e.g., `(props: { name: string }) => <span className=\"bg-blue-500 text-white px-3 py-1 rounded-full text-sm\">{props.name}</span>`) should be styled as a tag. `Skills.tsx` layout should be responsive (e.g., `flex flex-wrap justify-center gap-2`). Example structure: `<section id=\"skills\" className=\"py-16 px-4 bg-gray-900 text-white\">...</section>`.",
+        "testStrategy": "Verify that all skills from mock data are displayed as tags. Check the appearance and styling of `SkillTag.tsx`. Test the responsiveness of the skills layout (e.g., single column on mobile, multi-column/wrap on larger screens).",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create `ui` Directory",
+            "description": "Create `src/components/ui` directory for small, reusable UI components.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 2,
+            "title": "Create SkillTag.tsx Component",
+            "description": "Create the `SkillTag.tsx` component in `src/components/ui`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 3,
+            "title": "Create Skills.tsx Section",
+            "description": "Create the `Skills.tsx` component in `src/components/sections`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 4,
+            "title": "Integrate Skills Component",
+            "description": "Integrate the `Skills` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Develop Background Section (`Background.tsx`) and `ExperienceItem.tsx`",
+        "description": "Develop the `Background.tsx` section component and the `ExperienceItem.tsx` component to detail professional experience in a timeline style.",
+        "details": "Place `Background.tsx` in `components/sections/` and `ExperienceItem.tsx` in `components/`. `Background.tsx` imports `experienceList` from mock data and maps over it, rendering an `ExperienceItem.tsx` for each entry. `ExperienceItem.tsx` will display company, role, duration, and description. Implement a timeline style using Tailwind CSS (e.g., vertical line with items branching off). Example structure: `<section id=\"background\" className=\"py-16 px-4 bg-gray-850 text-gray-300\">...</section>`.",
+        "testStrategy": "Verify all experience entries are displayed with correct details. Check the timeline styling and readability. Test responsiveness, ensuring the timeline adapts well to different screen sizes.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create ExperienceItem.tsx Component",
+            "description": "Create the `ExperienceItem.tsx` component in `src/components/ui`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 2,
+            "title": "Create Background.tsx Section",
+            "description": "Create the `Background.tsx` component in `src/components/sections`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 3,
+            "title": "Integrate Background Component",
+            "description": "Integrate the `Background` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 4,
+            "title": "Replace Timeline Circle with SVG Icon",
+            "description": "Replace the default circle in the timeline with the office-bag.svg icon for each experience item.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 5,
+            "title": "Fix Timeline Line on Last Item",
+            "description": "Fix a visual bug where a vertical line was rendered after the last item in the timeline. Modified ExperienceItem.tsx to conditionally render the line based on an isLast prop passed from Background.tsx.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 6,
+            "title": "Refine Timeline Item Spacing",
+            "description": "Adjusted spacing in the timeline to make the vertical line appear more connected between items. Removed the container gap in Background.tsx and added bottom padding (pb-8) to the content div in ExperienceItem.tsx to compensate.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          },
+          {
+            "id": 7,
+            "title": "Fix Timeline Icon and Line Alignment",
+            "description": "Corrected a layout bug where the vertical timeline line was misaligned with the center of the icon. Removed a negative margin (-ml-1) that was causing the parent container to calculate its width incorrectly, ensuring proper centering.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 9
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Develop Featured Projects Section (`Projects.tsx`) and `ProjectCard.tsx`",
+        "description": "Develop the `Projects.tsx` section component and the `ProjectCard.tsx` component to showcase 2-4 featured projects with an image, title, and short description.",
+        "details": "Place `Projects.tsx` in `components/sections/` and `ProjectCard.tsx` in `components/`. `Projects.tsx` imports `projectList` from mock data and maps over it, rendering a `ProjectCard.tsx` for each project. `ProjectCard.tsx` will use `next/image` for project images and display title and description. Style cards and gallery layout using Tailwind CSS (e.g., responsive grid: `grid grid-cols-1 md:grid-cols-2 gap-6`). Example structure: `<section id=\"projects\" className=\"py-16 px-4 bg-gray-900 text-white\">...</section>`.",
+        "testStrategy": "Verify all featured projects are displayed with image, title, and description. Check card styling and image loading. Test the responsiveness of the project gallery layout (e.g., single column on mobile, multi-column grid on larger screens).",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create ProjectCard.tsx Component",
+            "description": "Create the `ProjectCard.tsx` component in `src/components/ui`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 10
+          },
+          {
+            "id": 2,
+            "title": "Create Projects.tsx Section",
+            "description": "Create the `Projects.tsx` component in `src/components/sections`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 10
+          },
+          {
+            "id": 3,
+            "title": "Integrate Projects Component",
+            "description": "Integrate the `Projects` component into the `src/app/page.tsx` file.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 10
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Integrate All Sections into Main Page and Implement Smooth Scrolling Navigation",
+        "description": "Integrate all developed section components (`Hero`, `About`, `Skills`, `Background`, `Projects`) into the main page (`app/page.tsx`) under the `Layout` component. Implement smooth scrolling for `Navbar` links to their respective sections.",
+        "details": "In `app/page.tsx`, import and render `Hero`, `About`, `Skills`, `Background`, and `Projects` components in the specified order. Ensure each section component has a unique `id` attribute (e.g., `<Hero id=\"hero\" />`). Update `Navbar.tsx` links to point to these IDs (e.g., `<a href=\"#hero\">...</a>`). Enable smooth scrolling globally via CSS: `html { scroll-behavior: smooth; }` in `app/globals.css`.",
+        "testStrategy": "Verify all sections appear on the main page in the correct order. Test navigation by clicking links in the Navbar; ensure smooth scrolling to the correct section. Check for any layout breaks or style conflicts after integration.",
+        "priority": "medium",
+        "dependencies": [
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Enable Smooth Scrolling",
+            "description": "Enable smooth scrolling by adding `scroll-behavior: smooth;` to the `html` element in `globals.css`.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 11
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Implement Mobile-First Responsiveness and Cross-Device Styling Refinements",
+        "description": "Thoroughly review and refine the responsiveness of all sections and components, ensuring adherence to the mobile-first design strategy. The application should adapt gracefully to tablet and desktop screen sizes.",
+        "details": "Use Tailwind CSS responsive prefixes (e.g., `sm:`, `md:`, `lg:`, `xl:`) to adjust layouts, font sizes, spacing, and visibility. Test using browser developer tools for various breakpoints (e.g., 320px, 375px, 768px, 1024px, 1440px). Focus on single-column for mobile, and multi-column for Skills/Projects on larger screens. Ensure interactive elements (links, buttons) have clear hover/focus states.",
+        "testStrategy": "Systematically test each section and component on common mobile, tablet, and desktop viewport sizes. Verify layout integrity, readability, and usability. Check for content overflow, awkward spacing, or unclickable elements. Ensure a consistent user experience across devices.",
+        "priority": "medium",
+        "dependencies": [
+          11
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Responsive Navigation Bar",
+            "description": "Make the `Navbar` component responsive by displaying links horizontally on desktop and keeping the hamburger menu for mobile.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 12
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Final Testing and Quality Assurance",
+        "description": "Conduct comprehensive testing of the entire application. This includes functionality, UI/UX consistency, responsiveness across devices, and content accuracy based on mock data and PRD requirements.",
+        "details": "Perform a full user journey walkthrough: landing on Hero, scrolling through sections, using navigation. Check all interactive elements. Validate against Figma design for layout, color scheme, and typography (as per MVP mitigation: professional and functional, not pixel-perfect). Test on major browsers (Chrome, Firefox, Safari). Check for console errors or warnings.",
+        "testStrategy": "Develop a test checklist covering all core features and UI elements. Perform exploratory testing to find edge cases. Verify content matches mock data. Ensure all links work and scroll correctly. Confirm responsiveness on key breakpoints.",
+        "priority": "medium",
+        "dependencies": [
+          12
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Fix Missing Navbar Links",
+            "description": "Added missing 'Home' and 'Contact' links to the navigation bar to ensure all sections are accessible. Also corrected the main 'Portfolio' link to point to the #hero section.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 13
+          },
+          {
+            "id": 2,
+            "title": "Temporarily Hide Contact Section",
+            "description": "Temporarily hid the Contact section by commenting out the component in `page.tsx` as per user request. The component file remains for future use.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 13
+          },
+          {
+            "id": 3,
+            "title": "Fix: Navbar anchor links overlapping section content",
+            "description": "Fixed an issue where the sticky navbar would overlap section content when navigating via anchor links. Applied a `scroll-margin-top` utility to all sections to create the necessary offset. Also corrected a mismatched ID between a navbar link and its target section.",
+            "details": "- Added `scroll-m-16` class to the main `<section>` element of `Hero.tsx`, `About.tsx`, `Skills.tsx`, `Background.tsx`, and `Projects.tsx`.\n- Corrected the ID of the `Background` section from `#background` to `#experience`.\n- Updated the corresponding link in `Navbar.tsx` to point to `#experience` instead of `#background`.\n- Verified with the user that the fix works as expected.",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 13
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "Prepare for Deployment",
+        "description": "Prepare the application for deployment on platforms like Vercel or Netlify. This includes ensuring the application builds successfully for production and any necessary deployment configurations are considered.",
+        "details": "Run the production build command (`npm run build`) and ensure it completes without errors. Review build output for any unexpectedly large assets (Next.js usually handles optimization well). If not already present, create/update `README.md` with basic build and run instructions. Ensure no sensitive information is hardcoded if any was used for placeholders (though MVP uses mock data).",
+        "testStrategy": "Successfully execute `npm run build`. Optionally, perform a test deployment to a Vercel or Netlify staging environment to confirm the build works in a production-like setting. Check the deployed site for basic functionality.",
+        "priority": "medium",
+        "dependencies": [
+          13
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 15,
+        "title": "Implement Carousel for Featured Projects Section",
+        "description": "Implement a responsive carousel for the Featured Projects section using `embla-carousel-react` to display project cards in a horizontally scrollable manner, replacing the current grid layout.",
+        "details": "1. Install `embla-carousel-react`: Run `npm install embla-carousel-react` or `yarn add embla-carousel-react`.\n2. Create a reusable `Carousel.tsx` component, likely in `components/ui/Carousel.tsx`. This component will utilize the `useEmblaCarousel` hook from the library. It should accept `children` (the project cards) and optionally `options` for embla configuration. The basic structure will involve a viewport, a container for slides, and individual slide elements.\n3. Style the `Carousel.tsx` component using Tailwind CSS to achieve a horizontal layout for slides and ensure it's responsive. Consider implementing optional previous/next navigation buttons and/or pagination dots, styled according to the project's dark theme and Figma design.\n4. Update the existing `Projects.tsx` section component (in `components/sections/Projects.tsx`). Import and integrate the new `Carousel.tsx` component. Modify the logic to map over project data (e.g., from `projectData` in `lib/data/mockData.ts`) and render each `ProjectCard.tsx` (assuming this component exists from Task 10) as a slide within the carousel.\n5. Remove the previous grid-based layout for project cards in `Projects.tsx`.\n6. Ensure the carousel is fully responsive, adapting its appearance and behavior across mobile, tablet, and desktop screen sizes, consistent with the guidelines from Task 12 and the Figma design. Support touch gestures for navigation on mobile devices.",
+        "testStrategy": "1. Verify `embla-carousel-react` is correctly installed and listed in `package.json`.\n2. Confirm the `Projects.tsx` section now displays project cards within a carousel structure, replacing any previous grid layout.\n3. Test core carousel functionality: horizontal scrolling via mouse drag (if enabled) on desktop and swipe gestures on touch devices. All project cards from the mock data should be viewable.\n4. If navigation buttons (previous/next) are implemented, verify they are correctly styled, functional, and appropriately enabled/disabled at the carousel ends.\n5. If pagination dots are implemented, verify they accurately reflect the number of slides, highlight the active slide, and allow navigation on click.\n6. Test responsiveness thoroughly across various viewport sizes (e.g., 320px, 375px, 768px, 1024px, 1440px). Ensure the carousel layout, item visibility, and controls adapt correctly without breaking the page layout or causing overflow.\n7. Visually inspect the carousel against the Figma design for adherence to specified horizontal layout, spacing, project card appearance within the carousel, and overall dark theme consistency.\n8. Check the browser console for any errors or warnings related to the carousel implementation during interaction.\n9. Perform basic accessibility checks: ensure carousel controls are keyboard focusable and operable.",
+        "status": "done",
+        "dependencies": [
+          10,
+          12
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": 16,
+        "title": "Implement Advanced Animations and Micro-interactions",
+        "description": "Implement advanced animations and micro-interactions to enhance user experience, focusing on the desktop version initially. This includes smooth inertia scrolling, scroll-based section reveals, and interactive effects on components.",
+        "details": "Integrate a library like Framer Motion (`npm install framer-motion`) to handle the animations. 1. **Inertia Scroll:** Implement a smooth scrolling library like `Lenis` to replace the native browser scroll, providing a more fluid, premium feel. This will involve wrapping the main layout in the Lenis provider. 2. **Scroll-based Reveals:** Wrap each main section component (`About`, `Skills`, `Background`, `Projects`) in a `motion` component from Framer Motion. Use the `useInView` hook or `whileInView` prop to trigger fade-in or slide-in animations as the section enters the viewport. Example: `<motion.section initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>...</motion.section>`. 3. **Interactive Tilt Effect:** Apply a 3D tilt effect to the `ProjectCard.tsx` components within the carousel on hover. This can be achieved using a library like `react-parallax-tilt` or by using Framer Motion's `whileHover` with transform properties. 4. **Enhanced Hover Effects:** Refine hover states for interactive elements like navigation links and buttons. Use Framer Motion's `whileHover` prop to add subtle scale, translate, or background color transitions for a more dynamic feel.",
+        "testStrategy": "1. Verify that scrolling the page is noticeably smoother and has an inertia effect. 2. Scroll down the page from the top; confirm that each section animates into view as it enters the viewport. 3. Hover the mouse over the project cards in the featured projects carousel; verify that they exhibit a 3D tilt effect. 4. Hover over links in the Navbar and any other buttons; confirm they have the new, enhanced animation effects. 5. Check for performance issues using browser developer tools to ensure animations are smooth (maintain 60fps) and do not cause layout shifts or high CPU load.",
+        "status": "pending",
+        "dependencies": [
+          11,
+          13,
+          15
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": 17,
+        "title": "Update Layout.tsx for Desktop Responsiveness",
+        "description": "Update the main `Layout.tsx` component to be fully responsive for larger screens. This involves adjusting the main content container's width to expand at the `lg` breakpoint, aligning with the desktop design.",
+        "details": "Locate the `Layout.tsx` component and identify the `main` element or its primary child container that wraps the page content. This container likely has a restrictive `max-width` class (e.g., `max-w-3xl`) and `mx-auto` for centering. Modify these classes to apply a larger width for desktop screens. For example, change `className=\"... max-w-3xl\"` to `className=\"... max-w-3xl lg:max-w-7xl\"`. This will maintain the constrained width on mobile and tablet while allowing the content to expand on viewports 1024px and wider, providing more space for desktop-oriented layouts like multi-column sections.",
+        "testStrategy": "1. Run the application and open it in a browser with developer tools. 2. Set the viewport to a mobile width (e.g., 375px) and verify the content is constrained to its original max-width and centered. 3. Resize the viewport to be wider than the `lg` breakpoint (e.g., 1200px). 4. Confirm that the main content container expands to the new, larger `max-width` (e.g., `7xl`). 5. Ensure that all page content reflows correctly within the wider container and that no horizontal scrollbar appears.",
+        "status": "done",
+        "dependencies": [
+          2,
+          12
+        ],
+        "priority": "high",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Refine Layout: Remove mobile-specific max-width constraint",
+            "description": "Remove the `max-w-[480px]` class from the main layout to allow for a more fluid width on intermediate screen sizes, as requested by the user.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 17
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "title": "Refine Section Components for Desktop Responsiveness",
+        "description": "Update the internal layout and styling of all major content sections (`Hero`, `About`, `Background`, `Projects`, `Skills`, `Contact`) to match the desktop design on larger screens, while preserving the existing mobile-first styling.",
+        "details": "This task involves applying responsive styles using Tailwind's `lg:` and `xl:` prefixes to adapt each section's internal layout for desktop viewports, following the completion of Task #17. The goal is to transition from single-column mobile layouts to more complex, multi-column, or spacious desktop layouts. Key changes include: - **Hero.tsx**: Transition from a `flex-col` layout to `lg:flex-row` with `lg:text-left`. Adjust spacing and image size for a side-by-side presentation. - **About.tsx**: Increase the `max-w` of the text container on large screens to improve line length and readability. - **Background.tsx**: Refine the timeline's spacing and alignment for wider viewports to ensure it doesn't look sparse. - **Projects.tsx**: Update the grid from `md:grid-cols-2` to `lg:grid-cols-3` to better utilize horizontal space. - **Skills.tsx**: Ensure the `flex-wrap` container has appropriate horizontal constraints and gaps on desktop. - **Contact.tsx**: Adjust form fields to be side-by-side or in a grid on desktop, instead of stacked vertically.",
+        "testStrategy": "1. Verify that all changes are applied only on viewports wider than the `lg` breakpoint (1024px). 2. Confirm that the mobile and tablet views (below 1024px) remain unchanged and functional, preserving the work from Task #12. 3. For each section on a large desktop viewport (>1200px): - **Hero**: Check for the side-by-side layout of the image and text. - **Projects**: Confirm the grid displays three columns. - **About/Background**: Ensure text is readable and layout is balanced. - **Skills/Contact**: Verify that elements are well-distributed and do not appear stretched or cramped.",
+        "status": "done",
+        "dependencies": [
+          12,
+          17
+        ],
+        "priority": "high",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Make Hero Section Responsive",
+            "description": "Make the Hero section responsive by adjusting its layout and styling for larger screens, following the desktop Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 2,
+            "title": "Fix: Add background to profile image in Hero section",
+            "description": "Add a background color to the container of the profile image in the Hero section to match the Figma design, as pointed out by the user.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 3,
+            "title": "Refine: Adjust profile image styling with padding",
+            "description": "Refine the Hero section's profile image styling. Remove the background color and apply 16px (p-4) padding around the image container for a better visual effect, as per user feedback.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 4,
+            "title": "Fix: Correctly apply padding to profile image",
+            "description": "Correct the implementation of the profile image padding. Wrap the Image component in an additional div to ensure the padding is visible and effectively creates a border around the image, as the previous implementation was incorrect.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 5,
+            "title": "Refine: Add colored border to profile image",
+            "description": "Added a background color to the padded container around the profile image to create the visual effect of a colored border, as implemented by the user.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 6,
+            "title": "Make About Section Responsive",
+            "description": "Make the About section responsive by adjusting its layout and styling for larger screens to match the desktop Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 7,
+            "title": "Make Background Section Responsive",
+            "description": "Make the Background section and its `ExperienceItem` components responsive, adjusting layout and typography for larger screens to match the desktop Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 8,
+            "title": "Make Skills Section Responsive",
+            "description": "Make the Skills section and its `SkillTag` components responsive, adjusting layout and typography for larger screens to match the desktop Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 9,
+            "title": "Make Projects Section Responsive",
+            "description": "Make the Projects section and its `ProjectCard` components responsive, adapting the carousel and typography for larger screens to match the desktop Figma design.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 10,
+            "title": "Fix: Use Tailwind classes for responsive carousel item width",
+            "description": "Refactor the CarouselItem component to use Tailwind CSS classes for responsive widths instead of invalid inline styles, correcting a previous implementation error.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 11,
+            "title": "Refactor Projects to Grid on Desktop & Fix Image Link",
+            "description": "Refactor the Projects section to display a static grid of project cards on desktop screens while retaining the carousel for mobile. Also, investigate and correct any broken project image links in the data source.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 12,
+            "title": "Update Project Image Link with Correct File",
+            "description": "Update the `imageUrl` for the 'React Virtual Scroll List' project to point to the correct image file now that it has been added by the user.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 13,
+            "title": "Fix: Implement auto-fitting grid for desktop projects",
+            "description": "Correct the desktop grid layout in the Projects section to be responsive and auto-fit the cards, creating a proper multi-column grid instead of a single column.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 14,
+            "title": "Fix: Correct responsive item count in Projects carousel",
+            "description": "Adjust the responsive behavior of the project carousel. Set it to display a single item on mobile devices and two items on tablets, correcting the previous implementation.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 15,
+            "title": "Fix: Configure Embla Carousel hook for proper responsive behavior",
+            "description": "Implement a proper fix for the carousel's responsive behavior by configuring the `useEmblaCarousel` hook with explicit breakpoints, ensuring it shows 1 slide on mobile and 2 on tablet screens. This corrects the previous failed attempt that only used CSS.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 16,
+            "title": "Fix: Implement Responsive Carousel with CSS Flex-Basis",
+            "description": "Correctly implement the responsive carousel behavior by using Tailwind CSS classes to adjust the `flex-basis` of `CarouselItem`. The carousel will now show one item on mobile (`basis-4/5`) and two items on tablet screens (`md:basis-1/2`).",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          },
+          {
+            "id": 17,
+            "title": "Fix: Restore flex-shrink and flex-grow on carousel items",
+            "description": "Reinstate `flex-shrink-0` and `flex-grow-0` on the `CarouselItem` to prevent flexbox from distorting the slide's width, a critical fix implemented by the user.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 18
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-06-26T13:36:45.161Z",
+      "updated": "2025-06-30T17:10:06.512Z",
+      "description": "Tasks for master context"
     }
-  ],
-  "metadata": {
-    "created": "2025-06-26T13:36:45.161Z",
-    "updated": "2025-06-30T15:39:37.349Z",
-    "description": "Tasks for master context"
   }
 }
