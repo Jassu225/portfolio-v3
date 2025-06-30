@@ -16,8 +16,6 @@ const springValues: SpringOptions = {
 
 const Tilted: React.FC<TiltedProps> = ({ children, className }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
 
   const rotateX = useSpring(useMotionValue(0), springValues);
   const rotateY = useSpring(useMotionValue(0), springValues);

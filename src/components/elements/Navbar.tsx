@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-white hover:text-gray-300">
+            <Link key={link.href} href={link.href} className="text-white transition-colors duration-300 hover:text-sky-400">
               {link.label}
             </Link>
           ))}
@@ -59,7 +59,7 @@ const Navbar = () => {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-white block py-2"
+                  className="text-white block py-2 transition-colors duration-300 hover:text-sky-400"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

@@ -8,7 +8,7 @@ const Contact = () => {
         <h2 className="text-3xl font-bold text-white mb-4 lg:mb-8">
           Contact
         </h2>
-        <p className="text-lg text-gray-300 max-w-2xl mb-4 lg:mb-8">
+        <p className="text-lg text-gray-300 mb-4 lg:mb-8">
           I&apos;m always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!
         </p>
         <div className="flex justify-start gap-4">

@@ -43,7 +43,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, isLast }) =
         {isExpandable && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-blue-400 hover:text-blue-300 text-sm lg:text-base mt-2"
+            className="text-blue-400 hover:text-blue-300 text-sm lg:text-base mt-2 cursor-pointer"
           >
             {isExpanded ? 'See less...' : 'See more...'}
           </button>
