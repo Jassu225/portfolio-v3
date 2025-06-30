@@ -17,7 +17,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, isLast }) =
       <div className="flex flex-col items-center">
         <div className="w-6 h-6 flex-shrink-0">
           <Image
-            src="/background/office-bag.svg"
+            src="/assets/icons/office-bag.svg"
             alt="Experience icon"
             width={24}
             height={24}

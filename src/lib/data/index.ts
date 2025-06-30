@@ -59,25 +59,25 @@ export const projects: Project[] = [
   {
     title: 'Photo Sphere',
     description: 'Turn your memories into a mesmerizing 3D globe, right in your browser.',
-    imageUrl: '/projects/photo-sphere/home.png',
+    imageUrl: '/assets/images/projects/photo-sphere-home.png',
     link: 'https://photo-sphere.web.app/',
   },
   {
     title: 'Kanban Board',
     description: 'A project management tool to track tasks using local storage.',
-    imageUrl: '/projects/kanban-board/home.jpeg',
+    imageUrl: '/assets/images/projects/kanban-board-home.jpeg',
     link: 'https://kanban-slate.web.app/',
   },
   {
     title: 'Cloud Work',
     description: 'A dummy tool to create tasks with complexity.',
-    imageUrl: '/projects/cloud-work/home.png',
+    imageUrl: '/assets/images/projects/cloud-work-home.png',
     link: 'https://cloud-work.web.app/',
   },
   {
     title: 'React Virtual Scroll List',
     description: 'A virtual scroll list implementation for efficiently rendering large datasets in React.',
-    imageUrl: '/projects/react-virtual-scroll-list/home.jpeg',
+    imageUrl: '/assets/images/projects/react-virtual-scroll-list-home.jpeg',
     link: 'https://virtual-scroll-list.web.app/',
   },
 ];
@@ -87,5 +87,5 @@ export const personalInfo = {
   title: 'Front-end oriented full-stack developer',
   location: 'Bengaluru, Karnataka, India',
   about: `I'm an experienced Software Engineer with 7+ years in web development using modern frameworks—Next.js, React, Redux, Vue.js, and jQuery. Skilled in mobile app development (Flutter) and backend API design with Go (Golang) as well. I've led end‑to‑end projects across the full tech stack, delivering seamless user experiences. I'm passionate about continuous learning and innovation. Outside work, I enjoy gaming, Netflix, and solving web challenges.`,
-  profilePicture: '/hero/profile.jpg', // Placeholder image
+  profilePicture: '/assets/images/hero/profile.jpg', // Placeholder image
 } 
