@@ -3,6 +3,10 @@
 *This file is updated for every change made to the project, as per the process defined in `ai/init.md`.*
 
 ---
+[2024-07-31T03:15:20Z] - Refactored lazy loading implementation to use Next.js `next/dynamic` instead of manual React state management, following official Next.js documentation best practices. (Task: N/A)
+[2024-07-31T03:10:45Z] - Implemented lazy loading for Tilted component in ProjectCard to improve performance by only loading animation code when needed on desktop devices. (Task: N/A)
+[2024-07-31T03:05:30Z] - Modified ProjectCard to conditionally use Tilted animation only on desktop (1024px+), improving touch experience on mobile and tablet devices. (Task: N/A)
+[2024-07-31T03:00:15Z] - Replaced CSS media queries for carousel slides with Tailwind responsive classes (basis-4/5 md:basis-1/2 lg:basis-1/3) in CarouselItem component. (Task: N/A)
 [2024-07-31T02:55:45Z] - Fixed project card height consistency in carousel by adding `h-full` class to the motion.div in Tilted component, ensuring uniform card heights. (Task: N/A)
 [2024-07-31T02:50:30Z] - Reverted carousel height fix changes as they negatively impacted the visual appearance. (Task: N/A)
 [2024-07-31T02:35:18Z] - Fixed project card height consistency in carousel by adding proper height constraints to carousel components. (Task: N/A)

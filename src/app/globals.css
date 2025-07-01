@@ -53,18 +53,6 @@ body {
   padding: 0 1rem;
 }
 
-@media (min-width: 768px) {
-  .embla__slide {
-    flex: 0 0 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .embla__slide {
-    flex: 0 0 33.3333%;
-  }
-}
-
 .embla__button {
   position: absolute;
   top: 50%;
