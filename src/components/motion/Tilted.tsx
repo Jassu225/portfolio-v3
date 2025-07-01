@@ -46,7 +46,7 @@ const Tilted: React.FC<TiltedProps> = ({ children, className }) => {
   };
 
   return (
-    <div ref={ref} className="[perspective:800px]">
+    <div ref={ref} className={`[perspective:800px] ${className}`}>
         <motion.div
             style={{
                 rotateX,
@@ -57,7 +57,7 @@ const Tilted: React.FC<TiltedProps> = ({ children, className }) => {
             onMouseMove={handleMouse}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={className}
+            className="h-full"
         >
             {children}
         </motion.div>
