@@ -9,14 +9,14 @@ export const AboutDesign = {
     heading: {
       fontSize: '1.125rem', // text-lg
       fontWeight: theme.typography.weights[2], // 700
-      color: theme.themes.dark.colors.text,
+      color: theme.themes.dark.colors.onSurface,
       fontFamily: theme.typography.fontFamily,
       marginBottom: '0.5rem',
     },
     paragraph: {
       fontSize: '1rem',
       fontWeight: theme.typography.weights[0], // 400
-      color: theme.themes.dark.colors.textSecondary,
+      color: theme.themes.dark.colors.onSurfaceVariant,
       fontFamily: theme.typography.fontFamily,
       lineHeight: '1.625', // leading-relaxed
     },

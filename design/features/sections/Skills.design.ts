@@ -9,7 +9,7 @@ export const SkillsDesign = {
     heading: {
       fontSize: '1.125rem',
       fontWeight: theme.typography.weights[2], // 700
-      color: theme.themes.dark.colors.text,
+      color: theme.themes.dark.colors.onSurface,
       fontFamily: theme.typography.fontFamily,
       marginBottom: '1rem',
     },

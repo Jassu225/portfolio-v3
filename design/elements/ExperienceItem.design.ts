@@ -25,16 +25,16 @@ export const ExperienceItemDesign = {
   },
   styles: {
     role: {
-      color: theme.themes.dark.colors.text,
+      color: theme.themes.dark.colors.onSurface,
       fontWeight: theme.typography.weights[1], // 500
       fontSize: '1rem',
     },
     meta: {
-      color: theme.themes.dark.colors.textSecondary,
+      color: theme.themes.dark.colors.onSurfaceVariant,
       fontSize: '1rem',
     },
     description: {
-      color: theme.themes.dark.colors.textSecondary,
+      color: theme.themes.dark.colors.onSurfaceVariant,
       fontSize: '0.875rem',
       marginTop: '0.5rem',
       paddingLeft: '1rem',

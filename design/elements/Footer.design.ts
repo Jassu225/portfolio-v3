@@ -8,6 +8,6 @@ export const FooterDesign = {
   },
   styles: {
     backgroundColor: theme.themes.dark.colors.background,
-    textColor: theme.themes.dark.colors.textTertiary,
+          textColor: theme.themes.dark.colors.outline,
   },
 }; 

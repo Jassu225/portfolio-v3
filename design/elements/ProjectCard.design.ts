@@ -23,7 +23,7 @@ export const ProjectCardDesign = {
       borderRadius: '9999px',
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       fontSize: '0.75rem',
-      color: theme.themes.dark.colors.text,
+      color: theme.themes.dark.colors.onSurface,
     },
     contentContainer: {
       padding: '1rem',
@@ -33,12 +33,12 @@ export const ProjectCardDesign = {
   },
   styles: {
     title: {
-      color: theme.themes.dark.colors.text,
+      color: theme.themes.dark.colors.onSurface,
       fontWeight: theme.typography.weights[1], // 500
       fontSize: '1rem',
     },
     description: {
-      color: theme.themes.dark.colors.textSecondary,
+      color: theme.themes.dark.colors.onSurfaceVariant,
       fontSize: '0.875rem',
       marginTop: '0.5rem',
     },

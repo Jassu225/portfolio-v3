@@ -3,6 +3,10 @@
 *This file is updated for every change made to the project, as per the process defined in `ai/init.md`.*
 
 ---
+[2025-07-02T13:30:00Z] - Resolved ESLint compilation errors in HeroDesktop component: Fixed unescaped apostrophe in "I'm" using &apos; entity and wrapped "//" comment syntax in JavaScript expression braces to comply with JSX comment rules, ensuring successful production build compilation. (Task: N/A)
+---
+[2025-07-02T13:25:00Z] - Fixed TypeScript build errors in design configuration files: Updated all theme color references from deprecated text/textSecondary/textTertiary properties to proper Material Design 3 semantic colors (onSurface, onSurfaceVariant, outline) across 11 design files including ProjectCard, About, Footer, Hero, Background, Projects, SkillTag, Skills, Navbar, and ExperienceItem to resolve build compilation errors and maintain type safety. (Task: N/A)
+---
 [2025-07-02T13:20:00Z] - Updated HeroDesktop dimensions to match new hero-shape-bg.svg specifications: Synchronized container dimensions from 777x877 to 720x629, updated Image component to use heroShapeBg object properties, corrected SVG viewBox to match new dimensions (720x629), and updated mask path coordinates to exactly match the updated background shape SVG for proper image masking and layout consistency. (Task: N/A)
 ---
 [2025-07-02T13:15:00Z] - Styled HeroDesktop description as authentic JavaScript code block: Transformed description into proper code block with monospace font, syntax highlighting using Material 3 semantic colors (comments in outline, functions in secondary, keywords in primary), rounded border container, and proper line structure to create genuine code editor appearance with technical personality. (Task: N/A)

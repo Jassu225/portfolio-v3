@@ -18,13 +18,13 @@ export const HeroDesign = {
   },
   styles: {
     heading: {
-      color: theme.themes.dark.colors.text,
+      color: theme.themes.dark.colors.onSurface,
       fontSize: '22px',
       fontWeight: theme.typography.weights[2], // 700
       fontFamily: theme.typography.fontFamily,
     },
     paragraph: {
-      color: theme.themes.dark.colors.textSecondary,
+      color: theme.themes.dark.colors.onSurfaceVariant,
       fontSize: '1rem',
       fontWeight: theme.typography.weights[0], // 400
       fontFamily: theme.typography.fontFamily,

@@ -10,14 +10,14 @@ export const NavbarDesign = {
   styles: {
     backgroundColor: theme.themes.dark.colors.background,
     brand: {
-      color: theme.themes.dark.colors.text,
+      color: theme.themes.dark.colors.onSurface,
       fontSize: '1.125rem', // text-lg
       fontWeight: theme.typography.weights[2], // 700
       fontFamily: theme.typography.fontFamily,
     },
     navLink: {
-      color: theme.themes.dark.colors.text,
-      hoverColor: theme.themes.dark.colors.textTertiary,
+      color: theme.themes.dark.colors.onSurface,
+      hoverColor: theme.themes.dark.colors.outline,
     },
     mobileMenu: {
       backgroundColor: theme.themes.dark.colors.background,

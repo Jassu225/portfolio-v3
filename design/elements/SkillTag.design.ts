@@ -7,7 +7,7 @@ export const SkillTagDesign = {
   },
   styles: {
     backgroundColor: '#293038', // Needs to be added to theme
-    color: theme.themes.dark.colors.text,
+          color: theme.themes.dark.colors.onSurface,
     fontWeight: theme.typography.weights[1], // 500
     fontSize: '0.875rem',
   },

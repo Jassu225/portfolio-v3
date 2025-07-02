@@ -25,7 +25,7 @@ const HeroDesktop = () => {
               {/* Title */}
               <div>
                 <h1 className="text-on-background font-bold text-[48px] lg:text-[56px] xl:text-[64px] leading-[1.2]">
-                  Hello, I'm {personalInfo.name}
+                  Hello, I&apos;m {personalInfo.name}
                 </h1>
               </div>
 
@@ -34,7 +34,7 @@ const HeroDesktop = () => {
                 <div>
                   <div className="bg-surface  rounded-lg py-4 font-mono text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.6]">
                     <div className="text-tertiary">
-                      <span className="text-outline">// </span>
+                      <span className="text-outline">{'// '}</span>
                       <span className="text-on-surface-variant">Scroll to </span>
                       <span className="text-secondary">fetch</span>
                       <span className="text-on-surface-variant"> my </span>
