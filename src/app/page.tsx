@@ -1,3 +1,4 @@
+import HeroDesktop from '@/components/features/sections/HeroDesktop';
 import Hero from '@/components/features/sections/Hero';
 import About from '@/components/features/sections/About';
 import Skills from '@/components/features/sections/Skills';
@@ -8,6 +9,7 @@ import Contact from '@/components/features/sections/Contact';
 export default function Home() {
   return (
     <>
+      <HeroDesktop />
       <Hero />
       <About />
       <Background />

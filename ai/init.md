@@ -18,6 +18,7 @@ This guide will help you (and any AI assistant) **bootstrap a new project from s
 - ✅ Focus on clarity, testability, and maintainability
 - **Responsive Design:** Implement a mobile-first approach, ensuring the portfolio looks great on all devices, from small phones to large desktops.
 - **Strict Design Adherence:** Strictly adhere to the provided Figma designs for both mobile and desktop views. I repeat, strictly adhere to the provided Figma designs for both mobile and desktop views.
+- **Dual Change Logging Requirement:** Every code update request MUST be logged in both CHANGELOG.md and taskmaster-ai task management system. No exceptions. This ensures complete traceability and project management consistency.
 
 ---
 
@@ -351,11 +352,12 @@ For each component / feature:
 ## 🔁 Change Management
 
 - [ ] For every change request:
-  - Create a new task or sub-task
+  - Create a new task or sub-task using taskmaster-ai
   - Link it to the relevant feature/component
-  - Document it in `CHANGELOG.md`
-  - Add relevant task or a sub-task
+  - Document it in `CHANGELOG.md` (mandatory)
+  - Log in taskmaster-ai task system (mandatory)
   - Include reason, requester, date, and relevant context
+  - **DUAL LOGGING REQUIRED:** Both CHANGELOG.md AND taskmaster-ai must be updated for ALL changes
 
 ---
 

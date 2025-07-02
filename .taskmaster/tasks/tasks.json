@@ -820,11 +820,62 @@
             "parentTaskId": 18
           }
         ]
+      },
+      {
+        "id": 19,
+        "title": "Implement Figma Hero Design for Desktop",
+        "description": "Create the `HeroDesktop.tsx` component, ensuring it precisely matches the provided Figma design specifications for desktop layouts, including all visual details like typography, colors, and asset placement.",
+        "details": "Create a new component `HeroDesktop.tsx` within the `components/sections/` directory. This component will implement the pixel-perfect desktop version of the Hero section as specified in the Figma design file. The implementation should use Tailwind CSS to precisely control layout, spacing, typography, and colors. All assets (images, icons) from the Figma file should be exported, optimized (e.g., using `next/image`), and integrated. The existing `Hero.tsx` component (from Task #6 and #18) should be refactored to act as a controller, conditionally rendering this new `HeroDesktop` component on large viewports (e.g., `lg` breakpoint and up) and the existing mobile-first layout on smaller screens. This ensures a clean separation between the mobile and desktop implementations.",
+        "testStrategy": "1. Using a browser extension like 'Pixel Perfect' or by overlaying screenshots, compare the rendered `HeroDesktop` component against the Figma design on a large desktop viewport (e.g., 1920px width). Verify that layout, spacing, and element positioning match exactly. 2. Check all typography (font family, size, weight, color, line height) and colors against the Figma specifications. 3. Confirm all graphical assets are rendered correctly, are high-quality, and are positioned accurately. 4. Resize the browser window from a large desktop size down to the `lg` breakpoint (1024px) to ensure the desktop layout remains stable. 5. Resize the browser below the `lg` breakpoint to confirm that the component correctly switches back to the original mobile-first hero layout without any visual glitches.",
+        "status": "done",
+        "dependencies": [
+          6,
+          18
+        ],
+        "priority": "high",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create HeroDesktop component with exact Figma specifications",
+            "description": "Download required assets and create new component matching Figma design exactly with precise dimensions, positioning, typography, and colors",
+            "details": "- Download yellow background SVG and profile image from Figma\n- Create component with 1440x704px dimensions\n- Implement exact positioning and typography from Figma specs\n- Add as first child in page.tsx",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 19
+          },
+          {
+            "id": 2,
+            "title": "Fix yellow background shape display",
+            "description": "Remove white background from image section container to allow yellow fluid background shape to display correctly",
+            "details": "- Identified white background interference issue\n- Removed bg-white class from image section container\n- Yellow shape now displays seamlessly with light background",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 19
+          },
+          {
+            "id": 3,
+            "title": "Position profile picture inside yellow fluid shape with masking",
+            "description": "Reposition profile image to be inside the yellow fluid shape at bottom center and apply CSS masking to crop image according to organic shape boundaries",
+            "details": "- Move profile image inside yellow shape container\n- Position at bottom center of fluid shape\n- Apply CSS mask using yellow shape SVG to crop image\n- Ensure image is bounded by organic shape boundaries\n<info added on 2025-07-02T11:47:10.244Z>\nFixed profile image positioning and masking issues. Replaced simple rounded rectangle mask with actual organic fluid shape path from yellow-bg.svg. Removed rounded-full class to prevent circular cropping. Adjusted positioning to true bottom center (paddingBottom: 60px) and reduced image size to 320x400px for better proportions. Image now follows organic shape boundaries instead of stadium/oval shape.\n</info added on 2025-07-02T11:47:10.244Z>",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 19
+          },
+          {
+            "id": 4,
+            "title": "Replace placeholder with actual profile picture",
+            "description": "Update HeroDesktop component to use the actual profile picture from the project data instead of the Figma placeholder image",
+            "details": "- Identify the actual profile picture path from personalInfo data\n- Replace placeholder image path with actual profile picture\n- Ensure proper image sizing and positioning is maintained",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 19
+          }
+        ]
       }
     ],
     "metadata": {
       "created": "2025-06-26T13:36:45.161Z",
-      "updated": "2025-06-30T19:42:35.715Z",
+      "updated": "2025-07-02T11:56:03.715Z",
       "description": "Tasks for master context"
     }
   }

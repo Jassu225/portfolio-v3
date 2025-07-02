@@ -3,6 +3,31 @@
 *This file is updated for every change made to the project, as per the process defined in `ai/init.md`.*
 
 ---
+[2025-07-02T12:00:30Z] - Removed fixed width (w-[1440px]) from HeroDesktop section and converted to responsive layout using CSS Grid, responsive typography, and flexible image positioning while maintaining the original Figma design integrity. (Task: N/A)
+[2025-07-02T11:52:15Z] - Restructured layout by removing max-width restriction from main container and applying lg:max-w-4xl individually to all sections (Hero, About, Skills, Background, Projects, Contact) while keeping HeroDesktop at full width for optimal design flexibility. (Task: N/A)
+[2025-07-02T11:47:10Z] - Fixed profile image masking to use actual organic fluid shape path instead of simple rounded rectangle, removed circular cropping, and repositioned image to true bottom center of yellow shape for proper organic boundary cropping. (Task: #19.3)
+[2025-07-02T11:35:27Z] - Replaced Figma placeholder image with actual profile picture from personalInfo data, imported personalInfo from data lib, and updated image src and alt attributes to use dynamic values from project data. (Task: #19.4)
+[2025-07-02T11:30:54Z] - Repositioned profile picture inside yellow fluid shape at bottom center and implemented SVG masking to crop image according to organic shape boundaries using inline SVG with foreignObject and mask elements for reliable cross-browser support. (Task: #19.3)
+[2025-07-02T11:23:22Z] - Fixed HeroDesktop component by removing white background from image section container to allow yellow fluid background shape to display correctly without white background interference. (Task: #19.2)
+[2025-07-02T11:13:20Z] - Created new HeroDesktop.tsx component that exactly matches Figma design specifications with precise dimensions (1440x704px), positioning, typography (Nunito, Playfair Display, Roboto), colors (#F9FAFF, #FDC435, #25282B, #828282), and downloaded required assets (yellow background SVG, profile image). Added as first child in page.tsx. (Task: #19.1)
+[2025-07-02T11:07:30Z] - Complete Hero and Navbar redesign to exactly match Figma design with light theme (#F9FAFF), yellow organic background shape extending behind navbar, split-screen layout, correct typography (Comfortaa, Raleway, Playfair Display, Nunito, Roboto), dark text on light background, and proper component positioning matching Figma specs. (Task: N/A). THIS IS REVERTED.
+[2025-07-02T10:52:21Z] - Redesigned Hero section desktop layout to exactly match Figma design with split-screen layout, precise typography (Playfair Display, Nunito, Roboto fonts), yellow accent color (#FDC435), proper spacing and button styling while preserving original mobile view. (Task: N/A). THIS IS REVERTED.
+[2025-07-02T10:40:00Z] - Completely redesigned Hero section to truly match Figma design with organic curved background shape, prominent image positioning, improved button styling, and proper visual hierarchy. Replaced simple gradient with complex organic SVG path, increased image size and prominence, enhanced button styling with proper Figma proportions, and adjusted grid layout for better visual balance. (Task: #23). THIS IS REVERTED.
+
+[2025-07-02T10:32:00Z] - Properly implemented exact Figma Hero design with correct structure, typography hierarchy, header navigation, and curved background decoration while adapting to dark theme. Fixed previous implementation that didn't follow Figma layout specifications. (Task: #22). THIS IS REVERTED.
+
+[2025-07-02T10:30:45Z] - Implemented desktop/tablet Hero section with split-screen layout based on Figma design. Created responsive layout with left content area and right image area for screens 768px+ while maintaining original mobile design. Used dark theme instead of Figma's light theme to match existing website design. (Task: #20). THIS IS REVERTED.
+
+[2025-07-02T10:32:15Z] - Enhanced About section with responsive desktop layout matching new Hero design system. Improved typography and spacing for tablet and desktop screens while preserving mobile layout. (Task: #20). THIS IS REVERTED.
+[2025-07-01T11:44:30Z] - Updated init.md to enforce mandatory Figma design system process and dual change logging requirements. Added step 6 design system modeling requirement for all Figma-based design updates. (Task: #19).
+
+[2025-07-01T11:45:15Z] - Enhanced theme.ts with Figma design system colors, typography, and layout specifications. Added support for light theme, yellow accent color (#FDC435), and specific font families from Figma design. (Task: #19). THIS IS REVERTED.
+
+[2025-07-01T11:46:00Z] - Updated Hero.design.ts and About.design.ts files to support responsive desktop/mobile layouts based on Figma design specifications. Added split-screen layout configuration for Hero section. (Task: #19). THIS IS REVERTED.
+
+[2025-07-01T11:47:30Z] - Implemented desktop split-screen layout for Hero section with left content area and right image area. Added responsive design that maintains mobile layout while implementing Figma desktop design for 1024px+ screens. (Task: #19). THIS IS REVERTED.
+
+[2025-07-01T11:48:45Z] - Updated About section to match new design system with responsive desktop layout. Implemented light theme styling and typography consistent with Figma design specifications. (Task: #19). THIS IS REVERTED.
 [2024-07-31T03:15:20Z] - Refactored lazy loading implementation to use Next.js `next/dynamic` instead of manual React state management, following official Next.js documentation best practices. (Task: N/A)
 [2024-07-31T03:10:45Z] - Implemented lazy loading for Tilted component in ProjectCard to improve performance by only loading animation code when needed on desktop devices. (Task: N/A)
 [2024-07-31T03:05:30Z] - Modified ProjectCard to conditionally use Tilted animation only on desktop (1024px+), improving touch experience on mobile and tablet devices. (Task: N/A)
