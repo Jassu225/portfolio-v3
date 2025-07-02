@@ -12,7 +12,7 @@ const Hero = () => {
             alt={personalInfo.name}
             width={128}
             height={128}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover bg-on-background border-8 border-gray-700 rounded-full"
           />
         </div>
                   <h1 className="text-on-background text-[22px] lg:text-4xl font-bold">

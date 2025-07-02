@@ -1,16 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
 import { personalInfo } from '@/lib/data';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaDownload, FaLinkedin } from 'react-icons/fa';
+
+const heroShapeBg = {link: '/assets/hero-shape-bg.svg', width: 720, height: 629};
 
 const HeroDesktop = () => {
   return (
-    <section className="relative w-full h-[704px] bg-background overflow-hidden">
+    <section className="relative w-full h-screen bg-background overflow-hidden">
       {/* Grid Layout for Split Design */}
       <div className="grid grid-cols-2 h-full">
         {/* Content Section - Left Side */}
-        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24">
-          <div className="flex flex-col gap-3 max-w-lg">
+        <div className="flex flex-col justify-start px-8 lg:px-16 xl:px-24">
+          <div className="flex flex-col gap-3 max-w-lg mt-[15vh]">
             {/* Role Text */}
             <div className="w-full">
               <p className="text-tertiary font-bold text-[20px] leading-[1.364] uppercase">
@@ -54,9 +56,17 @@ const HeroDesktop = () => {
               {/* Buttons */}
               <div className="flex gap-3">
                 {/* Primary Button */}
-                <button className="bg-primary text-on-primary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-primary-container px-6 py-2 cursor-pointer">
-                  Projects
-                </button>
+                <a
+                  href={personalInfo.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                <button className="inline-flex items-center gap-2 bg-primary text-on-primary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-primary-container px-6 py-2 cursor-pointer">
+                    <FaDownload />
+                    Download Resume
+                  </button>
+                </a>
 
                 {/* Secondary Button */}
 
@@ -65,7 +75,7 @@ const HeroDesktop = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className=" inline-flex items-center gap-2 border-2 border-secondary text-secondary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-secondary hover:text-on-secondary px-6 py-2 cursor-pointer">
+                  <button className="inline-flex items-center gap-2 border-2 border-secondary text-secondary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-secondary hover:text-on-secondary px-6 py-2 cursor-pointer">
                     <FaLinkedin />
                     LinkedIn
                   </button>
@@ -77,34 +87,34 @@ const HeroDesktop = () => {
         </div>
 
         {/* Image Section - Right Side */}
-        <div className="relative flex items-center justify-center">
-          {/* Yellow Background SVG */}
-          <div className="absolute inset-0 flex items-center justify-end pr-8">
-            <div className="relative w-full max-w-[777px] h-full max-h-[877px]">
+        <div className="relative flex items-start justify-center align-self-start">
+          {/* Background SVG */}
+          <div className="absolute inset-0 flex items-start justify-end">
+            <div className="relative w-full max-w-[720px] h-full max-h-[629px]">
               <Image
-                src="/assets/hero-shape-bg.svg"
-                alt="Yellow background shape"
-                width={777}
-                height={877}
+                src={heroShapeBg.link}
+                alt="background shape"
+                width={heroShapeBg.width}
+                height={heroShapeBg.height}
                 className="w-full h-full object-contain"
               />
             </div>
           </div>
 
-          {/* Profile Image - Positioned inside yellow shape and masked with organic shape */}
-          <div className="absolute inset-0 flex items-center justify-end pr-8">
-            <div className="relative w-full max-w-[777px] h-full max-h-[877px]">
+          {/* Profile Image - Positioned inside shape and masked with organic shape */}
+          <div className="absolute inset-0 flex items-start justify-end">
+            <div className="relative w-full max-w-[720px] h-full max-h-[629px]">
               <svg
                 width="100%"
                 height="100%"
-                viewBox="0 0 777 877"
+                viewBox={`0 0 ${heroShapeBg.width} ${heroShapeBg.height}`}
                 className="absolute inset-0"
               >
                 <defs>
                   <mask id="organicShapeMask">
-                    {/* Using the actual organic path from yellow-bg.svg */}
+                    {/* Using the actual organic path from hero-shape-bg.svg */}
                     <path
-                      d="M426.755 0.660905C526.01 5.37687 630.416 42.2627 691.019 119.058C747.053 190.064 709.403 290.888 725.408 379.114C738.276 450.044 786.302 512.961 775.404 584.204C763.332 663.132 724.842 738.453 662.532 790.186C597.271 844.368 510.835 889.895 426.755 873.671C345.261 857.947 319.875 754.823 250.249 710.635C174.069 662.287 41.2528 688.785 6.43092 606.913C-27.6816 526.71 83.9568 456.257 106.308 372.209C131.067 279.108 79.6084 166.633 143.094 93.0241C208.865 16.7636 324.689 -4.1886 426.755 0.660905Z"
+                      d="M426.755 -247.339C526.01 -242.623 630.416 -205.737 691.019 -128.942C747.053 -57.9359 709.403 42.8884 725.408 131.114C738.276 202.044 786.302 264.961 775.404 336.204C763.332 415.132 724.842 490.452 662.532 542.186C597.271 596.368 510.835 641.895 426.755 625.671C345.261 609.947 319.875 506.823 250.249 462.635C174.069 414.287 41.2528 440.785 6.43092 358.913C-27.6816 278.71 83.9568 208.257 106.308 124.209C131.067 31.1084 79.6084 -81.3667 143.094 -154.976C208.865 -231.236 324.689 -252.189 426.755 -247.339Z"
                       fill="white"
                     />
                   </mask>
@@ -120,18 +130,18 @@ const HeroDesktop = () => {
                     style={{
                       display: 'flex',
                       alignItems: 'flex-end',
-                      justifyContent: 'center'
+                      justifyContent: 'flex-end'
                     }}
                   >
                     <Image
-                      src={personalInfo.profilePicture}
+                      src={personalInfo.profilePictureDesktop}
                       alt={personalInfo.name}
-                      width={300}
-                      height={749}
+                      width={1000}
+                      height={751}
                       className="object-cover"
                       style={{
-                        maxWidth: '450px',
-                        maxHeight: '1123px'
+                        maxWidth: '2000px',
+                        maxHeight: '1502px'
                       }}
                     />
                   </div>
