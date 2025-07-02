@@ -30,7 +30,7 @@ body {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-[#121417] text-white;
+    @apply bg-[#121212] text-[#E0E0E0];
   }
 }
 
@@ -87,3 +87,15 @@ body {
   height: 1.25rem;
   color: white;
 }
+
+/* Material 3 Dark Theme Colors
+Primary: #3E91FF
+Secondary: #5A8E6F  
+Tertiary: #82B1FF
+Background: #121212
+Surface: #121212
+Surface Variant: #292929
+On Background: #E0E0E0
+On Surface Variant: #CCCCCC
+Outline: #8A8A8A
+*/

@@ -6,7 +6,7 @@ interface SkillTagProps {
 
 const SkillTag: React.FC<SkillTagProps> = ({ skill }) => {
   return (
-    <div className="bg-[#2A2E33] text-[#F5F5F5] text-sm lg:text-base py-1.5 px-4 rounded-full transition-all duration-400 ease-out hover:-translate-y-1 hover:border-cyan-500 hover:text-blue-500 cursor-pointer border border-transparent">
+    <div className="bg-[#292929] text-[#E0E0E0] text-sm lg:text-base py-1.5 px-4 rounded-full transition-all duration-400 ease-out hover:-translate-y-1 hover:border-[#3E91FF] hover:text-[#82B1FF] cursor-pointer border border-transparent">
       {skill}
     </div>
   );

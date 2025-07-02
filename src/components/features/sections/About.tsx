@@ -5,8 +5,8 @@ const About = () => {
   return (
     <section id="about" className="py-5 px-4 scroll-m-16">
       <div className="container mx-auto lg:max-w-4xl">
-        <h2 className="text-3xl font-bold text-white mb-4 lg:mb-8">About</h2>
-        <p className="text-[#9CABBA] text-base lg:text-lg font-normal leading-relaxed lg:leading-loose font-space-grotesk text-justify">
+        <h2 className="text-3xl font-bold text-[#E0E0E0] mb-4 lg:mb-8">About</h2>
+        <p className="text-[#CCCCCC] text-base lg:text-lg font-normal leading-relaxed lg:leading-loose font-space-grotesk text-justify">
           {personalInfo.about}
         </p>
       </div>

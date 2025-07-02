@@ -5,25 +5,87 @@ export const theme = {
   themes: {
     dark: {
       colors: {
-        primary: "#06B6D4", // Cyan-500 - Modern primary brand color for CTAs and main actions
-        accent: "#3B82F6", // Blue-500 - Sophisticated accent for secondary highlights
-        background: "#121417",
-        surface: "#1A1E23", // For cards and other surfaces
-        text: "#FFFFFF",
-        textSecondary: "#9CABBA",
-        textTertiary: "#D1D5DB", // Tailwind's gray-300
+        // Material 3 Color System
+        primary: "#3E91FF",
+        onPrimary: "#003263",
+        primaryContainer: "#005CCB",
+        onPrimaryContainer: "#D0E8FF",
+
+        secondary: "#5A8E6F",
+        onSecondary: "#172A1F",
+        secondaryContainer: "#3F5E46",
+        onSecondaryContainer: "#CCE8D0",
+
+        tertiary: "#82B1FF",
+        onTertiary: "#14304A",
+        tertiaryContainer: "#3B5F8A",
+        onTertiaryContainer: "#DCEEFF",
+
+        error: "#FF5C5C",
+        onError: "#410001",
+        errorContainer: "#93000A",
+        onErrorContainer: "#FFDAD6",
+
+        background: "#121212",
+        onBackground: "#E0E0E0",
+        surface: "#121212",
+        onSurface: "#E0E0E0",
+        surfaceVariant: "#292929",
+        onSurfaceVariant: "#CCCCCC",
+
+        outline: "#8A8A8A",
+        inverseSurface: "#E0E0E0",
+        inverseOnSurface: "#121212",
+        inversePrimary: "#90C2FF",
+        
+        surfaceTint: "#3E91FF",
+        shadow: "#000000",
+        scrim: "#000000",
+
+        // Legacy/Special Colors
         special: "#FDC435", // Yellow special accent for hero section
       },
     },
     light: {
       colors: {
-        primary: "#06B6D4", // Cyan-500 - Consistent primary across themes
-        accent: "#3B82F6", // Blue-500 - Consistent accent across themes
+        // Material 3 Light Theme (reverse mappings)
+        primary: "#005CCB",
+        onPrimary: "#FFFFFF",
+        primaryContainer: "#D0E8FF",
+        onPrimaryContainer: "#003263",
+
+        secondary: "#3F5E46",
+        onSecondary: "#FFFFFF",
+        secondaryContainer: "#CCE8D0",
+        onSecondaryContainer: "#172A1F",
+
+        tertiary: "#3B5F8A",
+        onTertiary: "#FFFFFF",
+        tertiaryContainer: "#DCEEFF",
+        onTertiaryContainer: "#14304A",
+
+        error: "#93000A",
+        onError: "#FFFFFF",
+        errorContainer: "#FFDAD6",
+        onErrorContainer: "#410001",
+
         background: "#FFFFFF",
-        surface: "#F3F4F6", // Tailwind's gray-100
-        text: "#171717",
-        textSecondary: "#6B7280", // Tailwind's gray-500
-        textTertiary: "#9CA3AF", // Tailwind's gray-400
+        onBackground: "#1C1B1F",
+        surface: "#FFFFFF",
+        onSurface: "#1C1B1F",
+        surfaceVariant: "#F3F3F3",
+        onSurfaceVariant: "#49454F",
+
+        outline: "#79747E",
+        inverseSurface: "#313033",
+        inverseOnSurface: "#F4EFF4",
+        inversePrimary: "#3E91FF",
+        
+        surfaceTint: "#005CCB",
+        shadow: "#000000",
+        scrim: "#000000",
+
+        // Legacy/Special Colors
         special: "#FDC435", // Yellow special accent
       },
     }

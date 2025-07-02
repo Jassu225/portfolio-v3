@@ -2,10 +2,10 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#121417] text-center p-4 mt-auto">
-      <div className="container mx-auto text-gray-400">
-        <p>© {new Date().getFullYear()} Jaswanth Sai. All rights reserved.</p>
-      </div>
+    <footer className="bg-[#121212] text-center p-4 mt-auto">
+      <p className="text-[#CCCCCC]">
+        © 2024 Jaswanth Sai Sattenapalli. All rights reserved.
+      </p>
     </footer>
   );
 };

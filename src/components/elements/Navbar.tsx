@@ -16,14 +16,14 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#121417] px-4 py-3">
+    <header className="sticky top-0 z-50 bg-[#121212] px-4 py-3">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-white text-lg font-bold font-space-grotesk">
+        <Link href="/" className="text-[#E0E0E0] text-lg font-bold font-space-grotesk">
           Portfolio
         </Link>
         {/* Hamburger Menu - Mobile */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-[#E0E0E0]">
             <svg
               className="w-6 h-6"
               fill="none"
@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-white transition-colors duration-300 hover:text-cyan-500">
+            <Link key={link.href} href={link.href} className="text-[#E0E0E0] transition-colors duration-300 hover:text-[#3E91FF]">
               {link.label}
             </Link>
           ))}
@@ -59,7 +59,7 @@ const Navbar = () => {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-white block py-2 transition-colors duration-300 hover:text-cyan-500"
+                  className="text-[#E0E0E0] block py-2 transition-colors duration-300 hover:text-[#3E91FF]"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

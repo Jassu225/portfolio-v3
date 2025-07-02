@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   const cardContent = (
     <div className="block h-full group">
-      <div className="rounded-lg overflow-hidden h-full flex flex-col bg-[#1A1E23] border border-transparent group-hover:border-cyan-500 transition-colors duration-300">
+      <div className="rounded-lg overflow-hidden h-full flex flex-col bg-[#292929] border border-transparent group-hover:border-[#3E91FF] transition-colors duration-300">
         <div className="relative h-40 w-full flex-shrink-0">
           <Image
             src={project.imageUrl}
@@ -28,13 +28,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             layout="fill"
             objectFit="cover"
           />
-          <div className="absolute top-2 right-2 bg-cyan-500 text-white text-xs py-1 px-3 rounded-full hover:bg-cyan-600 transition-colors duration-300">
+          <div className="absolute top-2 right-2 bg-[#3E91FF] text-[#003263] text-xs py-1 px-3 rounded-full hover:bg-[#005CCB] transition-colors duration-300">
             View
           </div>
         </div>
         <div className="p-4 flex-grow">
-          <h3 className="text-white font-medium text-base lg:text-lg group-hover:text-blue-500 transition-colors duration-300">{project.title}</h3>
-          <p className="text-[#9CABBA] text-sm lg:text-base mt-2">{project.description}</p>
+          <h3 className="text-[#E0E0E0] font-medium text-base lg:text-lg group-hover:text-[#82B1FF] transition-colors duration-300">{project.title}</h3>
+          <p className="text-[#CCCCCC] text-sm lg:text-base mt-2">{project.description}</p>
         </div>
       </div>
     </div>

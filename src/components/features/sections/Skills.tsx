@@ -6,8 +6,8 @@ const Skills = () => {
   return (
     <section id="skills" className="py-5 px-4 scroll-m-16">
       <div className="container mx-auto lg:max-w-4xl">
-        <h2 className="text-3xl font-bold text-white mb-4 lg:mb-8">Skills</h2>
-        <div className="flex flex-wrap gap-3 lg:gap-4">
+        <h2 className="text-3xl font-bold text-[#E0E0E0] mb-4 lg:mb-8">Skills</h2>
+        <div className="flex flex-wrap gap-2 lg:gap-3">
           {skills.map((skill, index) => (
             <SkillTag key={index} skill={skill.name} />
           ))}
