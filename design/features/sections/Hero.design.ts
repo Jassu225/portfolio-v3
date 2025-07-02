@@ -31,6 +31,6 @@ export const HeroDesign = {
     },
   },
   assets: {
-    profilePicture: '/assets/images/hero/profile.jpg',
+    profilePicture: '/assets/images/hero/profile.png',
   },
 }; 
