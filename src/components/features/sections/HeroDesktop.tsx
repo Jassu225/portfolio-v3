@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { personalInfo } from '@/lib/data';
+import { FaLinkedin } from 'react-icons/fa';
 
 const HeroDesktop = () => {
   return (
@@ -12,8 +13,8 @@ const HeroDesktop = () => {
           <div className="flex flex-col gap-3 max-w-lg">
             {/* Role Text */}
             <div className="w-full">
-              <p className="text-tertiary font-bold text-[20px] leading-[1.364] uppercase font-space-grotesk">
-                UI/UX Designer
+              <p className="text-tertiary font-bold text-[20px] leading-[1.364] uppercase">
+                {personalInfo.title}
               </p>
             </div>
 
@@ -21,31 +22,55 @@ const HeroDesktop = () => {
             <div className="flex flex-col gap-8">
               {/* Title */}
               <div>
-                <h1 className="text-on-background font-bold text-[48px] lg:text-[56px] xl:text-[64px] leading-[1.2] font-space-grotesk">
-                  Hello, my name is Madelyn Torff
+                <h1 className="text-on-background font-bold text-[48px] lg:text-[56px] xl:text-[64px] leading-[1.2]">
+                  Hello, I'm {personalInfo.name}
                 </h1>
               </div>
 
               {/* Description */}
               <div className="flex flex-col gap-3">
                 <div>
-                  <p className="text-on-surface-variant font-normal text-[20px] lg:text-[22px] xl:text-[24px] leading-[1.5] font-space-grotesk">
-                    Short text with details about you, what you do or your professional career. You can add more information on the about page.
-                  </p>
+                  <div className="bg-surface  rounded-lg py-4 font-mono text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.6]">
+                    <div className="text-tertiary">
+                      <span className="text-outline">// </span>
+                      <span className="text-on-surface-variant">Scroll to </span>
+                      <span className="text-secondary">fetch</span>
+                      <span className="text-on-surface-variant"> my </span>
+                      <span className="text-primary-700">experience</span>
+                      <span className="text-on-surface-variant">()</span>
+                    </div>
+                    <div className="text-on-surface-variant">
+                      <span>or </span>
+                      <span className="text-secondary">connect</span>
+                      <span>(</span>
+                      <span>) with me on </span>
+                      <span className="text-primary-700">LinkedIn</span>
+                      <span className="text-outline">;</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* Buttons */}
               <div className="flex gap-3">
                 {/* Primary Button */}
-                <button className="bg-primary text-on-primary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-primary-container px-6 py-2 font-space-grotesk">
+                <button className="bg-primary text-on-primary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-primary-container px-6 py-2 cursor-pointer">
                   Projects
                 </button>
 
                 {/* Secondary Button */}
-                <button className="border-2 border-secondary text-secondary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-secondary hover:text-on-secondary px-6 py-2 font-space-grotesk">
-                  LinkedIn
-                </button>
+
+                <a
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className=" inline-flex items-center gap-2 border-2 border-secondary text-secondary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-secondary hover:text-on-secondary px-6 py-2 cursor-pointer">
+                    <FaLinkedin />
+                    LinkedIn
+                  </button>
+                </a>
+
               </div>
             </div>
           </div>
@@ -69,10 +94,10 @@ const HeroDesktop = () => {
           {/* Profile Image - Positioned inside yellow shape and masked with organic shape */}
           <div className="absolute inset-0 flex items-center justify-end pr-8">
             <div className="relative w-full max-w-[777px] h-full max-h-[877px]">
-              <svg 
-                width="100%" 
-                height="100%" 
-                viewBox="0 0 777 877" 
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 777 877"
                 className="absolute inset-0"
               >
                 <defs>
@@ -84,13 +109,13 @@ const HeroDesktop = () => {
                     />
                   </mask>
                 </defs>
-                <foreignObject 
-                  width="100%" 
-                  height="100%" 
+                <foreignObject
+                  width="100%"
+                  height="100%"
                   mask="url(#organicShapeMask)"
                 >
                   {/* Profile image positioned at bottom center of the organic shape */}
-                  <div 
+                  <div
                     className="relative w-full h-full"
                     style={{
                       display: 'flex',

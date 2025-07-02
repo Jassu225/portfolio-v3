@@ -5,9 +5,25 @@ export const theme = {
   themes: {
     dark: {
       colors: {
+        // Primary Color Tones
+        primary0: "#000000",
+        primary100: "#051426", 
+        primary200: "#0A284D",
+        primary300: "#103D73",
+        primary400: "#15519A",
+        primary500: "#1A65C0",
+        primary600: "#4884CD",
+        primary700: "#76A3D9",
+        primary800: "#A3C1E6",
+        primary900: "#D1E0F2",
+        primary950: "#E8F0F9",
+        primary980: "#F6F9FC",
+        primary990: "#FAFCFE",
+        primary1000: "#FFFFFF",
+
         // Material 3 Color System
-        primary: "#3E91FF",
-        onPrimary: "#003263",
+        primary: "#1A65C0",
+        onPrimary: "#FFFFFF",
         primaryContainer: "#005CCB",
         onPrimaryContainer: "#D0E8FF",
 
@@ -38,16 +54,29 @@ export const theme = {
         inverseOnSurface: "#121212",
         inversePrimary: "#90C2FF",
         
-        surfaceTint: "#3E91FF",
+        surfaceTint: "#1A65C0",
         shadow: "#000000",
         scrim: "#000000",
-
-        // Legacy/Special Colors
-        special: "#FDC435", // Yellow special accent for hero section
       },
     },
     light: {
       colors: {
+        // Primary Color Tones  
+        primary0: "#000000",
+        primary100: "#051426",
+        primary200: "#0A284D", 
+        primary300: "#103D73",
+        primary400: "#15519A",
+        primary500: "#1A65C0",
+        primary600: "#4884CD",
+        primary700: "#76A3D9",
+        primary800: "#A3C1E6",
+        primary900: "#D1E0F2",
+        primary950: "#E8F0F9",
+        primary980: "#F6F9FC",
+        primary990: "#FAFCFE",
+        primary1000: "#FFFFFF",
+
         // Material 3 Light Theme (reverse mappings)
         primary: "#005CCB",
         onPrimary: "#FFFFFF",
@@ -79,14 +108,12 @@ export const theme = {
         outline: "#79747E",
         inverseSurface: "#313033",
         inverseOnSurface: "#F4EFF4",
-        inversePrimary: "#3E91FF",
+        inversePrimary: "#90C2FF",
         
         surfaceTint: "#005CCB",
         shadow: "#000000",
         scrim: "#000000",
 
-        // Legacy/Special Colors
-        special: "#FDC435", // Yellow special accent
       },
     }
   },

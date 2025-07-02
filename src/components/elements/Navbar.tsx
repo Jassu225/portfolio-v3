@@ -3,22 +3,22 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
+const navLinks = [
+  { href: '#hero', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { href: '#hero', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
-  ];
 
   return (
     <header className="sticky top-0 z-50 bg-background px-4 py-3">
       <div className="container mx-auto flex justify-between items-center">
-                  <Link href="/" className="text-on-background text-lg font-bold font-space-grotesk">
+                  <Link href="/" className="text-on-background text-lg font-bold">
           Portfolio
         </Link>
         {/* Hamburger Menu - Mobile */}

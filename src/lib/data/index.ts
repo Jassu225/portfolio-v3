@@ -87,5 +87,7 @@ export const personalInfo = {
   title: 'Front-end oriented full-stack developer',
   location: 'Bengaluru, Karnataka, India',
   about: `I'm an experienced Software Engineer with 7+ years in web development using modern frameworks—Next.js, React, Redux, Vue.js, and jQuery. Skilled in mobile app development (Flutter) and backend API design with Go (Golang) as well. I've led end‑to‑end projects across the full tech stack, delivering seamless user experiences. I'm passionate about continuous learning and innovation. Outside work, I enjoy gaming, Netflix, and solving web challenges.`,
-  profilePicture: '/assets/images/hero/profile.png', // Updated to PNG format
+  profilePicture: '/assets/images/hero/profile.png',
+  email: 'jaswanthsaisattenapalli@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/jaswanth-sai-sattenapalli-b74766128/',
 }; 

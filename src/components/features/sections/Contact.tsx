@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { personalInfo } from '@/lib/data';
 
 const Contact = () => {
   return (
@@ -13,14 +14,14 @@ const Contact = () => {
         </p>
         <div className="flex justify-start gap-4">
           <a 
-            href="mailto:jaswanthsaisattenapalli@gmail.com"
+            href={`mailto:${personalInfo.email}`}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary font-semibold hover:bg-primary-container transition-colors duration-300"
           >
             <FaEnvelope />
             Email
           </a>
           <a 
-            href="https://www.linkedin.com/in/jaswanth-sai-sattenapalli-b74766128/"
+            href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-on-secondary transition-colors duration-300"
