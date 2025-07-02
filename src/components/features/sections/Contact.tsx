@@ -23,7 +23,7 @@ const Contact = () => {
             href="https://www.linkedin.com/in/jaswanth-sai-sattenapalli-b74766128/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#5A8E6F] text-[#5A8E6F] font-semibold hover:bg-[#5A8E6F] hover:text-[#172A1F] transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#5A7FBA] text-[#5A7FBA] font-semibold hover:bg-[#5A7FBA] hover:text-[#1B2A4A] transition-colors duration-300"
           >
             <FaLinkedin />
             LinkedIn

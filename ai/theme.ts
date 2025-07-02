@@ -5,16 +5,16 @@ export const theme = {
   themes: {
     dark: {
       colors: {
-        // Material 3 Color System
+        // Material 3 Color System - Updated Comprehensive Scheme
         primary: "#3E91FF",
         onPrimary: "#003263",
         primaryContainer: "#005CCB",
         onPrimaryContainer: "#D0E8FF",
 
-        secondary: "#5A8E6F",
-        onSecondary: "#172A1F",
-        secondaryContainer: "#3F5E46",
-        onSecondaryContainer: "#CCE8D0",
+        secondary: "#5A7FBA",
+        onSecondary: "#1B2A4A",
+        secondaryContainer: "#2C4A80",
+        onSecondaryContainer: "#D3E0F9",
 
         tertiary: "#82B1FF",
         onTertiary: "#14304A",
@@ -48,16 +48,16 @@ export const theme = {
     },
     light: {
       colors: {
-        // Material 3 Light Theme (reverse mappings)
+        // Material 3 Light Theme - Proper inverse mappings
         primary: "#005CCB",
         onPrimary: "#FFFFFF",
         primaryContainer: "#D0E8FF",
         onPrimaryContainer: "#003263",
 
-        secondary: "#3F5E46",
+        secondary: "#2C4A80",
         onSecondary: "#FFFFFF",
-        secondaryContainer: "#CCE8D0",
-        onSecondaryContainer: "#172A1F",
+        secondaryContainer: "#D3E0F9",
+        onSecondaryContainer: "#1B2A4A",
 
         tertiary: "#3B5F8A",
         onTertiary: "#FFFFFF",

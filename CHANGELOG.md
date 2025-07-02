@@ -3,6 +3,7 @@
 *This file is updated for every change made to the project, as per the process defined in `ai/init.md`.*
 
 ---
+[2025-01-27T22:45:00Z] - **MAJOR**: Updated to enhanced Material 3 color scheme with improved color harmony - shifted secondary color from green (#5A8E6F) to blue (#5A7FBA) for better cohesion with primary blue, creating a more harmonious blue-toned color palette throughout portfolio. Updated theme.ts with comprehensive Material 3 color roles including containers and "on" color variants, and updated HeroDesktop and Contact components' LinkedIn buttons to use new secondary blue colors for consistent brand experience. (Task: N/A)
 [2025-07-02T12:30:00Z] - Implemented comprehensive Material Design 3 color scheme across entire portfolio: updated theme.ts with complete Material 3 color system (Primary: #3E91FF, Secondary: #5A8E6F, Tertiary: #82B1FF, Background: #121212, Surface: #292929), updated all components including Navbar, ExperienceItem, Contact, ProjectCard, SkillTag, HeroDesktop, Layout, sections (About, Hero, Background, Skills, Projects), Footer, and globals.css to use semantic Material 3 colors for modern, accessible, and cohesive design system with proper color tokens for light and dark themes. (Task: N/A)
 [2025-07-02T12:25:30Z] - Updated profile picture reference from profile.jpg to profile.png in personalInfo data and Hero design configuration for improved image quality and format consistency. (Task: N/A)
 [2025-07-02T12:22:15Z] - Implemented new color scheme with cyan-500 (#06B6D4) as primary color and blue-500 (#3B82F6) as accent color across entire portfolio: updated Navbar hovers, ExperienceItem buttons, Contact section with cyan-500 Email button and blue-500 LinkedIn button, ProjectCard with cyan-500 primary elements and blue-500 title accents, SkillTag hover effects, HeroDesktop LinkedIn button, and theme configuration for modern, distinctive, and sophisticated monochromatic color harmony. (Task: N/A)
@@ -92,3 +93,13 @@
 [2024-07-31T00:03:00Z] - Implemented core layout with Navbar and Footer components. (Task: #2, #3, #4)
 [2024-07-31T00:02:00Z] - Set up project with Next.js, TypeScript, and Tailwind CSS. (Task: #1)
 [2024-07-31T00:01:00Z] - Initialized project repository and `taskmaster-ai` for project management. (Task: N/A)
+
+## [Unreleased]
+
+### Changed
+- **MAJOR**: Updated to comprehensive Material 3 color scheme with enhanced color role system
+  - Secondary color shifted from green (#5A8E6F) to blue (#5A7FBA) for better color harmony
+  - Now using full Material 3 color specification including container colors and proper "on" color variants
+  - Creates more cohesive blue-toned color palette throughout the portfolio
+  - Updated HeroDesktop and Contact components' LinkedIn buttons to use new secondary blue colors
+  - Enhanced theme.ts with complete Material 3 color role mappings for both light and dark themes

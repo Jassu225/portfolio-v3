@@ -43,7 +43,7 @@ const HeroDesktop = () => {
                 </button>
 
                 {/* Secondary Button */}
-                <button className="border-2 border-[#5A8E6F] text-[#5A8E6F] font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-[#5A8E6F] hover:text-[#172A1F] px-6 py-2 font-space-grotesk">
+                <button className="border-2 border-[#5A7FBA] text-[#5A7FBA] font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-[#5A7FBA] hover:text-[#1B2A4A] px-6 py-2 font-space-grotesk">
                   LinkedIn
                 </button>
               </div>
