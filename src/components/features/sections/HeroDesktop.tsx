@@ -4,7 +4,7 @@ import { personalInfo } from '@/lib/data';
 
 const HeroDesktop = () => {
   return (
-    <section className="relative w-full h-[704px] bg-[#121212] overflow-hidden">
+    <section className="relative w-full h-[704px] bg-background overflow-hidden">
       {/* Grid Layout for Split Design */}
       <div className="grid grid-cols-2 h-full">
         {/* Content Section - Left Side */}
@@ -12,7 +12,7 @@ const HeroDesktop = () => {
           <div className="flex flex-col gap-3 max-w-lg">
             {/* Role Text */}
             <div className="w-full">
-              <p className="text-[#82B1FF] font-bold text-[20px] leading-[1.364] uppercase font-space-grotesk">
+              <p className="text-tertiary font-bold text-[20px] leading-[1.364] uppercase font-space-grotesk">
                 UI/UX Designer
               </p>
             </div>
@@ -21,7 +21,7 @@ const HeroDesktop = () => {
             <div className="flex flex-col gap-8">
               {/* Title */}
               <div>
-                <h1 className="text-[#E0E0E0] font-bold text-[48px] lg:text-[56px] xl:text-[64px] leading-[1.2] font-space-grotesk">
+                <h1 className="text-on-background font-bold text-[48px] lg:text-[56px] xl:text-[64px] leading-[1.2] font-space-grotesk">
                   Hello, my name is Madelyn Torff
                 </h1>
               </div>
@@ -29,7 +29,7 @@ const HeroDesktop = () => {
               {/* Description */}
               <div className="flex flex-col gap-3">
                 <div>
-                  <p className="text-[#CCCCCC] font-normal text-[20px] lg:text-[22px] xl:text-[24px] leading-[1.5] font-space-grotesk">
+                  <p className="text-on-surface-variant font-normal text-[20px] lg:text-[22px] xl:text-[24px] leading-[1.5] font-space-grotesk">
                     Short text with details about you, what you do or your professional career. You can add more information on the about page.
                   </p>
                 </div>
@@ -38,12 +38,12 @@ const HeroDesktop = () => {
               {/* Buttons */}
               <div className="flex gap-3">
                 {/* Primary Button */}
-                <button className="bg-[#3E91FF] text-[#003263] font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-[#005CCB] px-6 py-2 font-space-grotesk">
+                <button className="bg-primary text-on-primary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-primary-container px-6 py-2 font-space-grotesk">
                   Projects
                 </button>
 
                 {/* Secondary Button */}
-                <button className="border-2 border-[#5A7FBA] text-[#5A7FBA] font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-[#5A7FBA] hover:text-[#1B2A4A] px-6 py-2 font-space-grotesk">
+                <button className="border-2 border-secondary text-secondary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-secondary hover:text-on-secondary px-6 py-2 font-space-grotesk">
                   LinkedIn
                 </button>
               </div>

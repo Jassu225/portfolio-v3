@@ -5,8 +5,48 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
+@theme {
+  /* Material 3 Color System Variables */
+  --color-primary: #3E91FF;
+  --color-on-primary: #003263;
+  --color-primary-container: #005CCB;
+  --color-on-primary-container: #D0E8FF;
+
+  --color-secondary: #7C8DB5;
+  --color-on-secondary: #1C2433;
+  --color-secondary-container: #405072;
+  --color-on-secondary-container: #DDE3F7;
+
+  --color-tertiary: #82B1FF;
+  --color-on-tertiary: #14304A;
+  --color-tertiary-container: #3B5F8A;
+  --color-on-tertiary-container: #DCEEFF;
+
+  --color-error: #FF5C5C;
+  --color-on-error: #410001;
+  --color-error-container: #93000A;
+  --color-on-error-container: #FFDAD6;
+
+  --color-background: #121212;
+  --color-on-background: #E0E0E0;
+  --color-surface: #121212;
+  --color-on-surface: #E0E0E0;
+  --color-surface-variant: #292929;
+  --color-on-surface-variant: #CCCCCC;
+
+  --color-outline: #8A8A8A;
+  --color-inverse-surface: #E0E0E0;
+  --color-inverse-on-surface: #121212;
+  --color-inverse-primary: #90C2FF;
+
+  --color-surface-tint: #3E91FF;
+  --color-shadow: #000000;
+  --color-scrim: #000000;
+
+  /* Legacy/Special Colors */
+  --color-special: #FDC435;
+
+  /* Other theme variables */
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -30,7 +70,7 @@ body {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-[#121212] text-[#E0E0E0];
+    @apply bg-background text-on-background;
   }
 }
 
@@ -90,7 +130,7 @@ body {
 
 /* Material 3 Dark Theme Colors
 Primary: #3E91FF
-Secondary: #5A8E6F  
+Secondary: #7C8DB5  
 Tertiary: #82B1FF
 Background: #121212
 Surface: #121212

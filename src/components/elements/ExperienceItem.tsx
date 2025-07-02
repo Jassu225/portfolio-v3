@@ -24,14 +24,14 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, isLast }) =
             className="w-full h-full"
           />
         </div>
-        {!isLast && <div className="flex-grow w-px bg-[#8A8A8A]"></div>}
+        {!isLast && <div className="flex-grow w-px bg-outline"></div>}
       </div>
       <div className="pb-6">
-        <h3 className="text-[#E0E0E0] font-medium text-base lg:text-lg">{experience.role}</h3>
-        <p className="text-[#CCCCCC] text-base lg:text-lg">
+        <h3 className="text-on-background font-medium text-base lg:text-lg">{experience.role}</h3>
+        <p className="text-on-surface-variant text-base lg:text-lg">
           {experience.company} | {experience.duration}
         </p>
-        <ul className="list-disc text-[#CCCCCC] text-sm lg:text-base mt-2 space-y-1 pl-4">
+        <ul className="list-disc text-on-surface-variant text-sm lg:text-base mt-2 space-y-1 pl-4">
           {(isExpanded ? experience.description : experience.description.slice(0, 1)).map(
             (item, index) => (
               <li key={index} className="text-justify">
@@ -43,7 +43,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, isLast }) =
         {isExpandable && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-[#3E91FF] hover:text-[#82B1FF] text-sm lg:text-base mt-2 cursor-pointer transition-colors"
+            className="text-primary hover:text-tertiary text-sm lg:text-base mt-2 cursor-pointer transition-colors"
           >
             {isExpanded ? 'See less...' : 'See more...'}
           </button>

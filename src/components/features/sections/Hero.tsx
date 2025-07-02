@@ -15,13 +15,13 @@ const Hero = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <h1 className="text-[#E0E0E0] text-[22px] lg:text-4xl font-bold font-space-grotesk">
+                  <h1 className="text-on-background text-[22px] lg:text-4xl font-bold font-space-grotesk">
           {personalInfo.name}
         </h1>
-        <p className="text-[#CCCCCC] text-base lg:text-lg font-normal font-space-grotesk mt-2">
+                  <p className="text-on-surface-variant text-base lg:text-lg font-normal font-space-grotesk mt-2">
           {personalInfo.title}
         </p>
-        <p className="text-[#CCCCCC] text-base lg:text-lg font-normal font-space-grotesk">
+                  <p className="text-on-surface-variant text-base lg:text-lg font-normal font-space-grotesk">
           {personalInfo.location}
         </p>
       </div>
