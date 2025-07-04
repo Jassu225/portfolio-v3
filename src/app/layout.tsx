@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     siteName: `${personalInfo.name} - Portfolio`,
     images: [
       {
-        url: `${siteUrl}${personalInfo.profilePictureDesktop}`,
+        url: `${siteUrl}${personalInfo.profilePictureSeo}`,
         width: 1200,
         height: 630,
         alt: `${personalInfo.name} - ${personalInfo.title}`,
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${personalInfo.name} | ${personalInfo.title}`,
     description: personalInfo.shortDescription,
-    images: [`${siteUrl}${personalInfo.profilePictureDesktop}`],
+    images: [`${siteUrl}${personalInfo.profilePictureSeo}`],
     creator: '@jassu225',
   },
   alternates: {
@@ -97,6 +97,7 @@ const jsonLd = {
   description: personalInfo.shortDescription,
   url: siteUrl,
   email: personalInfo.email,
+  image: `${siteUrl}${personalInfo.profilePictureSeo}`,
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Bengaluru',

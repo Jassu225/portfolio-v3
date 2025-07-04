@@ -8,7 +8,7 @@ export const generateSEOData = () => {
     title: `${personalInfo.name} | ${personalInfo.title}`,
     description: personalInfo.shortDescription,
     url: siteUrl,
-    image: `${siteUrl}${personalInfo.profilePictureDesktop}`,
+    image: `${siteUrl}${personalInfo.profilePictureSeo}`,
   };
 };
 
@@ -21,7 +21,7 @@ export const generateStructuredData = () => {
     description: personalInfo.shortDescription,
     url: siteUrl,
     email: personalInfo.email,
-    image: `${siteUrl}${personalInfo.profilePictureDesktop}`,
+    image: `${siteUrl}${personalInfo.profilePictureSeo}`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Bengaluru',

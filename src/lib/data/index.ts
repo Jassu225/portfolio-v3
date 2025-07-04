@@ -1,4 +1,4 @@
-import { Skill, Experience, Project } from './types';
+import type { Experience, Project, Skill } from './types';
 
 export const skills: Skill[] = [
   { name: 'React' },
@@ -9,7 +9,6 @@ export const skills: Skill[] = [
   { name: 'Dart' },
   { name: 'Flutter' },
   { name: 'Node.js' },
-  
 ];
 
 export const experiences: Experience[] = [
@@ -31,7 +30,7 @@ export const experiences: Experience[] = [
     duration: 'Apr 2020 – Nov 2021',
     description: [
       'Developed and maintained the Web Planner feature, using IndexedDb and Web Workers for initialization and to ensure real-time data updates.',
-      'Took the initiative to cleanup and standardize the website\'s color theme, collaborating with design and product teams across multiple pods.',
+      "Took the initiative to cleanup and standardize the website's color theme, collaborating with design and product teams across multiple pods.",
       'Integrated Strapi, a CMS, which powers static content delivery and dynamic marketing page templates across the web platform.',
     ],
   },
@@ -58,13 +57,15 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     title: 'Photo Sphere',
-    description: 'Turn your memories into a mesmerizing 3D globe, right in your browser.',
+    description:
+      'Turn your memories into a mesmerizing 3D globe, right in your browser.',
     imageUrl: '/assets/images/projects/photo-sphere-home.png',
     link: 'https://photo-sphere.web.app/',
   },
   {
     title: 'Kanban Board',
-    description: 'A project management tool to track tasks using local storage.',
+    description:
+      'A project management tool to track tasks using local storage.',
     imageUrl: '/assets/images/projects/kanban-board-home.jpeg',
     link: 'https://kanban-slate.web.app/',
   },
@@ -76,7 +77,8 @@ export const projects: Project[] = [
   },
   {
     title: 'React Virtual Scroll List',
-    description: 'A virtual scroll list implementation for efficiently rendering large datasets in React.',
+    description:
+      'A virtual scroll list implementation for efficiently rendering large datasets in React.',
     imageUrl: '/assets/images/projects/react-virtual-scroll-list.jpeg',
     link: 'https://virtual-scroll-list.web.app/',
   },
@@ -90,9 +92,10 @@ export const personalInfo = {
   shortDescription: `I'm a senior full-stack engineer, passionate about building scalable products from the ground up. With hands-on expertise in Next.js, Go, and Flutter, I take full ownership of projects—architecting entire systems to solve complex, real-world problems.`,
   profilePictureDesktop: '/assets/images/hero/profile.png',
   profilePicture: '/assets/images/hero/profile-mobile.png',
+  profilePictureSeo: '/assets/images/seo/Jaswanth-Sai.jpg',
   email: 'jaswanthsaisattenapalli@gmail.com',
   linkedin: 'https://www.linkedin.com/in/jaswanth-sai-sattenapalli-b74766128/',
   github: 'https://github.com/jassu225',
   twitter: 'https://x.com/jassu225',
   resume: '/assets/files/hero/Jaswanth-Sai-resume.pdf',
-}; 
+};

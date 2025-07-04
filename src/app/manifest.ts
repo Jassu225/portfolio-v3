@@ -19,14 +19,14 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/x-icon',
       },
       {
-        src: personalInfo.profilePictureDesktop,
+        src: personalInfo.profilePictureSeo,
         sizes: '192x192',
-        type: 'image/png',
+        type: 'image/jpeg',
       },
       {
-        src: personalInfo.profilePictureDesktop,
+        src: personalInfo.profilePictureSeo,
         sizes: '512x512',
-        type: 'image/png',
+        type: 'image/jpeg',
       },
     ],
     categories: ['portfolio', 'developer', 'technology'],
