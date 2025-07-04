@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
 import Image from 'next/image';
-import { personalInfo } from '@/lib/data';
+import React from 'react';
 import { FaDownload, FaLinkedin } from 'react-icons/fa';
+import { personalInfo } from '@/lib/data';
 import useMediaQuery from '@/lib/hooks/useMediaQuery';
 
 const heroShapeBg = {
@@ -46,7 +46,11 @@ const HeroDesktop = () => {
               {/* Title */}
               <div>
                 <h1 className="text-on-background font-bold text-3xl md:text-5xl lg:text-[56px] xl:text-[64px] leading-[1.2]">
-                  Hello, I&apos;m {personalInfo.name}
+                  Hello, I&apos;m {personalInfo.firstName}
+                  <span className="hidden sm:inline">
+                    {' '}
+                    {personalInfo.lastName}
+                  </span>
                 </h1>
               </div>
 
@@ -84,9 +88,12 @@ const HeroDesktop = () => {
           rel="noopener noreferrer"
           download
         >
-          <button className="inline-flex items-center gap-2 bg-primary border-2 border-primary transition-colors hover:border-primary-container hover:bg-primary-container  text-on-primary font-medium text-[18px] leading-[1.5] rounded-lg px-6 py-2 cursor-pointer">
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 bg-primary border-2 border-primary transition-colors hover:border-primary-container hover:bg-primary-container  text-on-primary font-medium text-[18px] leading-[1.5] rounded-lg px-6 py-2 cursor-pointer"
+          >
             <FaDownload />
-            {!isMobile && "Download"} Resume
+            {!isMobile && 'Download'} Resume
           </button>
         </a>
 
@@ -97,7 +104,10 @@ const HeroDesktop = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="inline-flex items-center gap-2 border-2 border-secondary text-secondary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-secondary hover:text-on-secondary px-6 py-2 cursor-pointer">
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 border-2 border-secondary text-secondary font-medium text-[18px] leading-[1.5] rounded-lg transition-colors hover:bg-secondary hover:text-on-secondary px-6 py-2 cursor-pointer"
+          >
             <FaLinkedin />
             LinkedIn
           </button>
@@ -107,4 +117,4 @@ const HeroDesktop = () => {
   );
 };
 
-export default HeroDesktop; 
+export default HeroDesktop;

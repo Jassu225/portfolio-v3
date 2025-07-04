@@ -86,6 +86,8 @@ export const projects: Project[] = [
 
 export const personalInfo = {
   name: 'Jaswanth Sai Sattenapalli',
+  firstName: 'Jaswanth Sai',
+  lastName: 'Sattenapalli',
   title: 'Front-end oriented full-stack developer',
   location: 'Bengaluru, Karnataka, India',
   about: `I'm an experienced Software Engineer with 7+ years in web development using modern frameworks—Next.js, React, Redux, Vue.js, and jQuery. Skilled in mobile app development (Flutter) and backend API design with Go (Golang) as well. I've led end‑to‑end projects across the full tech stack, delivering seamless user experiences. I'm passionate about continuous learning and innovation. Outside work, I enjoy gaming, Netflix, and solving web challenges.`,
