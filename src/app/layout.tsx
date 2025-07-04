@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Jaswanth Sai Sattenapalli | Front-end oriented full-stack developer",
-  description: "Portfolio of Jaswanth Sai Sattenapalli, a full-stack developer based in Bengaluru, India.",
+  description: "I'm a senior full-stack engineer, passionate about building scalable products from the ground up. With hands-on expertise in Next.js, Go, and Flutter, I take full ownership of projects—architecting entire systems to solve complex, real-world problems.",
 };
 
 export default function RootLayout({
