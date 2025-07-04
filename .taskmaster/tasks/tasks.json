@@ -912,11 +912,24 @@
         ],
         "priority": "high",
         "subtasks": []
+      },
+      {
+        "id": 23,
+        "title": "Refactor ProjectCard Image to Use Next.js `fill` Prop",
+        "description": "Update the `next/image` component within `ProjectCard.tsx` to use the modern `fill` prop instead of the legacy `layout` and `objectFit` props. This change will improve image handling and align with current Next.js best practices.",
+        "details": "Locate the `ProjectCard.tsx` component and find the `next/image` instance used for the project's thumbnail. The current implementation likely uses props such as `layout=\"responsive\"` and `objectFit=\"cover\"`. To refactor, first remove both the `layout` and `objectFit` props. Add the `fill` boolean prop to the `Image` component. For the `fill` prop to work correctly, the immediate parent element of the `Image` component must have its position set to relative; add the `relative` class to this parent `div`. Finally, to replicate the previous visual behavior, add the `object-cover` class to the `className` of the `Image` component itself.",
+        "testStrategy": "1. Run the application and navigate to the 'Projects' section. 2. Visually inspect the project cards to ensure the images still correctly fill their designated space without distortion or breaking the card layout. 3. Use browser developer tools to inspect one of the project card images. 4. Verify that the parent `div` of the `<img>` tag has `position: relative`. 5. Confirm the `<img>` tag itself has classes/styles corresponding to `object-fit: cover` and `position: absolute` (which is the behavior of the `fill` prop). 6. Resize the browser window to check mobile and desktop views, ensuring the image maintains its appearance across different breakpoints.",
+        "status": "done",
+        "dependencies": [
+          18
+        ],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
       "created": "2025-06-26T13:36:45.161Z",
-      "updated": "2025-07-04T17:22:22.212Z",
+      "updated": "2025-07-04T17:30:47.665Z",
       "description": "Tasks for master context"
     }
   }
