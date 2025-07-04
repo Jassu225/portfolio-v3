@@ -19,7 +19,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 bg-background px-4 py-3">
       <div className="container mx-auto flex justify-between items-center">
                   <Link href="/" className="text-on-background text-lg font-bold">
-          Portfolio
+          Jaswanth Sai Sattenapalli
         </Link>
         {/* Hamburger Menu - Mobile */}
         <div className="md:hidden">

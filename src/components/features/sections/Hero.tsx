@@ -18,15 +18,7 @@ const HeroDesktop = () => {
       {/* Grid Layout for Split Design */}
       <div className="sm:grid sm:grid-cols-2 sm:h-full">
         {/* Image Section - Right Side */}
-        {isMobile ? <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden">
-          <Image
-            src={personalInfo.profilePicture}
-            alt={personalInfo.name}
-            width={128}
-            height={128}
-            className="w-full h-full object-cover bg-on-background border-9 border-primary rounded-full"
-          />
-        </div> : <div className="sm:order-2 relative flex items-start justify-end align-self-start">
+        <div className="max-w-[300px] ml-auto sm:max-w-[unset] sm:order-2 relative flex items-start justify-end align-self-start">
           <div className="inset-0 flex items-start justify-end">
             <div className="relative w-full h-full">
               <Image
@@ -38,9 +30,9 @@ const HeroDesktop = () => {
               />
             </div>
           </div>
-        </div>}
+        </div>
         {/* Content Section - Left Side */}
-        <div className="mt-10 sm:order-1 flex flex-col justify-center text-center sm:text-left px-8 lg:px-16 xl:px-24">
+        <div className="mt-10 sm:order-1 flex flex-col justify-center text-center sm:text-left px-4 sm:px-8 lg:px-16 xl:px-24">
           <div className="flex flex-col gap-3 max-w-lg">
             {/* Role Text */}
             <div className="w-full">
