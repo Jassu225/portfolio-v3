@@ -871,11 +871,39 @@
             "parentTaskId": 19
           }
         ]
+      },
+      {
+        "id": 20,
+        "title": "Implement Comprehensive SEO and Metadata",
+        "description": "Implement a full suite of SEO features, including dynamic meta tags for social sharing (Open Graph, Twitter), structured data (JSON-LD), a sitemap.xml, robots.txt, and a web app manifest to improve search engine visibility and user engagement.",
+        "details": "1. **Root Metadata in `layout.tsx`**: Utilize the Next.js App Router's static metadata feature. In `app/layout.tsx`, export a `metadata` object to define site-wide defaults for `title` (using a template), `description`, and `metadataBase` to set the canonical URL. Link the web app manifest here.\n2. **Dynamic Meta Tags & Social Cards**: Implement Open Graph (`og:`) and Twitter (`twitter:`) tags for rich social media previews. Define default tags in the root layout and ensure they can be overridden on a per-page basis using `generateMetadata` for future expansion. Include `title`, `description`, `image`, and `card type`.\n3. **Structured Data (JSON-LD)**: In `app/layout.tsx`, add a `<script type=\"application/ld+json\">` to the `head`. The script should contain a JSON-LD object for a `ProfilePage` or `Person` schema, including name, URL, and social media profiles. Consider creating a utility function in `lib/seo.ts` to generate this JSON.\n4. **Sitemap (`sitemap.xml`)**: Create an `app/sitemap.ts` file. This file should export a default function that returns an array of URLs for the site's main pages and sections (e.g., '/', '/#about', '/#projects'). Next.js will automatically serve this at the `/sitemap.xml` route.\n5. **Robots.txt**: Create an `app/robots.ts` file. Export a default function that returns the rules for web crawlers. It should allow all user agents (`User-Agent: *`, `Allow: /`) and provide the absolute URL to the sitemap.\n6. **Web App Manifest**: Create a `manifest.json` file in the `public/` directory. Define properties like `name`, `short_name`, `start_url`, `display`, `background_color`, `theme_color`, and provide icons of various sizes. Ensure it is linked correctly from the root layout.",
+        "testStrategy": "1. **Meta Tag Validation**: Use browser developer tools to inspect the `<head>` of the home page. Verify the `<title>`, `<meta name=\"description\">`, Open Graph (`og:*`), and Twitter (`twitter:*`) tags are present with correct content. Use online tools like the Facebook Sharing Debugger and Twitter Card Validator to test social sharing previews.\n2. **Structured Data Validation**: Copy the content of the JSON-LD script from the page source and paste it into Google's Rich Results Test tool. Confirm there are no errors and the data is parsed correctly.\n3. **Sitemap Access**: Navigate to `/sitemap.xml` in the browser. Verify that a valid XML file is served and that it contains the correct URLs for the main sections of the portfolio.\n4. **Robots.txt Access**: Navigate to `/robots.txt`. Verify the content correctly allows crawlers and points to the sitemap URL.\n5. **Manifest Verification**: In Chrome DevTools, go to the 'Application' tab and select 'Manifest' from the sidebar. Verify that the manifest is detected and all properties (name, icons, colors) are loaded correctly.",
+        "status": "done",
+        "dependencies": [
+          2,
+          3,
+          17
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 21,
+        "title": "Enhance SEO with Social Profiles and Code Formatting",
+        "description": "Update the SEO implementation to include GitHub and Twitter social profiles from the `personalInfo` data object. Additionally, enforce consistent code formatting across all SEO-related files.",
+        "details": "1. **Integrate Social Profiles into JSON-LD:** Locate the `personalInfo` data object, likely defined in `lib/data.ts`. Modify the root `layout.tsx` where the JSON-LD `Person` schema is generated. Add the `sameAs` property to this schema, populating it with an array containing the GitHub and Twitter profile URLs from `personalInfo`. For example: `sameAs: [personalInfo.socials.github, personalInfo.socials.twitter]`. 2. **Code Formatting Cleanup:** Review all files related to the SEO implementation from Task #20, including `app/layout.tsx`, `app/sitemap.ts`, and `app/robots.ts`. Apply consistent code formatting by ensuring all string literals use double quotes (`\"`) instead of single quotes (`'`) and that all JavaScript statements are terminated with a semicolon (`;`). This can be done manually or by configuring and running a code formatter like Prettier.",
+        "testStrategy": "1. **Validate Structured Data:** Run the application and use browser developer tools to inspect the page source of the homepage. Locate the `<script type=\"application/ld+json\">` tag and verify that the `Person` schema now contains the `sameAs` property with the correct URLs for GitHub and Twitter. 2. **Use External Validator:** Copy the live URL or the generated HTML into Google's Rich Results Test tool. Confirm that the structured data is valid and that the `sameAs` property is correctly recognized without errors. 3. **Verify Code Formatting:** Use `git diff` to review the changes. Confirm that the only modifications in the relevant files, apart from the `sameAs` addition, are the updates from single to double quotes and the addition of semicolons. Run the project's linter/formatter to ensure no new issues are introduced.",
+        "status": "done",
+        "dependencies": [
+          20
+        ],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
       "created": "2025-06-26T13:36:45.161Z",
-      "updated": "2025-07-02T11:56:03.715Z",
+      "updated": "2025-07-04T10:57:31.105Z",
       "description": "Tasks for master context"
     }
   }

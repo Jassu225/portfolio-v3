@@ -1,0 +1,19 @@
+{
+    "files": {
+    "includes": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts", "**/*.jsonc", "**/*.json"]
+},
+    "formatter": {
+      "indentStyle": "space" // default is `tab`
+    },
+    "javascript": {
+      "formatter": {
+        "quoteStyle": "single", // default is `double`
+        "semicolons": "always"
+      }
+    },
+    "json": {
+      "formatter": {
+        "enabled": false
+      }
+    }
+  }
