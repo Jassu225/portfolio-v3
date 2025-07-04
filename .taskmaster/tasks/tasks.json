@@ -899,11 +899,24 @@
         ],
         "priority": "medium",
         "subtasks": []
+      },
+      {
+        "id": 22,
+        "title": "Fix Static Export Error for Metadata Routes",
+        "description": "Resolve the Next.js static export build failure by adding `export const revalidate = false` to the metadata route handlers (manifest.ts, sitemap.ts, robots.ts), ensuring they are treated as fully static routes.",
+        "details": "The `next export` command requires all app routes to be statically generated at build time. The current implementation of metadata routes (sitemap, robots, manifest) does not explicitly declare its revalidation strategy, causing them to be treated as dynamic, which fails the static export process. To fix this, you must modify each of the following files: `app/manifest.ts`, `app/sitemap.ts`, and `app/robots.ts`. In each file, add the line `export const revalidate = false;`. This segment option explicitly tells Next.js to cache the route indefinitely and treat it as fully static, making it compatible with `next export`.",
+        "testStrategy": "1. After implementing the changes, run the static export build command (e.g., `npm run build` or `pnpm build`). 2. Confirm that the build process completes successfully without any errors related to dynamic rendering or revalidation of the metadata routes. 3. Inspect the `out/` directory and verify that `manifest.webmanifest`, `sitemap.xml`, and `robots.txt` have been generated. 4. Use a local static file server (e.g., `npx serve out`) to preview the exported site and navigate directly to `/manifest.webmanifest`, `/sitemap.xml`, and `/robots.txt` to ensure they load correctly.",
+        "status": "done",
+        "dependencies": [
+          20
+        ],
+        "priority": "high",
+        "subtasks": []
       }
     ],
     "metadata": {
       "created": "2025-06-26T13:36:45.161Z",
-      "updated": "2025-07-04T10:57:31.105Z",
+      "updated": "2025-07-04T17:22:22.212Z",
       "description": "Tasks for master context"
     }
   }

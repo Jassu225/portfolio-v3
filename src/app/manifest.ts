@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { personalInfo } from '@/lib/data';
 
 export const dynamic = 'force-static';
+export const revalidate = false;
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
